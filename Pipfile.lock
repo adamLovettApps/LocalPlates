@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a2ab2b71d5ba8d95df02368eab9e979d83e5e79ba0e6d9e41b98c589811ba5d8"
+            "sha256": "22333b1fb840b813e742a73a89f5d987c3472b84ae54332cc74ca4ec98efc09b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -102,6 +102,14 @@
             ],
             "index": "pypi",
             "version": "==0.14.3"
+        },
+        "geoalchemy2": {
+            "hashes": [
+                "sha256:5220da4aca963f56024fadb5fc17ed60d413aba089d07ffc8487388d83a7434a",
+                "sha256:9302c7332ed7fecc25bff8944066227c5849146c998c2b21a21d4f55a2177d13"
+            ],
+            "index": "pypi",
+            "version": "==0.4.0"
         },
         "gunicorn": {
             "hashes": [
