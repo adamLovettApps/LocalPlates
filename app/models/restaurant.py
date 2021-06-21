@@ -1,6 +1,6 @@
 from geoalchemy2 import Geometry
 from .db import db
-
+from .restaurant_tags import restaurant_tags
 
 class Restaurant(db.Model):
     __tablename__ = 'restaurants'
@@ -27,7 +27,6 @@ class Restaurant(db.Model):
     menu_photo = db.relationship("MenuPhoto", back_populates="restaurant")
     photo = db.relationship("Photo", back_populates="restaurant")
     review = db.relationship("Review", back_populates="restaurant")
-
 
     bookings = db.relationship("Booking", back_populates="restaurant")
 
