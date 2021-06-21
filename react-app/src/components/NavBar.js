@@ -8,7 +8,7 @@ const NavBar = ({  }) => {
       <ul>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            Home!
           </NavLink>
         </li>
         <li>
