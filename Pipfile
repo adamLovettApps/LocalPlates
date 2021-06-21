@@ -30,6 +30,7 @@ PyJWT = "==1.7.1"
 geoalchemy2 = "==0.4.0"
 boto3 = "*"
 
+
 [dev-packages]
 psycopg2-binary = "==2.8.6"
 autopep8 = "*"

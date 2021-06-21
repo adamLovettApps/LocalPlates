@@ -22,7 +22,7 @@ class Restaurant(db.Model):
     latitude = db.Column(db.Float)
     geo = db.Column(Geometry(geometry_type="POINT"))
 
-    owner = db.relationship("User", back_populates="restaurant")
+    owner = db.relationship("User", back_populates="restaurant",)
 
     menu_photo = db.relationship("MenuPhoto", back_populates="restaurant")
     photo = db.relationship("Photo", back_populates="restaurant")
