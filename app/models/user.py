@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
   is_owner = db.Column(db.Boolean, nullable = False)
   review = db.relationship("Review", back_populates="user")
 
-  restaurant = db.relationship("Restaurant", back_populates="owner")
+  restaurant = db.relationship("Restaurant", back_populates="owner",)
   bookings = db.relationship("Booking", back_populates="user")
   favorites = db.relationship("Favorite", back_populates="user" )
 
