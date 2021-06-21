@@ -26,12 +26,13 @@ class Restaurant(db.Model):
 
     menu_photo = db.relationship("MenuPhoto", back_populates="restaurant")
     photo = db.relationship("Photo", back_populates="restaurant")
+    review = db.relationship("Review", back_populates="restaurant")
 
 
     bookings = db.relationship("Booking", back_populates="restaurant")
 
     tags = db.relationship(
-        "Tag", 
-        secondary=restaurant_tags, 
+        "Tag",
+        secondary=restaurant_tags,
         back_populates="restaurant"
     )

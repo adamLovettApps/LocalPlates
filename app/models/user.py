@@ -12,11 +12,12 @@ class User(db.Model, UserMixin):
   hashed_password = db.Column(db.String(255), nullable = False)
   profile_photo = db.Column(db.String)
   is_owner = db.Column(db.Boolean, nullable = False)
+  review = db.relationship("Review", back_populates="user")
 
   restaurant = db.relationship("Restaurant", back_populates="owner")
   bookings = db.relationship("Booking", back_populates="user")
   favorites = db.relationship("Favorites", back_populates="user" )
-  
+
   @property
   def password(self):
     return self.hashed_password
