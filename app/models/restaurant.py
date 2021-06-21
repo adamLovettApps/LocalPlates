@@ -33,3 +33,21 @@ class Restaurant(db.Model):
         secondary=restaurant_tags,
         back_populates="restaurant"
     )
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "address": self.address,
+            "state": self.state,
+            "city": self.city,
+            "zipcode": self.zipcode,
+            "phone_number": self.phone_number,
+            "hours": self.hours,
+            "total_bookings": self.total_bookings,
+            "star_rating": self.star_rating,
+            "review_count": self.review_count,
+            "description": self.description
+        }
+
+    # def get_all(self, *args):

@@ -34,7 +34,6 @@ def seed_restaurants():
     demo9 = Restaurant(name='Republique', address="624 South La Brea Ave", city="Los Angeles", state="California", zipcode=90036, phone_number="(310)36-6115", owner_id=14, hours='{"Mon" : "8AM - 2PM", "Tue" : "8AM - 2PM", "Wed" : "8AM - 2PM, 6 - 9PM", "Thur" : "8AM - 2PM, 6 - 9PM", "Fri" : "8AM - 2PM, 5 - 9PM", "Sat" : "8AM - 2PM, 5 - 9PM", "Sun" : "8AM - 2PM, 5 - 9PM"}', total_bookings=0, star_rating=0.0, review_count=0,
                       description="Modern French plates served in a striking space with communal tables, plus a bakery & cocktail bar.", geo=POINT(34.2526, -118.2993)
 
-
     db.session.add(demo)
     db.session.add(demo2)
     db.session.add(demo3)
