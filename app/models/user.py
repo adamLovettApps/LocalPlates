@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
   profile_photo = db.Column(db.String)
   is_owner = db.Column(db.Boolean, nullable = False)
   restaurant = db.relationship("Restaurant", back_populates="owner")
-
+  review = db.relationship("Review", back_populates="user")
   @property
   def password(self):
     return self.hashed_password

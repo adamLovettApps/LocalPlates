@@ -25,3 +25,4 @@ class Restaurant(db.Model):
     owner = db.relationship("User", back_populates="restaurant")
     menu_photo = db.relationship("MenuPhoto", back_populates="restaurant")
     photo = db.relationship("Photo", back_populates="restaurant")
+    review = db.relationship("Review", back_populates="restaurant")
