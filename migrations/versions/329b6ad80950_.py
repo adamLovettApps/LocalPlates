@@ -1,18 +1,18 @@
-"""new migration
+"""empty message
 
-Revision ID: 14342c834216
-Revises: d473990dc594
-Create Date: 2021-06-21 11:43:10.097466
+Revision ID: 329b6ad80950
+Revises:
+Create Date: 2021-06-21 16:51:51.573479
 
 """
 from alembic import op
 import sqlalchemy as sa
-from geoalchemy2 import Geometry
 import geoalchemy2
 
+
 # revision identifiers, used by Alembic.
-revision = '14342c834216'
-down_revision = 'd473990dc594'
+revision = '329b6ad80950'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -49,8 +49,6 @@ def upgrade():
     sa.Column('star_rating', sa.Float(), nullable=True),
     sa.Column('review_count', sa.Integer(), nullable=False),
     sa.Column('description', sa.Text(), nullable=False),
-    sa.Column('longitude', sa.Float(), nullable=True),
-    sa.Column('latitude', sa.Float(), nullable=True),
     sa.Column('geo', geoalchemy2.types.Geometry(geometry_type='POINT'), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -112,6 +110,7 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
     # ### end Alembic commands ###
 
 
