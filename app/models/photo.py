@@ -1,0 +1,9 @@
+from .db import db
+
+class Photo(db.Model):
+    __tablename__ = 'photos'
+    id = db.Column(db.Integer, primary_key=True)
+    image = db.Column(db.String, nullable=False)
+    restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
+    caption = db.Column(db.String, nullable=False)
+    restaurant = db.relationship("Restaurant", back_populates="photo")
