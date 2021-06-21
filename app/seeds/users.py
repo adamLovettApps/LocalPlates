@@ -7,19 +7,19 @@ def seed_users():
     # lat1 = 37.773972
     # geo = 'POINT({} {})'.format(lon1, lat1)
     demo = User(username='Demo', email='demo@aa.io',
-                password='password', isOwner=False)
+                password='password', is_owner=False)
 
 
     demo2 = User(username='Demo 2', email='demo2@aa.io',
-                 password='password', isOwner=False)
+                 password='password', is_owner=False)
 
 
     demo3 = User(username='Demo 3', email='demo3@aa.io',
-                 password='password', isOwner=False)
+                 password='password', is_owner=False)
 
 
     demo4 = User(username='Demo 4', email='demo4@aa.io',
-                 password='password', isOwner=False)
+                 password='password', is_owner=False)
 
     db.session.add(demo)
     db.session.add(demo2)
