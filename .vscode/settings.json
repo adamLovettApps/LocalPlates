@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/adam/.pyenv/versions/3.9.4/bin/python",
+    "python.pythonPath": "/home/chris/.local/share/virtualenvs/python-unit-tests-2l-VIJ_b/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pycodestyleEnabled": true
