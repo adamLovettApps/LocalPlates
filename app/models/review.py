@@ -12,3 +12,6 @@ class Review(db.Model):
     image = db.Column(db.String, nullable=False)
     created_at = db.Column(db.Date, nullable=False)
     updated_at = db.Column(db.Date, nullable=False)
+
+    restaurant = db.relationship("Restaurant", back_populates="review")
+    owner = db.relationship("User", back_populates="restaurant")
