@@ -1,0 +1,62 @@
+body {
+    font-family: 'Mukta', sans-serif;
+}
+
+.sign-up-form {
+    max-width: 300px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.sign-up-form-header {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.form-field-input-container {
+    padding-bottom: 8px;
+    margin-right: 10px;
+}
+
+.form-field-input {
+    width: 100%;
+    line-height:30px;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field-button-container {
+    margin-top: -20px;
+}
+
+.form-field-button {
+    font-family: 'Mukta', sans-serif;
+    color: white;
+    border-radius: 2px;
+    background-color: rgb(209, 49, 62);
+    font-size: 18px;
+    width: 101%;
+    height: 40px;
+    border: none;
+}
+
+.form-field-button:hover {
+    background-color: rgb(172, 32, 43);
+}
+
+.restaurant-owner-box {
+    padding-top:10px;
+    padding-right: 30px;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 300px;
+}
