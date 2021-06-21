@@ -23,4 +23,12 @@ class Restaurant(db.Model):
     geo = db.Column(Geometry(geometry_type="POINT"))
 
     owner = db.relationship("User", back_populates="restaurant")
+
     bookings = db.relationship("Booking", back_populates="restaurant")
+
+    tags = db.relationship(
+        "Tag", 
+        secondary=restaurant_tags, 
+        back_populates="restaurant"
+    )
+

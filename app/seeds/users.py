@@ -3,29 +3,23 @@ from app.models import db, User
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    lon1 = -122.43129
-    lat1 = 37.773972
-    geo = 'POINT({} {})'.format(lon1, lat1)
-    demo = User(username='SF', email='demo@aa.io',
-                password='password', latitude=lat1, longitude=lon1, geo=geo)
+    # lon1 = -122.43129
+    # lat1 = 37.773972
+    # geo = 'POINT({} {})'.format(lon1, lat1)
+    demo = User(username='Demo', email='demo@aa.io',
+                password='password', isOwner=False)
 
-    lon2 = -118.243683
-    lat2 = 34.052235
-    geo2 = 'POINT({} {})'.format(lon2, lat2)
-    demo2 = User(username='LA', email='demo2@aa.io',
-                 password='password', latitude=lat2, longitude=lon1, geo=geo2)
 
-    lon3 = -122.335167
-    lat3 = 47.608013
-    geo3 = 'POINT({} {})'.format(lon3, lat3)
-    demo3 = User(username='Seattle', email='demo3@aa.io',
-                 password='password', latitude=lat3, longitude=lon3, geo=geo3)
+    demo2 = User(username='Demo 2', email='demo2@aa.io',
+                 password='password', isOwner=False)
 
-    lon4 = -122.271111
-    lat4 = 37.804363
-    geo4 = 'POINT({} {})'.format(lon4, lat4)
-    demo4 = User(username='Oakland', email='demo4@aa.io',
-                 password='password', latitude=lat4, longitude=lon4, geo=geo4)
+
+    demo3 = User(username='Demo 3', email='demo3@aa.io',
+                 password='password', isOwner=False)
+
+
+    demo4 = User(username='Demo 4', email='demo4@aa.io',
+                 password='password', isOwner=False)
 
     db.session.add(demo)
     db.session.add(demo2)
