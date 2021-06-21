@@ -42,7 +42,7 @@ def upgrade():
     sa.Column('city', sa.String(), nullable=False),
     sa.Column('state', sa.String(), nullable=False),
     sa.Column('zipcode', sa.Integer(), nullable=False),
-    sa.Column('phone_number', sa.Integer(), nullable=False),
+    sa.Column('phone_number', sa.String(), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=False),
     sa.Column('hours', sa.String(), nullable=False),
     sa.Column('total_bookings', sa.Integer(), nullable=False),
