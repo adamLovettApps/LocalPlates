@@ -10,10 +10,9 @@ class User(db.Model, UserMixin):
   username = db.Column(db.String(40), nullable = False, unique = True)
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
-  longitude = db.Column(db.Float)
-  latitude = db.Column(db.Float)
-  geo = db.Column(Geometry(geometry_type="POINT"))
-
+  profile_photo = db.Column(db.String)
+  is_owner = db.Column(db.Boolean, nullable = False)
+  restaurant = db.relationship("Restaurant", back_populates="owner")
 
   @property
   def password(self):
