@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../../store/session';
 import './SignUpForm.css'
@@ -18,6 +19,9 @@ const SignUpForm = () => {
   const [zip, setZip] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [hours, setHours] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
+  const [imageLoading, setImageLoading] = useState(false);
   const [visibilityStateUser, setVisibilityStateUser] = useState("grid")
   const [visibilityStateRestaurant, setVisibilityStateRestaurant] = useState("none")
 
@@ -79,6 +83,16 @@ const SignUpForm = () => {
     setHours(e.target.value);
   };
 
+  const updateDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const updateImage = (e) => {
+        const file = e.target.files[0];
+        document.getElementById('file-label').innerText = "File Chosen"
+        setImage(file);
+    }
+
   if (user) {
     return <Redirect to="/" />;
   }
@@ -94,6 +108,8 @@ const SignUpForm = () => {
     }
     
   }
+
+  
   
   return (
     <>
@@ -176,7 +192,7 @@ const SignUpForm = () => {
             type="text"
             name="name"
             onChange={updateName}
-            value={email}
+            value={name}
             placeholder="Restaurant Name"
             className='form-field-input'
           ></input>
@@ -186,7 +202,7 @@ const SignUpForm = () => {
             type="text"
             name="address"
             onChange={updateAddress}
-            value={email}
+            value={address}
             placeholder="Street Address"
             className='form-field-input'
           ></input>
@@ -196,7 +212,7 @@ const SignUpForm = () => {
             type="text"
             name="city"
             onChange={updateCity}
-            value={email}
+            value={city}
             placeholder="City"
             className='form-field-input'
           ></input>
@@ -206,7 +222,7 @@ const SignUpForm = () => {
             type="text"
             name="state"
             onChange={updateState}
-            value={email}
+            value={state}
             placeholder="State"
             className='form-field-input'
           ></input>
@@ -216,7 +232,7 @@ const SignUpForm = () => {
             type="text"
             name="zip"
             onChange={updateZip}
-            value={email}
+            value={zip}
             placeholder="Zipcode"
             className='form-field-input'
           ></input>
@@ -226,7 +242,7 @@ const SignUpForm = () => {
             type="text"
             name="phoneNumber"
             onChange={updatePhoneNumber}
-            value={email}
+            value={phoneNumber}
             placeholder="Phone Number"
             className='form-field-input'
           ></input>
@@ -236,10 +252,19 @@ const SignUpForm = () => {
             type="text"
             name="hours"
             onChange={updateHours}
-            value={email}
+            value={hours}
             placeholder="Hours"
             className='form-field-input'
           ></input>
+        </div>
+        <div className='form-field-input-container'>
+          <textarea
+            name="description"
+            onChange={updateDescription}
+            value={description}
+            placeholder="Description"
+            className='form-field-input form-field-textarea'
+          />
         </div>
         <div className='form-field-input-container'>
           <input
@@ -261,6 +286,15 @@ const SignUpForm = () => {
             placeholder="Re-enter Password"
             className='form-field-input'
           ></input>
+        </div>
+        <div class="file">
+            <label for="file-input" id="file-label">Choose a Primary Photo</label>
+            <input 
+              type="file" 
+              id="file-input"
+              accept="image/*"
+              onChange={updateImage}
+            ></input>
         </div>
         <input type="checkbox" value={false} style = {{visibility: "hidden"}}></input>
         <div className="form-field-button-container"><button type="submit" className="form-field-button">Create Account</button></div>
