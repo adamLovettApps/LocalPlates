@@ -1,7 +1,7 @@
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getRestaurant } from "../../store/restaurant";
+import { getOneRestaurant } from "../../store/restaurant";
 
 const Restaurant = () => {
     const dispatch = useDispatch();
@@ -9,19 +9,22 @@ const Restaurant = () => {
     const { id } = useParams();
 
     const sessionUser = useSelector(state => state.session.user)
-    const restaurant = useSelector(state => state.restaurant)
+    const restaurant_data = useSelector(state => state.restaurant.restaurant)
 
-    const [reviews, setReviews] = useState(restaurant.reviews);
+    const [reviews, setReviews] = useState(restaurant_data.reviews);
 
     useEffect(() => {
-        dispatch(getRestaurant(id));
+        dispatch(getOneRestaurant(id));
+        console.log(restaurant_data)
     }, [dispatch, id])
 
     useEffect(() => {
-        if (!restaurant) {
-            setRestaurant(restaurant);
+        if (!restaurant_data) {
+            getOneRestaurant(id);
+            console.log(restaurant_data)
         }
-    }, [restaurant])
+    }, [restaurant_data])
+
 
 
     return (
@@ -30,7 +33,7 @@ const Restaurant = () => {
                 Set gallery images here
             </div>
             <div className="title-card">
-                <h1>{restaurant.name}</h1>
+                <h1>{restaurant_data.name}</h1>
             </div>
             <div className="reservation-wrapper">
                 <div className="reservation-card">
@@ -38,7 +41,7 @@ const Restaurant = () => {
                     <button>Reserve Now</button>
                 </div>
                 <div className="phone-details">
-                    <p>To order delivery or takeout call: {restaurant.phone_number}</p>
+                    <p>To order delivery or takeout call: {restaurant_data.phone_number}</p>
                 </div>
             </div>
             <div className="review-wrapper">
@@ -63,3 +66,5 @@ const Restaurant = () => {
         </div>
     )
 }
+
+export default Restaurant;

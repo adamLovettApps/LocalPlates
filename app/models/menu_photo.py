@@ -8,5 +8,12 @@ class MenuPhoto(db.Model):
     image = db.Column(db.String, nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     updated_at = db.Column(db.DateTime, nullable=False)
-    
+
     restaurant = db.relationship("Restaurant", back_populates="menu_photo")
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "image": self.image,
+            "restaurant_id": self.restaurant.id
+        }
