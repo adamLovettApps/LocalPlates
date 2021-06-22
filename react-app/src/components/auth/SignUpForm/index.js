@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../../store/session';
+import { signUp, signUpRestaurant } from '../../../store/session';
 import './SignUpForm.css'
 
 const SignUpForm = () => {
@@ -35,7 +35,10 @@ const SignUpForm = () => {
   const onSignUpRestaurant = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await dispatch(signUp(username, email, password));
+      const formData = new FormData();
+      formData.append("image", image); 
+      // , username, email, password, name, address, city, state, zip, phoneNumber, hours, description
+      const user = await dispatch(signUpRestaurant(formData));
     }
   };
 
@@ -298,6 +301,7 @@ const SignUpForm = () => {
         </div>
         <input type="checkbox" value={false} style = {{visibility: "hidden"}}></input>
         <div className="form-field-button-container"><button type="submit" className="form-field-button">Create Account</button></div>
+        {(imageLoading)&& <p>Loading...</p>}
       </div>
     </form>
 

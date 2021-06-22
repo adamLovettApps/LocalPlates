@@ -2,10 +2,10 @@ from flask import Blueprint, jsonify, session, request
 from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
+from app.forms import RestaurantSignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
-
 
 auth_routes = Blueprint('auth', __name__)
 
@@ -76,6 +76,52 @@ def sign_up():
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@auth_routes.route('/signupRestaurant', methods=['POST'])
+def sign_up_restaurant():
+    """
+    Creates a new user and logs them in
+    """
+
+    print("REQUEST FILES!!!!!!!!!!!!!!!", request.files["image"])
+    
+    if "image" not in request.files:
+        return {"errors": "image required"}, 400
+
+    image = request.files["image"]
+
+    if not allowed_file(image.filename):
+        return {"errors": "file type not permitted"}, 400
+
+    image.filename = get_unique_filename(image.filename)
+
+    upload = upload_file_to_s3(image)
+
+    print("UPLOAD", upload)
+    if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
+
+    url = upload["url"]
+    form = SignUpForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    return
+    # user = User(
+    #     username=form.data['username'],
+    #     email=form.data['email'],
+    #     password=form.data['password']
+    # )
+
+    # db.session.add(user)
+    # db.session.commit()
+    # login_user(user)
+    # return user.to_dict()
+    # print("ERRORS", form.errors)
+    # return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @auth_routes.route('/unauthorized')
