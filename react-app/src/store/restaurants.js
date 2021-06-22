@@ -1,5 +1,6 @@
 const SET_ALL_RESTAURANTS = "session/SET_ALL_RESTAURANTS"
 
+
 export const getRestaurants=()=> async(dispatch)=>{
     const response = await fetch('/api/restaurants/all');
     const restaurants = await response.json();
@@ -11,8 +12,8 @@ export const getRestaurants=()=> async(dispatch)=>{
 const setRestaurants=(restaurants)=>({
     type: SET_ALL_RESTAURANTS,
     restaurants
-
 })
+
 
 const initialState = {restaurants: {}}
 const RestaurantReducer = (state = initialState, action) => {
