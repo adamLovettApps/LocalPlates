@@ -54,5 +54,5 @@ def seed_restaurants():
 
 
 def undo_restaurants():
-    db.session.execute('TRUNCATE TABLE restaurants CASCADE;')
+    db.session.execute('TRUNCATE TABLE restaurants RESTART IDENTITY CASCADE;')
     db.session.commit()
