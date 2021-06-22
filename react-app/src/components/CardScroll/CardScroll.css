@@ -1,0 +1,17 @@
+.scroll{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+
+}
+
+.scroll-title {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.scroll-container {
+    margin: 10px;
+    width: 90vw;
+
+}

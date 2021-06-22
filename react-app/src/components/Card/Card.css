@@ -1,0 +1,47 @@
+.card-container {
+    border: solid 2px;
+    background-color: green;
+    overflow: hidden;
+    margin: 10px;
+    height: 20vh;
+    width: 10vw;
+    transition: top ease 0.5s;
+    top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    height: 100%;
+    width: 100%;
+}
+
+.zoom-image {
+    height: 50%;
+    width: 100%;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+.zoom-image img {
+    transition: transform .5s ease;
+}
+
+.zoom-image:hover img {
+transform: scale(1.5);
+}
+
+.card-container:hover {
+    top: -5px;
+}
+
+.card-name {
+    font-weight: bold;
+
+}
+
+.card-stars {
+    width: 50%;
+    height: 20%;
+}

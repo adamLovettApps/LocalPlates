@@ -1,7 +1,7 @@
 .splash-background {
     background-image: url("https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg");
     padding: 5px;
-    height: 30vh;
+    height: 40vh;
     width: auto;
     display: flex;
     align-items: center;
@@ -10,13 +10,14 @@
 
 .splash-title {
     color: white;
-    font-size: 4vh;
+    font-size: 7vh;
 }
 
 
 .booking-params {
     display: flex;
     margin-top: 50px;
+    margin-bottom: 30px;
     flex-direction: row;
     justify-content:space-between ;
 }

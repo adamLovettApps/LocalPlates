@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SplashDisplay from "../SplashDisplay"
+import CardScroll from "../CardScroll"
 import { useDispatch, useSelector } from "react-redux";
 import {getRestaurants} from "../../store/restaurants"
 function Home(){
@@ -14,10 +15,7 @@ function Home(){
     return(
         <div>
             <SplashDisplay/>
-            {restaurants && restaurants.map((restaurant,index)=>(
-                <div>{restaurant.name} </div>
-
-            ))}
+            {restaurants &&<CardScroll restaurants={restaurants}/>}
         </div>
     );
 }
