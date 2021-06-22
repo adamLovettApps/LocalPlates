@@ -11,27 +11,27 @@ const Restaurant = () => {
     const sessionUser = useSelector(state => state.session.user)
     const restaurant = useSelector(state => state.restaurant)
 
-    const [currentRestaurant, setRestaurant] = useState();
     const [restaurantPics, setRestaurantPics] = useState();
+    const [reviews, setReviews] = useState(restaurant.reviews);
 
     useEffect(() => {
         dispatch(getRestaurant(id));
     }, [dispatch, id])
 
     useEffect(() => {
-        if (!currentRestaurant) {
+        if (!restaurant) {
             setRestaurant(restaurant);
         }
-    }, [currentRestaurant])
+    }, [restaurant])
 
 
     return (
         <div className="body-wrapper">
             <div className="gallery-slider">
-
+                Set gallery images here
             </div>
             <div className="title-card">
-                <h1>{currentRestaurant.name}</h1>
+                <h1>{restaurant.name}</h1>
             </div>
             <div className="reservation-wrapper">
                 <div className="reservation-card">
@@ -39,7 +39,7 @@ const Restaurant = () => {
                     <button>Reserve Now</button>
                 </div>
                 <div className="phone-details">
-                    <p>To order delivery or takeout call: {currentRestaurant.phone_number}</p>
+                    <p>To order delivery or takeout call: {restaurant.phone_number}</p>
                 </div>
             </div>
             <div className="review-wrapper">
@@ -51,10 +51,15 @@ const Restaurant = () => {
                     <div key={review.id} className="review-card">
                         <div className="review-header">
                             <h4>{review.title}</h4>
-                            
+                            <div>{review.stars}</div>
+                            <div>{review.updated_at}</div>
+                        </div>
+                        <div className="review-body">
+                            <div>{review.image}</div>
+                            <div>{review.body}</div>
                         </div>
                     </div>
-                    ))}
+                ))}
             </div>
         </div>
     )

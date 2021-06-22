@@ -40,5 +40,18 @@
 
 .review-card{
     display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+.review-header{
+    display: flex;
     flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.review-body{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
 }

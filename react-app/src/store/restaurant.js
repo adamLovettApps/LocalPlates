@@ -8,7 +8,7 @@ export const getRestaurant=(id)=> async(dispatch)=>{
         const restaurant = await response.json();
         console.log(restaurant)
         dispatch(setRestaurant(restaurant))
-        return restaurant
+        return restaurant;
     }
 }
 
