@@ -77,6 +77,20 @@ export const signUp = (username, email, password) => async (dispatch) => {
     return {};
 }
 
+export const signUpRestaurant = (formData) => async (dispatch) => {
+    console.log(formData)
+    const response = await fetch("/api/auth/signupRestaurant", {
+        method: "POST",
+        body: formData
+    });
+    const data = await response.json();
+    if (data.errors) {
+        return data;
+    }
+    dispatch(setUser(data));
+    return {};
+}
+
 const initialState = { user: null }
 
 export default function reducer(state=initialState, action) {

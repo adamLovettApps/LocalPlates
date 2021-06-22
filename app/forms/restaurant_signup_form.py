@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField
+from wtforms import StringField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
 
@@ -16,4 +16,11 @@ class RestaurantSignUpForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[DataRequired()])
-
+    profilePhoto = StringField('profile photo', validators=[DataRequired()])
+    name = StringField('name', validators=[DataRequired()])
+    address = StringField('address', validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired()])
+    state = StringField('state', validators=[DataRequired()])
+    zip = IntegerField('zip', validators=[DataRequired()])
+    phoneNumber = StringField('phoneNumber', validators=[DataRequired()])
+    hours = StringField('hours', validators=[DataRequired()])
