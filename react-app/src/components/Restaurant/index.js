@@ -11,7 +11,6 @@ const Restaurant = () => {
     const sessionUser = useSelector(state => state.session.user)
     const restaurant = useSelector(state => state.restaurant)
 
-    const [restaurantPics, setRestaurantPics] = useState();
     const [reviews, setReviews] = useState(restaurant.reviews);
 
     useEffect(() => {
