@@ -32,9 +32,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Mukta', sans-serif;
 }
 
 .form-field-textarea {
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Mukta', sans-serif;
     height: 120px;
     resize: none;
 }
