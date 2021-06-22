@@ -1,17 +1,51 @@
 .scroll{
     width: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    background-color: aqua;
+    border-top: 4px solid black;
 
+}
+
+.card-scroll::-webkit-scrollbar {
+    display: none;
 }
 
 .scroll-title {
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+    position: relative;
+    align-self: flex-start;
+    justify-self: left;
 }
 
 .scroll-container {
-    margin: 10px;
-    width: 90vw;
 
+    margin: 10px;
+    display: flex;
+
+}
+.card-scroll {
+    background-color: purple;
+    width: 80%;
+    display: flex;
+    align-self: start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.scroll-center {
+
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right-button {
+    width: 10%;
+}
+.left-button {
+    width: 10%;
 }
