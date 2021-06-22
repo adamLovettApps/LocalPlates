@@ -9,7 +9,7 @@ from geoalchemy2 import Geometry
 from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
-
+from .api.restaurant_routes import restaurant_routes
 from .seeds import seed_commands
 
 from .config import Config
@@ -32,6 +32,7 @@ app.cli.add_command(seed_commands)
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
+app.register_blueprint(restaurant_routes, url_prefix='/api/restaurants')
 db.init_app(app)
 Migrate(app, db)
 
@@ -40,7 +41,7 @@ CORS(app)
 
 # Since we are deploying with Docker and Flask,
 # we won't be using a buildpack when we deploy to Heroku.
-# Therefore, we need to make sure that in production any 
+# Therefore, we need to make sure that in production any
 # request made over http is redirected to https.
 # Well.........
 
@@ -66,9 +67,14 @@ def inject_csrf_token(response):
 
 
 @app.route('/', defaults={'path': ''})
+def splash():
+    print('hiiiiii')
+
 @app.route('/<path:path>')
 def react_root(path):
     print("path", path)
+    print('hiiiiii')
+
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
     return app.send_static_file('index.html')

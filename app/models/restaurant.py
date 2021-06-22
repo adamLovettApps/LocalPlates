@@ -34,11 +34,16 @@ class Restaurant(db.Model):
         back_populates="restaurant"
     )
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
             "address": self.address,
+<<<<<<< HEAD
             "state": self.state,
             "city": self.city,
             "zipcode": self.zipcode,
@@ -51,3 +56,17 @@ class Restaurant(db.Model):
         }
 
     # def get_all(self, *args):
+=======
+            "city": self.city,
+            "state": self.state,
+            "zipcode": self.zipcode,
+            "phone_number": self.phone_number,
+            # add owner.to_dict() method call
+            # "owner": self.owner.to_dict(),
+            "hours": self.hours,
+            "total_bookings":self.total_bookings,
+            "star_rating": self.star_rating,
+            "review_count": self.review_count,
+            "description": self.description,
+        }
+>>>>>>> main
