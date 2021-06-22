@@ -19,7 +19,7 @@ jobs:
           justlogin: true
 
       - name: "Login to heroku registry"
-          run: heroku container:login
+        run: heroku container:login
 
       - name: "Build and push to heroku registry"
         run: heroku container:push web --app localplates
