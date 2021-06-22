@@ -34,7 +34,6 @@ class Restaurant(db.Model):
         back_populates="restaurant"
     )
 
-
     def to_dict(self):
         return {
             "id": self.id,
