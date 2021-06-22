@@ -11,6 +11,8 @@ import Home from "./components/Home";
 import Restaurant from "./components/Restaurant";
 import { authenticate } from "./store/session";
 
+require('dotenv').config()
+
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
   const dispatch = useDispatch();
