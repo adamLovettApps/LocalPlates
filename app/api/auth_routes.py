@@ -131,7 +131,7 @@ def sign_up_restaurant():
                 review_count=0,
                 hours=" ",
                 description=form.data["description"],
-                geo=f'POINT({lng} {lat})'
+                geo=f'POINT({lat} {lng})'
             )
             db.session.add(restaurant)
             db.session.commit()
