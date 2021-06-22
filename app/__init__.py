@@ -67,9 +67,6 @@ def inject_csrf_token(response):
 
 
 @app.route('/', defaults={'path': ''})
-def splash():
-    print('hiiiiii')
-
 @app.route('/<path:path>')
 def react_root(path):
     print("path", path)
