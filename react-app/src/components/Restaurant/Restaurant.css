@@ -6,18 +6,24 @@
         "tcard tcard rcard"
         "review review ."
         "review review .";
+        padding: 5%;
+
 }
 
 .gallery-slider{
     display: flex;
     flex-direction: row;
     grid-area: "gallery";
+    border: 1px solid red;
+
 }
 
 .title-card{
     display: flex;
     justify-content: flex-start;
     grid-area: "tcard";
+    border: 1px solid green;
+    width: 60%;
 }
 
 .reservation-card{
@@ -54,4 +60,16 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
+}
+
+.review-form-wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.review-form-wrapper form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }

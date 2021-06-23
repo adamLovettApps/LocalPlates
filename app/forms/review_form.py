@@ -4,9 +4,9 @@ from wtforms.validators import DataRequired
 
 
 class ReviewForm(FlaskForm):
-    title = StringField("Review headline.", validators=[DataRequired()])
-    body = TextAreaField("Tell us about your experience.",
+    title = StringField("Title", validators=[DataRequired()])
+    body = TextAreaField("Body",
                          validators=[DataRequired()])
-    stars = IntegerField("how many stars?", validators=[DataRequired()])
-    image = StringField("Image URL: ")
+    stars = IntegerField("Rating", validators=[DataRequired()])
+    image = StringField("Image")
     submit = SubmitField("Submit")

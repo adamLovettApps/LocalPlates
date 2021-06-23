@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getOneRestaurant } from "../../store/restaurant";
-
+import ReviewForm from "./review_form";
 
 const Restaurant = () => {
     const dispatch = useDispatch();
@@ -10,31 +10,45 @@ const Restaurant = () => {
     const { id } = useParams();
 
     const sessionUser = useSelector(state => state.session.user)
-    const restaurant_data = useSelector(state => state.restaurant.restaurant)
-
-    const [reviews, setReviews] = useState(restaurant_data.reviews);
+    const data = useSelector(state => state.restaurant)
+    const [reviews, setReviews] = useState(data.restaurant_data.reviews);
+    const [isHidden, setIsHidden] = useState(true)
 
     useEffect(() => {
         dispatch(getOneRestaurant(id));
-        console.log(restaurant_data)
+        if (!data.restaurant_data) {
+            setReviews(data.restaurant_data.reviews)
+        }
     }, [dispatch, id])
 
     useEffect(() => {
-        if (!restaurant_data) {
+        if (!data.restaurant) {
             getOneRestaurant(id);
-            console.log(restaurant_data)
         }
-    }, [restaurant_data])
+    }, [data])
 
 
 
     return (
         <div className="body-wrapper">
             <div className="gallery-slider">
-                Set gallery images here
+                <p>Set gallery images here</p>
             </div>
             <div className="title-card">
-                <h1>{restaurant_data.name}</h1>
+                <h1>{data.restaurant.name}</h1>
+                <div className="restaurant-details">
+                    <div>
+                        <div>
+                            {data.restaurant.star_rating}
+                        </div>
+                        <div>{data.restaurant.review_count}</div>
+                    </div>
+                    <div>
+                       <div>"Tag 1"</div>
+                       <div>"Tag 2"</div>
+                       <div>"Tag 3"</div>
+                    </div>
+                </div>
             </div>
             <div className="reservation-wrapper">
                 <div className="reservation-card">
@@ -42,13 +56,16 @@ const Restaurant = () => {
                     <button>Reserve Now</button>
                 </div>
                 <div className="phone-details">
-                    <p>To order delivery or takeout call: {restaurant_data.phone_number}</p>
+                    <p>To order delivery or takeout call: {data.restaurant.phone_number}</p>
                 </div>
             </div>
             <div className="review-wrapper">
                 <div className="section-title">
                     <h3>Reviews</h3>
-                    <button>Submit Review</button>
+                    <button onClick={() => setIsHidden(!isHidden)} disabled={!isHidden}>Submit Review</button>
+                    <div hidden={isHidden}>
+                        <ReviewForm />
+                    </div>
                 </div>
                 {reviews && reviews.map(review => (
                     <div key={review.id} className="review-card">
