@@ -47,13 +47,17 @@ def add_review(id):
     form = ReviewForm()
     if form.validate_on_submit():
         review = Review(
+            restaurant_id=form.data["restaurant_id"],
+            user_id=form.data["user_id"],
             title=form.data["title"],
             body=form.data["body"],
             stars=form.data["stars"],
-            image=form.data["image"],
+            image=form.data["image"]
         )
+        print(review)
         db.session.add(review)
         db.session.commit()
+        return review
         print("Review Added")
     else:
         return ValidationError("There was an Error when submitting your review, please try again.")

@@ -4,9 +4,11 @@ from wtforms.validators import DataRequired
 
 
 class ReviewForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
-    body = TextAreaField("Body",
+    restaurant_id = IntegerField("restaurant_id", validators=[DataRequired()])
+    user_id = IntegerField("user_id", validators=[DataRequired()])
+    title = StringField("title", validators=[DataRequired()])
+    body = TextAreaField("body",
                          validators=[DataRequired()])
-    stars = IntegerField("Rating", validators=[DataRequired()])
-    image = StringField("Image")
-    submit = SubmitField("Submit")
+    stars = IntegerField("rating", validators=[DataRequired()])
+    image = StringField("image")
+    submit = SubmitField("submit")
