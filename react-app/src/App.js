@@ -7,11 +7,12 @@ import NavBar from "./components/NavBar/index.js";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Home from "./components/Home";
+
+import Home from "./components/Home"
+import SearchResults from "./components/SearchResults"
+
 import Restaurant from "./components/Restaurant";
 import { authenticate } from "./store/session";
-
-require('dotenv').config()
 
 function App() {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path="/search/:searchString">
+          <SearchResults />
         </Route>
         <ProtectedRoute path="/users" exact={true} >
           <UsersList />
