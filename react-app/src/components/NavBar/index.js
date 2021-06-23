@@ -11,7 +11,7 @@ const NavBar = ({  }) => {
 
 
   return (
-    <nav>
+    <nav className="nav-bar-container">
       <ul>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">

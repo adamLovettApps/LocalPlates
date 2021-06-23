@@ -10,6 +10,17 @@ from sqlalchemy import or_
 search_routes = Blueprint('search', __name__)
 
 
+@search_routes.route('/getTags')
+def get_all_tages():
+    tags = Tag.query.all()
+    tag_dict = {}
+    for tag in tags:
+        temp_tag = tag.to_dict()
+        tag_dict[temp_tag["id"]] = temp_tag
+    print(tag_dict)
+    return tag_dict
+
+
 @search_routes.route('/<searchString>/<ip>')
 def get_search_results(searchString, ip):
 
@@ -21,13 +32,11 @@ def get_search_results(searchString, ip):
 
     latitude = location["latitude"]
     longitude = location["longitude"]
-    print("LOCAAAAAAATION!!!!!!!!!!!!!", location["latitude"])
     results = db.session.execute(
         f"SELECT * FROM restaurants FULL JOIN users ON users.id=restaurants.owner_id FULL JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id FULL JOIN tags ON tags.id=restaurant_tags.tag_id FULL JOIN reviews ON reviews.restaurant_id=restaurants.id WHERE restaurants.name ILIKE \'%{searchString}%\' OR restaurants.description ILIKE \'%{searchString}%\' OR restaurants.city ILIKE \'%{searchString}%\' OR restaurants.state ILIKE \'%{searchString}%\' OR tags.type ILIKE \'%{searchString}%\' ORDER BY ST_Distance(geo, ST_MakePoint({latitude}, {longitude}):: geography) LIMIT 10")
     rows = results.fetchall()
     data = {}
     for row in rows:
-        print(row)
         if row[0] not in data:
             if row[25] is not None:
                 data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
