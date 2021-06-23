@@ -23,5 +23,6 @@ def get_search_results(searchString, ip):
     results = db.session.execute(
         f"SELECT * FROM restaurants FULL JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id FULL JOIN tags ON tags.id=restaurant_tags.tag_id WHERE restaurants.name ILIKE \'%{searchString}%\' OR restaurants.description ILIKE \'%{searchString}%\' OR restaurants.city ILIKE \'%{searchString}%\' OR restaurants.state ILIKE \'%{searchString}%\' OR tags.type ILIKE \'%{searchString}%\' ORDER BY ST_Distance(geo, ST_MakePoint({latitude}, {longitude}):: geography) LIMIT 10")
     rows = results.fetchall()
-    print("RESULTS!!!!!!!!!", rows)
+    for row in rows:
+        print(row)
     return {}
