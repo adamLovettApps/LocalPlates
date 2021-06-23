@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './Card.css'
 import StarRating from "../StarRating"
 function Card({restaurant}){
+    let tagString = 'Test, TagStr'
     return (
         <a>
             <div className="card-container">
@@ -13,7 +14,27 @@ function Card({restaurant}){
                         {restaurant.name}
                     </div>
                     <div className="card-stars">
-                        <StarRating rating={restaurant.star_rating}/>
+                        <StarRating reviewNum ={restaurant.review_count} rating={restaurant.star_rating}/>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div className='card-tag-city-container'>
+                        <div className="card-tags">
+                                {tagString}
+                        </div>
+                        <div className="card-city">
+                        &nbsp; &#8226; &nbsp; {restaurant.city}
+                        </div>
+
+                    </div>
+                    <div className="card-booking-container">
+                        <div className='card-reserve'>
+                            Reserve
+                        </div>
+                        <div className="card-booking-display">
+                            Booked {restaurant.total_bookings} times
+                        </div>
                     </div>
                 </div>
             </div>
