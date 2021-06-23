@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getOneRestaurant } from "../../store/restaurant";
 
+
 const Restaurant = () => {
     const dispatch = useDispatch();
     const history = useHistory();
