@@ -8,22 +8,60 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         let cardScroll = document.querySelector(".card-scroll");
 
 
-        function scrollLeftAnimation(){
-            let count = 30;
-            const speedyScroll = setInterval(()=>{
-                cardScroll.scrollLeft -=1
-                count -=1;
-                if (count == 0){
-                    clearInterval(speedyScroll)
+        function scrollAnimation(isLeft){
+            let x = 1;
+            if(isLeft){
+                x = -1
+            }
+            let count = 0;
+            let movementSpeed;
+            const scroll = setInterval(()=>{
+                if (count<40){
+                    movementSpeed = 4;
                 }
-            }, 10)
+                else if( count <60){
+                    movementSpeed =6;
+                }
+                else if( count < 150){
+                    movementSpeed = 3;
+                }
+                else{
+
+                    movementSpeed = 1;
+                }
+                cardScroll.scrollLeft +=  x * movementSpeed;
+                count +=1;
+                if (count === 200){
+                    let shakeCount = 0
+                    const shake = setInterval(() => {
+                        cardScroll.scrollLeft += ( x *-1);
+                        shakeCount +=1;
+                        const shakeDist = 5;
+                        if (shakeCount === shakeDist){
+                            let shakeBackCount = 0
+                            const shakeBack = setInterval(() => {
+                                cardScroll.scrollLeft +=  x ;
+                                shakeBackCount+=1;
+                                if(shakeBackCount ==  shakeDist){
+                                    clearInterval(shakeBack)
+                                }
+                            }, 4);
+                            clearInterval(shake)
+                        }
+                    }, 4);
+                    clearInterval(scroll)
+                }
+            }, 4);
+
+
+
         }
         console.log("hiiiiiiiiiiiiiiiiii")
         leftButtonsArr.forEach(el=>{
             el.addEventListener("click",(e)=>{
                 console.log("scroll left")
                 // cardScroll.scrollLeft -=70;
-                scrollLeftAnimation();
+                scrollAnimation(true);
             })
         })
 
@@ -31,8 +69,8 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         let rightButtonsArr = Array.from(rightButtons)
         rightButtonsArr.forEach(el=>{
             el.addEventListener("click",(e)=>{
-                console.log("scroll left")
-                cardScroll.scrollLeft +=70;
+                console.log("scroll right")
+                scrollAnimation(false);
             })
         })
 

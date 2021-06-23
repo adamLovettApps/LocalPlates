@@ -1,11 +1,11 @@
 .checked {
-  color:red;
+  color:#d1313e;
 }
 
 .star {
-  font-size: .8vw;
+  font-size: 13px;
 }
 
 .not-checked {
-  color: gray;
+  color: #d8d9db;
 }

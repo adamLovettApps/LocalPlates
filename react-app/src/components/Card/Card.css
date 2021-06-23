@@ -1,10 +1,11 @@
 .card-container {
     border: solid 2px;
-    background-color: green;
+    background-color: rgb(239,241,243);
+    border-radius: 4px;
     overflow: hidden;
     margin: 10px;
-    height: 20vh;
-    width: 10vw;
+    height: 270px;
+    width: 236px;
     transition: top ease 0.5s;
     top: 0;
     position: relative;
@@ -29,18 +30,18 @@
 }
 
 .zoom-image:hover img {
-transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .card-container:hover {
     top: -5px;
+    box-shadow: 0px 3px 5px -2px black;
 }
 
 .card-name {
     font-weight: bold;
 
 }
-
 .card-stars {
     width: 50%;
     height: 1vw;

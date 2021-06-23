@@ -5,12 +5,14 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    padding-top: 10px;
-    background-color: aqua;
-    border-top: 4px solid black;
+    /* padding-top: 10px; */
+    /* border-top: 2px solid black; */
+    position: relative;
 
 }
-
+h1 {
+    margin: 0px;
+}
 .card-scroll::-webkit-scrollbar {
     display: none;
 }
@@ -19,17 +21,29 @@
     position: relative;
     align-self: flex-start;
     justify-self: left;
+    width: 96%;
+    margin-left: 30px;
+    margin-right: 25px;
+    color:#2d333f;
+    border-bottom: 2px solid #d8d9db;
 }
 
-.scroll-container {
+.scroll-border-bar {
 
+    width: 95%;
+}
+.scroll-container {
     margin: 10px;
     display: flex;
 
 }
 .card-scroll {
-    background-color: purple;
-    width: 80%;
+    margin-left:24px;
+    margin-right:24px;
+    margin-bottom:10px;
+    margin-top:10px;
+    background-color: rgb(236, 236, 236);
+    width: 100%;
     display: flex;
     align-self: start;
     overflow-y: hidden;
@@ -42,10 +56,51 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 .right-button {
     width: 10%;
 }
 .left-button {
     width: 10%;
+}
+.scroll-button {
+    font-weight: bolder;
+    display: flex;
+
+    align-content: center;
+    justify-items: center;
+    height: 40px;
+     width: 40px;
+    background-color: rgb(236, 236, 236);
+    border-radius: 50%;
+    border: .0625rem solid #d8d9db;
+    box-shadow: 0 0.125rem 0.5rem hsl(0deg 0% 60% / 40%);
+  /* display: inline-block; */
+}
+
+.scroll-button:hover {
+    border: 2px solid rgb(172,42,33);
+}
+
+.chevron-left {
+    align-self: center;
+    justify-self: center;
+    margin-left: 27%;
+    font-size: 30px;
+}
+
+.chevron-right {
+    align-self: center;
+    justify-self: center;
+    margin-left: 34%;
+    font-size: 30px;
+}
+
+.scroll-button-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
 }
