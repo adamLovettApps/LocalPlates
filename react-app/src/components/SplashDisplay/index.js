@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import './SplashDisplay.css'
+
 function SplashDisplay(){
     const handleSubmit = (e) => {
 
     }
     const [date,setDate] = useState(Date())
     const [time,setTime] = useState(Date().now)
-    const [searchTerm, setSearchTerm] = useState('');
-
+    const [searchString, setSearchString] = useState('');
 
     //clear date and time from prev searches
     useEffect(()=>{
@@ -21,7 +21,7 @@ function SplashDisplay(){
     return(
         <div className="splash-background">
             <h1 className="splash-title">Find a Seat For a Local Plate!</h1>
-            <form action = {`/search/:${searchTerm}`} method="get">
+            <form action = {`/search/:${searchString}`} method="get">
                 <div className="booking-params">
                     <input type='date'
                         className= 'home-form-ele'
@@ -42,7 +42,7 @@ function SplashDisplay(){
                     </input>
                     <input className="home-page-search home-form-ele"
                         placeholder="Search by Restaurant, Cuisine Type, or Location"
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => setSearchString(e.target.value)}
                         required
                     >
                     </input>
