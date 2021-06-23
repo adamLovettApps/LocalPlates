@@ -1,0 +1,85 @@
+.booking-params {
+    display: flex;
+    /* margin-top: 50px; */
+    margin-bottom: 30px;
+    flex-direction: row;
+    justify-content:space-between ;
+}
+
+.search-form {
+    width: 5;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    background-color: rgb(236, 236, 236);
+}
+select {
+    border: 0px;
+    background-color: rgb(236, 236, 236);
+}
+.search-form-ele {
+    padding: 10px;
+    /* margin: 7px; */
+    border-top: 2px solid #d8d9db;
+    border: 0px;
+}
+
+.search-date {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid #d8d9db;
+}
+
+.search-time {
+    border-right: 1px solid #d8d9db;
+}
+
+.search-button {
+    background-color: #da3743;
+    border-radius: 5px;
+    border: 0px;
+    font-weight: 700;
+    color: rgb(236, 236, 236);
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+.search-button:hover {
+    background-color: #b8222d;
+}
+
+.search-icon {
+    background-color: rgb(236, 236, 236);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.search-input-field {
+    background-color: rgb(236, 236, 236);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 25px;
+    width: 300px;
+
+}
+
+.search-person-icon {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 5px;
+}
+
+.search-party-size {
+    margin-right: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-right: 15px;
+}
