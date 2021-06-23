@@ -21,7 +21,7 @@ function Card({restaurant}){
                     </div>
                     <div className='card-tag-city-container'>
                         <div className="card-tags">
-                                {tagString}
+                                {restaurant.tags}
                         </div>
                         <div className="card-city">
                         &nbsp; &#8226; &nbsp; {restaurant.city}

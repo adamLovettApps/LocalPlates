@@ -7,7 +7,7 @@ function Home(){
     const dispatch = useDispatch();
     const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
     const italian = useSelector((state)=>Object.values(state.restaurant.italian))
-    console.log("ITALIAN WORKING",italian)
+    const indian = useSelector((state)=>Object.values(state.restaurant.indian))
     const user = useSelector(state => state.session.user);
     if (user){
         console.log('user authenticated')
@@ -18,12 +18,13 @@ function Home(){
 
         //   await dispatch(getRestaurants("all"));
           await dispatch(getRestaurants("italian"));
+          await dispatch(getRestaurants("indian"));
         })();
       }, [dispatch]);
     return(
         <div>
             <SplashDisplay/>
-            {restaurants &&<CardScroll collectionTitle={placeholderTitle} restaurants={restaurants}/>}
+            {indian &&<CardScroll collectionTitle={"Indian"} restaurants={indian}/>}
             {italian &&<CardScroll collectionTitle={"Italian"} restaurants={italian}/>}
         </div>
     );
