@@ -45,10 +45,30 @@ function SearchBar(){
                     </label>
                     <select
                     className="search-party-size"
+                    onChange={(e)=>{
+                        setPartySize(e.target.value)
+                    }}
                     >
-                        <option>
-                             2 People
-                        </option>
+                            <option key={1} value={1}> 1 Person </option>
+                            <option selected={true} key={2}  value={2}> 2 People </option>
+                            <option key={3} value={3}> 3 People </option>
+                            <option key={4} value={3}> 3 People </option>
+                            <option key={5} value={3}> 3 People </option>
+                            <option key={6} value={3}> 3 People </option>
+                            <option key={7} value={7}> 7 People </option>
+                            <option key={8} value={8}> 8 People </option>
+                            <option key={9} value={9}> 9 People </option>
+                            <option key={10} value={10}> 10 People </option>
+                            <option key={11} value={11}> 11 People </option>
+                            <option key={12} value={12}> 12 People </option>
+                            <option key={13} value={13}> 13 People </option>
+                            <option key={14} value={14}> 14 People </option>
+                            <option key={15} value={15}> 15 People </option>
+                            <option key={16} value={16}> 16 People </option>
+                            <option key={17} value={17}> 17 People </option>
+                            <option key={18} value={18}> 18 People </option>
+                            <option key={19} value={19}> 19 People </option>
+                            <option key={20} value={20}> 20 People </option>
                     </select>
                     <label className="search-icon">
                         <i class="fas fa-search"></i>

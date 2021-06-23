@@ -83,3 +83,12 @@ select {
     border-bottom-right-radius: 5px;
     padding-right: 15px;
 }
+
+
+
+select option:checked,
+option:active {
+     background-color: #b8222d;
+ }
+
+
