@@ -1,29 +1,21 @@
 .splash-background {
-    background-image: url("https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fget.pxhere.com%2Fphoto%2Ftable-fork-cutlery-silverware-flower-glass-restaurant-summer-celebration-decoration-meal-food-plate-gourmet-wedding-lunch-knife-buffet-napkin-place-setting-formal-al-fresco-ceremony-place-luxury-dining-decorative-dishes-glasses-dinner-party-table-setting-elegant-fine-ballroom-banquet-rich-event-crystal-dine-service-setting-supper-brunch-investment-fancy-wealthy-napkins-wedding-reception-centrepiece-christmas-dinner-rehearsal-dinner-function-hall-aft-deck-acquisition-tablescape-formal-dining-1052271.jpg&f=1&nofb=1");
+    background-position: 50% 50%;
+    background-size: 100%;
     padding: 5px;
-    height: 40vh;
+    height: 60vh;
     width: auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 .splash-title {
     background-color: EFF1F3;
-    font-size: 7vh;
+    color: rgb(236, 236, 236);
+    font-size:  50px;
 }
 
 
-.booking-params {
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    flex-direction: row;
-    justify-content:space-between ;
-}
 
-.home-form-ele {
-    padding: 10px;
-    margin: 7px;
-    border-radius: 5px;
-}
