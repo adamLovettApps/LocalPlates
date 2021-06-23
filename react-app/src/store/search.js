@@ -9,7 +9,10 @@ export const getSearchResults = (ip, searchString) => async(dispatch) => {
     ip = ip.ip;
     const response = await fetch(`/api/search/${searchString}/${ip}`);
     const results = await response.json();
-    console.log(results);
+    Object.keys(results).forEach(result => {
+        console.log(results[result].tags)
+        results[result].tags = Object.keys(results[result].tags).map(key => `${results[result].tags[key]} `)
+    })
     dispatch(setResults(results));
 }
 
