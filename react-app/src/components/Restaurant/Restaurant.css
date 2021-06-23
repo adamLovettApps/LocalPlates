@@ -1,0 +1,57 @@
+.body-wrapper {
+    display: grid;
+    grid-template-areas:
+        "gallery gallery gallergy gallery"
+        "tcard tcard rcard"
+        "tcard tcard rcard"
+        "review review ."
+        "review review .";
+}
+
+.gallery-slider{
+    display: flex;
+    flex-direction: row;
+    grid-area: "gallery";
+}
+
+.title-card{
+    display: flex;
+    justify-content: flex-start;
+    grid-area: "tcard";
+}
+
+.reservation-card{
+    display: flex;
+    flex-flow: column nowrap;
+    grid-area: "rcard"
+}
+
+.review-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    grid-area: "review";
+}
+
+.section-title{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.review-card{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+.review-header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.review-body{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}

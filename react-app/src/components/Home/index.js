@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SplashDisplay from "../SplashDisplay"
 import { useDispatch, useSelector } from "react-redux";
-import {getRestaurants} from "../../store/restaurants"
+import {getRestaurants} from "../../store/restaurant"
 function Home(){
     const dispatch = useDispatch();
     const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
@@ -10,7 +10,7 @@ function Home(){
           await dispatch(getRestaurants());
 
         })();
-      }, []);
+      }, [dispatch]);
     return(
         <div>
             <SplashDisplay/>

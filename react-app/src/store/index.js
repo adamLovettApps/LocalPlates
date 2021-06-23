@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import session from './session';
 import RestaurantReducer from './restaurants'
 import search from './search'
+
 const rootReducer = combineReducers({
     session,
     restaurant: RestaurantReducer,
