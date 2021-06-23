@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getOneRestaurant } from "../../store/restaurant";
 import ReviewForm from "./review_form";
 
-const Restaurant = () => {
+function Restaurant(){
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();

@@ -15,20 +15,25 @@ import Restaurant from "./components/Restaurant";
 import { authenticate } from "./store/session";
 
 function App() {
+
   // const [authenticated, setAuthenticated] = useState(false);
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
+
 
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
-  }, [dispatch]);
+  }, []);
 
   if (!loaded) {
     return null;
   }
+
+
+
 
   return (
     <BrowserRouter>

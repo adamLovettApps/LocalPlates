@@ -29,16 +29,16 @@ def get_restaurant(id):
 
     if reviews:
         new_reviews = {k: review.to_dict() for k, review in dict(
-        zip(range(len(reviews)), reviews)).items()}
+            zip(range(len(reviews)), reviews)).items()}
     if photos:
         new_photos = {k: photo.to_dict() for k, photo in dict(
-        zip(range(len(photos)), photos)).items()}
+            zip(range(len(photos)), photos)).items()}
     if menu_photos:
         new_menu_photos = {k: menu_photo.to_dict() for k, menu_photo in dict(
-        zip(range(len(menu_photos)), menu_photos)).items()}
+            zip(range(len(menu_photos)), menu_photos)).items()}
     if bookings:
         new_bookings = {k: booking.to_dict() for k, booking in dict(
-        zip(range(len(bookings)), bookings)).items()}
+            zip(range(len(bookings)), bookings)).items()}
     return {"restaurant": restaurant.to_dict(), "data": {"reviews": new_reviews, "photos": new_photos, "menu_photos": new_menu_photos, "bookings": new_bookings}}
 
 

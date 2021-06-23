@@ -30,6 +30,7 @@ def authenticate():
     Authenticates a user.
     """
     if current_user.is_authenticated:
+        print(current_user.to_dict())
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
 
@@ -89,7 +90,7 @@ def sign_up_restaurant():
     """
     Creates a new user and logs them in
     """
-    
+
     form = RestaurantSignUpForm()
     addressForGoogle = form.data["address"].replace(" ", "+")
     cityForGoogle = form.data["city"].replace(" ", "+")
