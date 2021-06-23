@@ -6,16 +6,24 @@ import {getRestaurants} from "../../store/restaurant"
 function Home(){
     const dispatch = useDispatch();
     const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
+    const user = useSelector(state => state.session.user);
+    if (user){
+        console.log('user authenticated')
+    }
+    let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
-          await dispatch(getRestaurants());
-
+            if (user){
+              console.log('user authenticated')
+          }
+          await dispatch(getRestaurants("all"));
         })();
       }, [dispatch]);
     return(
         <div>
             <SplashDisplay/>
-            {restaurants &&<CardScroll restaurants={restaurants}/>}
+            {restaurants &&<CardScroll collectionTitle={placeholderTitle} restaurants={restaurants}/>}
+            {restaurants &&<CardScroll collectionTitle={placeholderTitle} restaurants={restaurants}/>}
         </div>
     );
 }

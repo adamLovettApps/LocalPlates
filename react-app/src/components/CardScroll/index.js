@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card"
 import "./CardScroll.css"
-function CardScroll({restaurants}){
+function CardScroll({collectionTitle,restaurants}){
+
     return (
 
         <div className='scroll-container'>
@@ -9,7 +10,7 @@ function CardScroll({restaurants}){
         <div className="scroll-center">
 
             <div className='scroll-title'>
-                <h1>tag title</h1>
+                <h1>{collectionTitle}</h1>
             </div>
             <div className="scroll-border-bar"></div>
             <div className='scroll'>

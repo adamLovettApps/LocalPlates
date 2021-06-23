@@ -13,12 +13,14 @@ function SearchBar(){
     useEffect(()=>{
         localStorage.setItem('myDate', '');
         localStorage.setItem('myTime', '');
+        localStorage.setItem('myPartySize', '');
 
     },[])
     useEffect(()=>{
         localStorage.setItem('myDate', date);
         localStorage.setItem('myTime', time);
-    },[date,time])
+        localStorage.setItem('myPartySize', partySize);
+    },[date,time,partySize])
     return(
         <>
         <form action = {`/search/:${searchString}`} method="get" className="search-form">
@@ -48,6 +50,7 @@ function SearchBar(){
                     onChange={(e)=>{
                         setPartySize(e.target.value)
                     }}
+                    value = {partySize}
                     >
                             <option key={1} value={1}> 1 Person </option>
                             <option selected={true} key={2}  value={2}> 2 People </option>
