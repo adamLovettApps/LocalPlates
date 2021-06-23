@@ -1,0 +1,15 @@
+body {
+    font-family: 'Mukta', sans-serif;
+}
+
+.search-term-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 600px;
+}
+
+.restaurant-divider {
+    max-width: 620px;
+    padding-right: 60px;
+    
+}

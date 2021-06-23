@@ -2,16 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSearchResults } from "../../store/search"
+import SearchRestultCard from "../SearchResultCard";
+import "./SearchResults.css"
 
 const getIPInfo = async () => {
         let res = await fetch('https://ipapi.co/json/');
         let ip = await res.json();
-        // let apiKey = process.env.REACT_APP_IPAPI_KEY;
-        // console.log("APIKEY!!!!!", apiKey)
-        // let locres = await fetch(`https://api.ipapi.com/api/${ip.ip}?access_key=${apiKey}`)
-        // let location = await locres.json();
-        // console.log(ip);
-        // console.log(location);
         return ip;
     }
 
@@ -19,7 +15,7 @@ const getIPInfo = async () => {
 const SearchResults = () => {
     const dispatch = useDispatch();
     const [loaded, setLoaded] = useState(false);
-    const user = useSelector(state => state.search.results);
+    const currentResults = useSelector(state => state.search.currentResults);
     const { searchString } = useParams();
 
 
@@ -27,6 +23,7 @@ const SearchResults = () => {
         (async() => {
             let ip = await getIPInfo();
             dispatch(getSearchResults(ip, searchString));
+            console.log(currentResults);
             setLoaded(true);
         })();
     }, []);
@@ -34,10 +31,24 @@ const SearchResults = () => {
     if (!loaded) {
         return null;
     }
-
+    let count = 0;
+    console.log(currentResults.length)
     return (
         <>
-        HIT!
+        <div className="header-container">
+            <div className="search-term-container"><h1>You Searched For "{searchString.substring(1)}"</h1></div>
+            <hr className="restaurant-divider"></hr>
+            {Object.keys(currentResults).map(key => { 
+                if (count < Object.keys(currentResults).length - 1) { 
+                    count++; 
+                    return (<><SearchRestultCard className="restaurant-search-card" restaurant={currentResults[key]} id={key}></SearchRestultCard><hr className="restaurant-divider"></hr></>) 
+                } else {
+                    return (<><SearchRestultCard className="restaurant-search-card" restaurant={currentResults[key]} id={key}></SearchRestultCard></>)
+                }
+            }
+            )}
+            
+        </div>
         </>
     )
 
