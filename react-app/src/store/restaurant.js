@@ -1,6 +1,6 @@
 const GET_ALL_RESTAURANTS = "restaurants/GET_all"
 const GET_ONE_RESTAURANT = "restaurants/GET_ONE_RESTAURANT"
-const GET_Italian="restaurants/GET_Italian"
+const GET_Italian="restaurants/GET_italian"
 const GET_Indian="restaurants/GET_Indian"
 const GET_Mexican="restaurants/GET_Mexican"
 const GET_Sushi="restaurants/GET_Sushi"
@@ -12,7 +12,7 @@ const GET_Outdoor="restaurants/GET_Outdoor"
 const GET_Delivery="restaurants/GET_Delivery"
 
 export const getRestaurants=(tagType)=> async(dispatch)=>{
-    const response = await fetch(`/api/restaurants/${tagType}`);
+    const response = await fetch(`/api/restaurants/tag_select/${tagType}`);
     const restaurants = await response.json();
     console.log(restaurants);
     dispatch(setRestaurants(restaurants, tagType));
@@ -27,7 +27,6 @@ const setRestaurants=(restaurants,tagType)=>({
 export const getOneRestaurant=(id)=> async(dispatch)=>{
     console.log(">>>>>>>>>>>>>>>>Heeeeeeeeee")
     const response = await fetch(`/api/restaurants/${id}`);
-
     if (response.ok){
         const data = await response.json();
         dispatch(setOneRestaurant(data))
@@ -52,6 +51,7 @@ const RestaurantReducer = (state = initialState, action) => {
             for (let key in action.restaurants){
                 all_italian[key] = action.restaurants[key]
             }
+            console.log('INSIDE REDUCER', all_italian)
             return {
                 ...state, italian: all_italian
             }
