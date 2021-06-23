@@ -2,6 +2,7 @@ from geoalchemy2 import Geometry
 from .db import db
 from .restaurant_tags import restaurant_tags
 
+
 class Restaurant(db.Model):
     __tablename__ = 'restaurants'
 
@@ -34,7 +35,6 @@ class Restaurant(db.Model):
         back_populates="restaurant"
     )
 
-
     def to_dict(self):
         return {
             "id": self.id,
@@ -47,7 +47,7 @@ class Restaurant(db.Model):
             # add owner.to_dict() method call
             # "owner": self.owner.to_dict(),
             "hours": self.hours,
-            "total_bookings":self.total_bookings,
+            "total_bookings": self.total_bookings,
             "star_rating": self.star_rating,
             "review_count": self.review_count,
             "description": self.description,

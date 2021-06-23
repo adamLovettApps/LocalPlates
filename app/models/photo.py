@@ -7,5 +7,13 @@ class Photo(db.Model):
     image = db.Column(db.String, nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     caption = db.Column(db.String, nullable=False)
-    
+
     restaurant = db.relationship("Restaurant", back_populates="photo")
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "image": self.image,
+            "restaurant_id": self.restaurant_id,
+            "caption": self.caption
+        }

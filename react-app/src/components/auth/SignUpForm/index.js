@@ -16,9 +16,8 @@ const SignUpForm = () => {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+  const [zipcode, setZipcode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [hours, setHours] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
@@ -38,7 +37,27 @@ const SignUpForm = () => {
       const formData = new FormData();
       formData.append("image", image); 
       // , username, email, password, name, address, city, state, zip, phoneNumber, hours, description
-      const user = await dispatch(signUpRestaurant(formData));
+
+
+      setImageLoading(true);
+
+        const res = await fetch('/api/images', {
+            method: "POST",
+            body: formData,
+        });
+        if (res.ok) {
+            let profile_photo = await res.json();
+            setImageLoading(false);
+            const user = await dispatch(signUpRestaurant(profile_photo, username, email, password, name, address, city, state, zipcode, phoneNumber, description));
+            console.log(res)
+        }
+        else {
+            setImageLoading(false);
+            // a real app would probably use more advanced
+            // error handling
+            console.log("error");
+        }
+      
     }
   };
 
@@ -74,16 +93,12 @@ const SignUpForm = () => {
     setState(e.target.value);
   };
 
-  const updateZip = (e) => {
-    setZip(e.target.value);
+  const updateZipcode = (e) => {
+    setZipcode(e.target.value);
   };
 
   const updatePhoneNumber = (e) => {
     setPhoneNumber(e.target.value);
-  };
-
-  const updateHours = (e) => {
-    setHours(e.target.value);
   };
 
   const updateDescription = (e) => {
@@ -233,9 +248,9 @@ const SignUpForm = () => {
         <div className='form-field-input-container'>
           <input
             type="text"
-            name="zip"
-            onChange={updateZip}
-            value={zip}
+            name="zipcode"
+            onChange={updateZipcode}
+            value={zipcode}
             placeholder="Zipcode"
             className='form-field-input'
           ></input>
@@ -247,16 +262,6 @@ const SignUpForm = () => {
             onChange={updatePhoneNumber}
             value={phoneNumber}
             placeholder="Phone Number"
-            className='form-field-input'
-          ></input>
-        </div>
-        <div className='form-field-input-container'>
-          <input
-            type="text"
-            name="hours"
-            onChange={updateHours}
-            value={hours}
-            placeholder="Hours"
             className='form-field-input'
           ></input>
         </div>

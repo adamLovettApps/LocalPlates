@@ -1,5 +1,8 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+import os
+import json
+import requests
+from app.models import User, Restaurant, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from app.forms import RestaurantSignUpForm
@@ -69,7 +72,10 @@ def sign_up():
         user = User(
             username=form.data['username'],
             email=form.data['email'],
-            password=form.data['password']
+            password=form.data['password'],
+            profile_photo="null",
+            is_owner=False
+
         )
         db.session.add(user)
         db.session.commit()
@@ -83,45 +89,59 @@ def sign_up_restaurant():
     """
     Creates a new user and logs them in
     """
-
-    print("REQUEST FILES!!!!!!!!!!!!!!!", request.files["image"])
     
-    if "image" not in request.files:
-        return {"errors": "image required"}, 400
+    form = RestaurantSignUpForm()
+    addressForGoogle = form.data["address"].replace(" ", "+")
+    cityForGoogle = form.data["city"].replace(" ", "+")
+    stateForGoogle = form.data["state"].replace(" ", "+")
+    googleKey = os.environ.get("GOOGLE_KEY")
 
-    image = request.files["image"]
+    print(googleKey)
+    res = requests.get(
+        f"https://maps.googleapis.com/maps/api/geocode/json?address={addressForGoogle},+{cityForGoogle},+{stateForGoogle}&key={googleKey}")
 
-    if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
-
-    image.filename = get_unique_filename(image.filename)
-
-    upload = upload_file_to_s3(image)
-
-    print("UPLOAD", upload)
-    if "url" not in upload:
-        # if the dictionary doesn't have a url key
-        # it means that there was an error when we tried to upload
-        # so we send back that error message
-        return upload, 400
-
-    url = upload["url"]
-    form = SignUpForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-
-    return
-    # user = User(
-    #     username=form.data['username'],
-    #     email=form.data['email'],
-    #     password=form.data['password']
-    # )
-
-    # db.session.add(user)
-    # db.session.commit()
-    # login_user(user)
-    # return user.to_dict()
-    # print("ERRORS", form.errors)
-    # return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    if res.status_code == 200:
+        location = res.json()
+        print(location["results"][0]['geometry']['location'])
+        lat = location["results"][0]['geometry']['location']['lat']
+        lng = location["results"][0]['geometry']['location']['lng']
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            print("HERE!")
+            profile_photo = form.data["profile_photo"]
+            user = User(
+                username=form.data['username'],
+                email=form.data['email'],
+                password=form.data['password'],
+                is_owner=True,
+                profile_photo=profile_photo["url"]
+            )
+            db.session.add(user)
+            db.session.commit()
+            restaurant = Restaurant(
+                owner_id=user.id,
+                name=form.data["name"],
+                address=form.data["address"],
+                city=form.data["city"],
+                state=form.data["state"],
+                zipcode=form.data["zipcode"],
+                phone_number=form.data["phoneNumber"],
+                total_bookings=0,
+                star_rating=0,
+                review_count=0,
+                hours=" ",
+                description=form.data["description"],
+                geo=f'POINT({lat} {lng})'
+            )
+            db.session.add(restaurant)
+            db.session.commit()
+            login_user(user)
+            return user.to_dict()
+        else:
+            print("ERRORS!!!!!!!!!!!", form.errors)
+            return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    else:
+        return {'errors': "Please provide a valid address."}, 404
 
 
 @auth_routes.route('/unauthorized')
