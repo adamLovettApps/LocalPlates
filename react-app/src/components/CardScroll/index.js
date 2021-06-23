@@ -26,7 +26,6 @@ function CardScroll({restaurants}){
                 <div className="card-scroll">
                     {restaurants && restaurants.map((restaurant,index)=>(
                         <div><Card restaurant={restaurant}/> </div>
-
                         ))}
                 </div>
             </div>
