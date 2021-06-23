@@ -6,7 +6,6 @@ const setResults = (results) => ({
 })
 
 export const getSearchResults = (ip, searchString) => async(dispatch) => {
-    console.log("THIS IS THE IP:", ip)
     ip = ip.ip;
     const response = await fetch(`/api/search/${searchString}/${ip}`);
     const results = await response.json();
@@ -14,13 +13,13 @@ export const getSearchResults = (ip, searchString) => async(dispatch) => {
     dispatch(setResults(results));
 }
 
-const initialState = { results: null }
+const initialState = { allResults: {}, currentResults: {} }
 
 
 export default function reducer(state=initialState, action) {
     switch (action.type) {
         case SET_RESULTS:
-            return { results: action.payload };
+            return { allResults: action.payload, currentResults: action.payload };
         default: 
             return state;
     }
