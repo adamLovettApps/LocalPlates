@@ -38,7 +38,7 @@ app.register_blueprint(restaurant_routes, url_prefix='/api/restaurants')
 app.register_blueprint(image_routes, url_prefix='/api/images')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 db.init_app(app)
-Migrate(app, db)
+Migrate(app, db,compare_type=True)
 
 # Application Security
 CORS(app)

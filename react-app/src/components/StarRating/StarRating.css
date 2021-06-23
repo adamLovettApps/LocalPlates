@@ -1,0 +1,21 @@
+.checked {
+  color:#d1313e;
+}
+
+.star {
+  font-size: 13px;
+}
+
+.not-checked {
+  color: #d8d9db;
+}
+.rating-span{
+  display: flex;
+  align-items: center;
+}
+
+.star-rating-num{
+  position: relative;
+  margin-left: 9px;
+  top:2px;
+}
