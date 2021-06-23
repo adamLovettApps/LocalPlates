@@ -14,10 +14,8 @@ function trimString( review, useWordBoundary ){
 
 const SearchRestultCard = (restaurant) => {
 
-    console.log(restaurant.id)
     if (restaurant.restaurant) {
         const baseURL = restaurant.restaurant.photo.split('/')[3];;
-        console.log(baseURL)
         const imageRequest = JSON.stringify({
                         bucket: "localplates",
                         key: baseURL,
@@ -32,7 +30,11 @@ const SearchRestultCard = (restaurant) => {
                     })
         const encoded = btoa(imageRequest);
         const url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
-        restaurant.restaurant.review = trimString(restaurant.restaurant.review);
+        
+        if (restaurant.restaurant.review) {
+            restaurant.restaurant.review = trimString(restaurant.restaurant.review);
+        }
+
         let count = 0;
         return (
             <>

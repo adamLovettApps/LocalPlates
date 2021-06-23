@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded',(event)=>{
     const timer = setTimeout(()=> {
         let leftButtons = document.getElementsByClassName("left-button");
         let leftButtonsArr = Array.from(leftButtons)
-        console.log(leftButtons.length)
         let cardScroll = document.querySelector(".card-scroll");
 
 
@@ -56,10 +55,8 @@ window.addEventListener('DOMContentLoaded',(event)=>{
 
 
         }
-        console.log("hiiiiiiiiiiiiiiiiii")
         leftButtonsArr.forEach(el=>{
             el.addEventListener("click",(e)=>{
-                console.log("scroll left")
                 // cardScroll.scrollLeft -=70;
                 scrollAnimation(true);
             })
@@ -69,7 +66,6 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         let rightButtonsArr = Array.from(rightButtons)
         rightButtonsArr.forEach(el=>{
             el.addEventListener("click",(e)=>{
-                console.log("scroll right")
                 scrollAnimation(false);
             })
         })

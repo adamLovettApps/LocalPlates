@@ -4,12 +4,10 @@ const GET_ONE_RESTAURANT = "restaurants/GET_ONE_RESTAURANT"
 export const getRestaurants=()=> async(dispatch)=>{
     const response = await fetch('/api/restaurants/all');
     const restaurants = await response.json();
-    console.log(restaurants);
     dispatch(setRestaurants(restaurants));
 }
 
 export const getOneRestaurant=(id)=> async(dispatch)=>{
-    console.log(">>>>>>>>>>>>>>>>Heeeeeeeeee")
     const response = await fetch(`/api/restaurants/${id}`);
 
     if (response.ok){

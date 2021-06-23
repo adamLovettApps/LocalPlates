@@ -2,4 +2,11 @@ ul > li {
     display: inline-block;
     zoom:1;
     *display:inline;
+    background-color: #CFE8F2;
+}
+
+.nav-bar-container {
+    background-color: #CFE8F2;
+    margin-top: -16px;
+    padding-bottom: 10px;
 }

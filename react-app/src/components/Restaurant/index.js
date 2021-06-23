@@ -15,13 +15,11 @@ const Restaurant = () => {
 
     useEffect(() => {
         dispatch(getOneRestaurant(id));
-        console.log(restaurant_data)
     }, [dispatch, id])
 
     useEffect(() => {
         if (!restaurant_data) {
             getOneRestaurant(id);
-            console.log(restaurant_data)
         }
     }, [restaurant_data])
 
