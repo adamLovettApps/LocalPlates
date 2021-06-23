@@ -31,14 +31,22 @@ const SearchResults = () => {
     if (!loaded) {
         return null;
     }
-
+    let count = 0;
+    console.log(currentResults.length)
     return (
         <>
         <div className="header-container">
             <div className="search-term-container"><h1>You Searched For "{searchString.substring(1)}"</h1></div>
-            
-                {Object.keys(currentResults).map(key => <SearchRestultCard className="restaurant-search-card" restaurant={currentResults[key]}></SearchRestultCard>)}
-                
+            <hr className="restaurant-divider"></hr>
+            {Object.keys(currentResults).map(key => { 
+                if (count < Object.keys(currentResults).length - 1) { 
+                    count++; 
+                    return (<><SearchRestultCard className="restaurant-search-card" restaurant={currentResults[key]} id={key}></SearchRestultCard><hr className="restaurant-divider"></hr></>) 
+                } else {
+                    return (<><SearchRestultCard className="restaurant-search-card" restaurant={currentResults[key]} id={key}></SearchRestultCard></>)
+                }
+            }
+            )}
             
         </div>
         </>
