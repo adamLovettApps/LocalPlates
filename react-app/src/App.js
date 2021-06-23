@@ -7,7 +7,8 @@ import NavBar from "./components/NavBar/index.js";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Home from "./components/Home"
+import Home from "./components/Home";
+import Restaurant from "./components/Restaurant";
 import { authenticate } from "./store/session";
 
 require('dotenv').config()
@@ -18,11 +19,11 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     return null;
@@ -39,13 +40,16 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path="/users" exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
         <Route path="/" exact={true} >
           <Home />
+        </Route>
+        <Route path="/restaurants/:id" exact={true}>
+          <Restaurant />
         </Route>
       </Switch>
     </BrowserRouter>
