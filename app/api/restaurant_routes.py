@@ -1,6 +1,9 @@
 from flask import Blueprint, jsonify
 from flask.helpers import url_for
+from wtforms.validators import ValidationError
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db
+from app.forms.review_form import ReviewForm
+
 restaurant_routes = Blueprint('restaurants', __name__)
 
 
@@ -17,14 +20,11 @@ def get_all_restaurants():
 
 @restaurant_routes.route('/<int:id>')
 def get_restaurant(id):
-    print("In Route>>>>>>>>>>>>>>>>>>>>>>>>>>>>:  ", int(id))
     restaurant = Restaurant.query.get(id)
     reviews = Review.query.filter_by(restaurant_id=id).all()
     photos = Photo.query.filter_by(restaurant_id=id).all()
     menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
     # loop through iterables and call to_dict
-    data = {"restaurant": restaurant, "data": {
-        "reviews": reviews, "menu_photos": menu_photos, "photos": photos}}
     new_reviews = {k: review.to_dict() for k, review in dict(
         zip(range(len(reviews)), reviews)).items()}
     new_photos = {k: photo.to_dict() for k, photo in dict(
@@ -32,3 +32,20 @@ def get_restaurant(id):
     new_menu_photos = {k: menu_photo.to_dict() for k, menu_photo in dict(
         zip(range(len(menu_photos)), menu_photos)).items()}
     return {"restaurant": restaurant.to_dict(), "data": {"reviews": new_reviews, "photos": new_photos, "menu_photos": new_menu_photos}}
+
+
+@restaurant_routes.route('/<int:id>/reviews', methods=["POST"])
+def add_review(id):
+    form = ReviewForm()
+    if form.validate_on_submit():
+        review = Review(
+            title=form.data["title"],
+            body=form.data["body"],
+            stars=form.data["stars"],
+            image=form.data["image"]
+        )
+        db.session.add(review)
+        db.session.commit()
+        print("Review Added")
+    else:
+        return ValidationError("There was an Error when submitting your review, please try again.")
