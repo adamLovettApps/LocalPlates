@@ -74,7 +74,7 @@ function SearchBar(){
                             <option key={20} value={20}> 20 People </option>
                     </select>
                     <label className="search-icon">
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                     </label>
                     <input className="search-form-ele search-input-field"
                         placeholder="Search by Restaurant, Cuisine Type, or Location"

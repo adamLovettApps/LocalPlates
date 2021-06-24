@@ -8,14 +8,16 @@ body {
     max-width: 650px;
     display: grid;
     grid-template-columns: repeat(2, 1fr) .3fr repeat(2, 2fr) .3fr;
-    grid-template-rows: .3fr .4fr .3fr .3fr .5fr .5fr 1.5fr .3fr;
+    grid-template-rows: .3fr .35fr .3fr .3fr .4fr .4fr 1fr .3fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin-bottom: -80px;
+    margin-bottom: -10px;
+    
 }
 
 .photo-container { grid-area: 2 / 1 / 8 / 3; }
 .name-container { 
+    margin-top: -5px;
     grid-area: 1 / 4 / 3 / 6; 
     color: #247F9E;
 }
@@ -35,7 +37,12 @@ body {
 }
 .review-container { 
     margin-top: 7px;
-    grid-area: 7 / 4 / 8 / 6; 
+    grid-area: 7 / 4 / 8 / 6;
+    display: block;
+    overflow: auto;
+    line-height: 130%;
+    display: flex;
+    align-items:center ;
 }
 
 .restaurant-main-photo {
@@ -43,9 +50,11 @@ body {
 }
 
 .review-count-container {
-    padding-left: 10px;
+    margin-top: 2px;
+    padding-top: 2px;
+    padding-left: 1px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
     
 }
 
@@ -66,4 +75,9 @@ body {
 
 .booking-button:hover {
     background-color: rgb(172, 32, 43);
+}
+
+.restaurant-page-link {
+    color: #247F9E;
+    text-decoration: none;
 }

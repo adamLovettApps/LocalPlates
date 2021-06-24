@@ -1,11 +1,14 @@
 from flask import Blueprint, jsonify
+import requests
+import os
+from sqlalchemy import func
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
 restaurant_routes = Blueprint('restaurants', __name__)
 
 
 @restaurant_routes.route('/tag_select/<string:tag>')
-def get_all_restaurants(tag):
+def get_collection_of_restaurants(tag):
     # restaurants = Restaurant.query.all()
     print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api', tag)
     results = db.session.execute(
@@ -16,6 +19,21 @@ def get_all_restaurants(tag):
     restaurants = Restaurant.query.filter(Restaurant.id.in_(restaurant_id_list)).all()
     # print('>>>>>>>>>>>>>>>>>>>>>>>got past query and reassigned', restaurantsWithTup )
     print('>>>>>>>>>>>>>>>>>>>>>>>got past reassign ', restaurants )
+
+@restaurant_routes.route('/all/<ip>')
+def get_all_restaurants(ip):
+    REACT_APP_IPAPI_KEY = os.environ.get('REACT_APP_IPAPI_KEY')
+    res = requests.get(
+        f"https://api.ipapi.com/api/{ip}?access_key={REACT_APP_IPAPI_KEY}")
+    location = res.json()
+    latitude = location["latitude"]
+    longitude = location["longitude"]
+    restaurants = Restaurant.query.order_by(func.ST_Distance(
+        Restaurant.geo, func.ST_MakePoint(latitude, longitude)
+    )).all()
+    print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api')
+    print(restaurants[0].to_dict())
+
     print({k: restaurant.to_dict() for k, restaurant in dict(
         zip(range(len(restaurants)), restaurants)).items()})
     # every restaurant is assigned a key from 0 to length of total restaurants

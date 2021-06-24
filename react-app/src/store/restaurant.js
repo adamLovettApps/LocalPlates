@@ -11,11 +11,20 @@ const GET_Pizza="restaurants/GET_pizza"
 const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
 
+
 export const getRestaurants=(tagType)=> async(dispatch)=>{
     const response = await fetch(`/api/restaurants/tag_select/${tagType}`);
     const restaurants = await response.json();
     console.log(restaurants);
     dispatch(setRestaurants(restaurants, tagType));
+
+export const getRestaurantsByLocation=(ip)=> async(dispatch)=>{
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/all/${ip}`);
+    const restaurants = await response.json();
+    console.log("RESTAURANTS", restaurants)
+    dispatch(setRestaurants(restaurants));
+
 }
 
 const setRestaurants=(restaurants,tagType)=>({
@@ -25,7 +34,6 @@ const setRestaurants=(restaurants,tagType)=>({
 
 
 export const getOneRestaurant=(id)=> async(dispatch)=>{
-    console.log(">>>>>>>>>>>>>>>>Heeeeeeeeee")
     const response = await fetch(`/api/restaurants/${id}`);
     if (response.ok){
         const data = await response.json();
