@@ -1,7 +1,7 @@
 .restaurant-info-container {
     display: grid;
     grid-template-columns: .3fr repeat(2, 1fr) .3fr;
-    grid-template-rows: .3fr 1fr .1fr repeat(2, .5fr) 1.5fr .3fr;
+    grid-template-rows: .3fr 1fr .1fr repeat(2, .5fr) 4fr .3fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     margin-left:18%;
@@ -15,20 +15,31 @@
     font-size: 48px;
     margin-top: -20px;
     margin-bottom: -20px;
+
 }
 
 .hr-container {
     grid-area: 3 / 2 / 4 / 3;
+
     
 }
 .stars-container { 
     grid-area: 4 / 2 / 5 / 4;
+
 }
 
 .tag-container { 
     grid-area: 5 / 2 / 6 / 4;
+
 }
 
 .description-container { 
-    grid-area: 6 / 2 / 7 / 4;
+    grid-area: 6 / 2 / 7 / 3;
+
+
+}
+
+.description-text {
+    max-width: 500px;
+    
 }

@@ -12,11 +12,13 @@ const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
 
 
-export const getRestaurants=(tagType)=> async(dispatch)=>{
-    const response = await fetch(`/api/restaurants/tag_select/${tagType}`);
+export const getRestaurants=(tagType, ip)=> async(dispatch)=>{
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/tag_select/${tagType}/${ip}`);
     const restaurants = await response.json();
     console.log(restaurants);
     dispatch(setRestaurants(restaurants, tagType));
+}
 
 export const getRestaurantsByLocation=(ip)=> async(dispatch)=>{
     ip = ip.ip;

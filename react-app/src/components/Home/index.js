@@ -24,12 +24,11 @@ function Home(){
         (async() => {
 
           let ip = await getIPInfo();
-          await dispatch(getRestaurants(ip));
 
 
         //   await dispatch(getRestaurants("all"));
-          await dispatch(getRestaurants("italian"));
-          await dispatch(getRestaurants("indian"));
+          await dispatch(getRestaurants("italian", ip));
+          await dispatch(getRestaurants("indian", ip));
         })();
       }, [dispatch]);
     return(
