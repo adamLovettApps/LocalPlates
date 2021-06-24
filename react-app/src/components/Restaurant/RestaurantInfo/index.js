@@ -46,8 +46,8 @@ const RestaurantInfo = () => {
                             return `${key}`;
                         }
                     })}
-                    <div className="description-container">{restaurant.description}</div>
                 </div>
+                <div className="description-container">{restaurant.description}</div>
             </div>
         )
     }
