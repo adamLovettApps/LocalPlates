@@ -23,7 +23,9 @@ def user(id):
         favorites = Favorite.query.filter_by(user_id=id).all()
         print(favorites)
         reviews = Review.query.filter_by(user_id=id).all()
-        new_user = dict(list(user))
+        new_user = user.to_dict()
+        # for k, value in dict(user).items():
+        #     new_user[k] = value
         if bookings:
             new_user["bookings"] = {k: booking.to_dict() for k, booking in dict(
                 zip(range(len(bookings)), bookings)).items()}
@@ -35,5 +37,5 @@ def user(id):
             new_user["favorites"] = {k: favorite.to_dict() for k, favorite in dict(
                 zip(range(len(favorites)), favorites)).items()}
             print(new_user.favorites)
-        print(new_user.to_dict())
-        return new_user.to_dict()
+        print(new_user)
+        return new_user

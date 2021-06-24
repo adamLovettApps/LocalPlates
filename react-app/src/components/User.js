@@ -5,17 +5,23 @@ import { getUser } from "../store/user"
 
 
 function User() {
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   // Notice we use useParams here instead of getting the params
   // From props.
   const dispatch = useDispatch();
   const { userId } = useParams();
+  const user = useSelector(state => state.user)
   const sessionUser = useSelector(state => state.session.user)
   const [feature, setFeature] = useState("")
-
+  const [username, setUsername] = useState(user.username)
+  const [email, setEmail] = useState(user.email)
+  const [reviewList, setReviewList] = useState([])
 
   const updateFeature = (stri) => {
     setFeature(stri)
+  }
+  const updateUsername = (stri) => {
+    setUsername(stri)
   }
 
   useEffect(() => {
@@ -23,13 +29,11 @@ function User() {
       return;
     }
 
-    console.log(Number(userId), sessionUser.id)
-    if (Number(userId) !== sessionUser.id){
-      return Redirect('/')
+    if (Number(userId) !== sessionUser.id) {
+      return Redirect(`/users/${sessionUser.id}`)
     }
-    dispatch(getUser(userId))
-
-  }, [userId, dispatch]);
+    dispatch(getUser(sessionUser.id))
+  }, [dispatch]);
 
 
   function Bookings() {
@@ -45,18 +49,58 @@ function User() {
     return (
       <>
         <h2>Your Account Details: </h2>
-        { }
+        <div className="form-wrapper">
+          <form className="edit-details-form">
+            <label htmlFor="username">Username: </label>
+            <input type="text" id="username" name="username" value={user.username} onChange={(e) => updateUsername(e.target.value)} />
+          </form>
+        </div>
       </>
     )
   }
 
   function Favs() {
+
     return (
       <>
         <h2>Your Favorite Restaurants: </h2>
-        {user.favorites && user.favorites.map(favorite => <li key="favorite" >favorite.id</li>) || <p>You have no favorites</p>}
+        {user.favorites && user.favorites.map(favorite => <li key="favorite" >favorite.id</li>)}
       </>
     )
+  }
+
+  function Reviews() {
+
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
+      let newReviews = [];
+      for (var key in user.reviews) {
+        newReviews.push(user.reviews[key])
+      }
+      setReviews(newReviews)
+    }, [dispatch])
+    return (
+      <>
+        <div className="review-wrapper">
+          {reviews.map(review =>
+            <div key={review.id}>
+              <h3>{review.title}<span>{review.stars} Stars</span></h3>
+              <p>{review.body}</p>
+            </div>
+          )}
+        </div>
+      </>
+    )
+  }
+
+
+  if (Number(userId) !== sessionUser.id) {
+    return Redirect(`/users/${sessionUser.id}`);
+  }
+
+
+  if (!user) {
+    dispatch(getUser(sessionUser.id))
   }
 
   return (
@@ -69,13 +113,15 @@ function User() {
         <p onClick={() => updateFeature("bookings")}>Bookings</p>
         <p onClick={() => updateFeature("account")}>Account Details</p>
         <p onClick={() => updateFeature("favs")}>Favorites</p>
+        <p onClick={() => updateFeature("reviews")}>Reviews</p>
       </div>
       <div className="profile-feature">
-        {feature == "bookings" && <Bookings />}
-        {feature == "account" && <Account />}
-        {feature == "favs" && <Favs />}
+        {feature === "bookings" && <Bookings />}
+        {feature === "account" && <Account />}
+        {feature === "favs" && <Favs />}
+        {feature === "reviews" && <Reviews />}
       </div>
     </div>
   );
 }
-export default User;
+export default User
