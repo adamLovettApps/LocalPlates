@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         let leftButtons = document.getElementsByClassName("left-button");
         let leftButtonsArr = Array.from(leftButtons)
         let cardScroll = document.querySelector(".card-scroll");
-
+        console.log("LOADED JS");
 
         function scrollAnimation(isLeft){
             let x = 1;
@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded',(event)=>{
         leftButtonsArr.forEach(el=>{
             el.addEventListener("click",(e)=>{
                 // cardScroll.scrollLeft -=70;
+                console.log("REGISTERED CLICK")
                 scrollAnimation(true);
             })
         })
