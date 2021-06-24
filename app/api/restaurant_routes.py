@@ -3,9 +3,22 @@ import requests
 import os
 from sqlalchemy import func
 from flask.helpers import url_for
-from app.models import User, Restaurant, Review, Photo, MenuPhoto, db
+from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
 restaurant_routes = Blueprint('restaurants', __name__)
 
+
+@restaurant_routes.route('/tag_select/<string:tag>')
+def get_collection_of_restaurants(tag):
+    # restaurants = Restaurant.query.all()
+    print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api', tag)
+    results = db.session.execute(
+        f"SELECT restaurants.id FROM restaurants JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id JOIN tags ON tags.id=restaurant_tags.tag_id  WHERE tags.type ILIKE \'%{tag}%\'  LIMIT 20")
+    restaurantsWithTup = results.fetchall();
+    restaurant_id_list = list({id[0] for id in restaurantsWithTup})
+    print('>>>>>>>>>>>>>>>>>>>>>>>got past query', restaurant_id_list )
+    restaurants = Restaurant.query.filter(Restaurant.id.in_(restaurant_id_list)).all()
+    # print('>>>>>>>>>>>>>>>>>>>>>>>got past query and reassigned', restaurantsWithTup )
+    print('>>>>>>>>>>>>>>>>>>>>>>>got past reassign ', restaurants )
 
 @restaurant_routes.route('/all/<ip>')
 def get_all_restaurants(ip):
@@ -20,6 +33,7 @@ def get_all_restaurants(ip):
     )).all()
     print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api')
     print(restaurants[0].to_dict())
+
     print({k: restaurant.to_dict() for k, restaurant in dict(
         zip(range(len(restaurants)), restaurants)).items()})
     # every restaurant is assigned a key from 0 to length of total restaurants
