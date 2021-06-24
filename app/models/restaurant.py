@@ -1,6 +1,7 @@
 from geoalchemy2 import Geometry
 from .db import db
 from .restaurant_tags import restaurant_tags
+from .user import User
 
 
 class Restaurant(db.Model):
@@ -36,6 +37,8 @@ class Restaurant(db.Model):
     )
 
     def to_dict(self):
+        data = User.query.get(self.owner_id)
+        owner_info = data.to_dict()
         return {
             "id": self.id,
             "name": self.name,
@@ -46,6 +49,7 @@ class Restaurant(db.Model):
             "phone_number": self.phone_number,
             # add owner.to_dict() method call
             # "owner": self.owner.to_dict(),
+            "profile_photo": owner_info["profile_photo"],
             "hours": self.hours,
             "total_bookings": self.total_bookings,
             "star_rating": self.star_rating,

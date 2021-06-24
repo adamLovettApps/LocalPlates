@@ -27,12 +27,11 @@ const setRestaurants=(restaurants)=>({
 
 const setOneRestaurant = (data) => ({
     type: GET_ONE_RESTAURANT,
-    restaurant_data: data.data,
-    restaurant: data.restaurant
+    payload: data
 })
 
 
-const initialState = {restaurants: {}, restaurant: {}, restaurant_data: {}}
+const initialState = {restaurants: {}, restaurant: {}}
 const RestaurantReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_ALL_RESTAURANTS:
@@ -44,15 +43,9 @@ const RestaurantReducer = (state = initialState, action) => {
             return {
                 ...state, restaurants : all_restaurants
             }
-        case GET_ONE_RESTAURANT:
-            let restaurant_datas = {}
-            let one_restaurant = action.restaurant
-            for (let key in action.restaurant_data){
-                restaurant_datas[key] = action.restaurant_data[key]
-            }
-
+        case GET_ONE_RESTAURANT:            
             return {
-                ...state, restaurant: one_restaurant, restaurant_data: restaurant_datas
+                ...state, restaurant: action.payload
             }
         default:
             return state;
