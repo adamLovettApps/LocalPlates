@@ -1,6 +1,7 @@
 from werkzeug.security import generate_password_hash
 from app.models import db, User
 from faker import Faker
+from .user_image_data import image_seeds
 fake = Faker()
 # Adds a demo user, you can add other users here if you want
 def seed_users():
@@ -9,11 +10,12 @@ def seed_users():
     # geo = 'POINT({} {})'.format(lon1, lat1)
 
     # creating 200 restaurant owners
-    for i in range(200):
+    for i in range(60):
         username = fake.unique.name()
         email= f'restuarantEmail{i}@App_Academy.io'
         password= f'password{i}'
-        db.session.add(User(username=username,email=email,password=password,is_owner=True))
+        
+        db.session.add(User(username=username,email=email,password=password,profile_photo=image_seeds[i]["url"],is_owner=True))
 
     db.session.commit()
 
