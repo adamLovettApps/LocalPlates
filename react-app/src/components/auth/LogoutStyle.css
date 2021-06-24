@@ -1,0 +1,13 @@
+.nav-logout {
+    border: 0px;
+    display:flex;
+    text-align: center;
+    background-color: rgb(239,241,243);
+    color: #247f9e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 6px;
+
+}
