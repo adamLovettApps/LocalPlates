@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { getUser } from "../store/user"
 
 
@@ -14,20 +13,24 @@ function User() {
   const sessionUser = useSelector(state => state.session.user)
   const [feature, setFeature] = useState("")
 
+
   const updateFeature = (stri) => {
     setFeature(stri)
   }
 
   useEffect(() => {
     if (!userId) {
-      return
+      return;
+    }
+
+    console.log(Number(userId), sessionUser.id)
+    if (Number(userId) !== sessionUser.id){
+      return Redirect('/')
     }
     dispatch(getUser(userId))
+
   }, [userId, dispatch]);
 
-  if (!user) {
-    return;
-  }
 
   function Bookings() {
     return (

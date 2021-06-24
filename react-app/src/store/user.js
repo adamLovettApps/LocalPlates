@@ -9,7 +9,7 @@ export const getUser = (id) => async (dispatch) => {
     const response = await fetch(`/api/users/${id}`)
     if (response.ok) {
         const user_data = await response.json()
-
+        
         if (user_data.errors) {
             return user_data;
         }
