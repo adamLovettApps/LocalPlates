@@ -14,9 +14,11 @@ def seed_users():
         username = fake.unique.name()
         email= f'restuarantEmail{i}@App_Academy.io'
         password= f'password{i}'
-        
         db.session.add(User(username=username,email=email,password=password,profile_photo=image_seeds[i]["url"],is_owner=True))
+    db.session.add(User(username="Demo User",email="fake@email.com",password="password",is_owner=False))
 
+        
+        
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.

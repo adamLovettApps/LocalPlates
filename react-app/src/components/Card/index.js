@@ -3,21 +3,35 @@ import './Card.css'
 import StarRating from "../StarRating"
 function Card({restaurant,collectionTitle}){
     //formats tag str to include a '...' and cut off more than 2 tags and to not include the collection title tag in the str
-    let tagString = restaurant.tags;
-    let tagArr = tagString.split(', ');
-    let formatedTagArr = [];
-    tagArr.forEach((el,i)=>{
-        if(el.toLowerCase().includes(collectionTitle.toLowerCase())){
-            return;
-        }
-        if(formatedTagArr.length === 2){
-            formatedTagArr[1]+="..."
-        }
-        if (formatedTagArr.length < 2){
-            formatedTagArr.push(el);
-        }
-    })
-    let formatedTagStr = formatedTagArr.join(', ')
+    let tagArr = restaurant.tags.split(', ');
+    let noTitleTagArr = []
+    tagArr.forEach((el)=>{
+    if(collectionTitle.toLowerCase().includes(el.toLowerCase())){
+        return;
+    }else{
+        noTitleTagArr.push(el)
+    }})
+    let tagString=  noTitleTagArr.join(", ");
+    let formatedTagStr = "";
+    if(tagString.length > 14){
+        formatedTagStr = tagString.slice(0,14) + "..."
+    }else{
+        formatedTagStr = tagString
+    }
+    // let tagArr = tagString.split(', ');
+    // let formatedTagArr = [];
+    // tagArr.forEach((el,i)=>{
+    //     if(el.toLowerCase().includes(collectionTitle.toLowerCase())){
+    //         return;
+    //     }
+    //     if(formatedTagArr.length === 2){
+    //         formatedTagArr[1]+="..."
+    //     }
+    //     if (formatedTagArr.length < 2){
+    //         formatedTagArr.push(el);
+    //     }
+    // })
+    // let formatedTagStr = formatedTagArr.join(', ')
     return (
         <a>
             <div className="card-container">

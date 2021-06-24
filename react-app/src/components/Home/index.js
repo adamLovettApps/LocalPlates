@@ -14,7 +14,8 @@ function Home(){
     const dispatch = useDispatch();
     const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
     const italian = useSelector((state)=>Object.values(state.restaurant.italian))
-    const indian = useSelector((state)=>Object.values(state.restaurant.indian))
+    const outdoor = useSelector((state)=>Object.values(state.restaurant.outdoor))
+    const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
     const user = useSelector(state => state.session.user);
     if (user){
         console.log('user authenticated')
@@ -22,20 +23,21 @@ function Home(){
     let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
-
           let ip = await getIPInfo();
 
-
         //   await dispatch(getRestaurants("all"));
-          await dispatch(getRestaurants("italian", ip));
-          await dispatch(getRestaurants("indian", ip));
+          await dispatch(getRestaurants("italian",ip));
+          await dispatch(getRestaurants("outdoor",ip));
+          await dispatch(getRestaurants("hispanic",ip));
+
         })();
       }, [dispatch]);
     return(
         <div>
             <SplashDisplay/>
-            {indian &&<CardScroll collectionTitle={"Indian"} restaurants={indian}/>}
-            {italian &&<CardScroll collectionTitle={"Italian"} restaurants={italian}/>}
+            {outdoor &&<CardScroll collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
+            {italian &&<CardScroll collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic &&<CardScroll collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
         </div>
     );
 }
