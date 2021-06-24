@@ -26,6 +26,7 @@ def seed_restaurant_tags():
     db.session.execute(restaurant_tags.insert().values(tag_id=12,restaurant_id=8));
     db.session.execute(restaurant_tags.insert().values(tag_id=9,restaurant_id=8));
     db.session.execute(restaurant_tags.insert().values(tag_id=9,restaurant_id=9));
+    db.session.execute(restaurant_tags.insert().values(tag_id=12,restaurant_id=9));
     db.session.execute(restaurant_tags.insert().values(tag_id=9,restaurant_id=10));
     db.session.execute(restaurant_tags.insert().values(tag_id=5,restaurant_id=10));
     db.session.execute(restaurant_tags.insert().values(tag_id=1,restaurant_id=11));

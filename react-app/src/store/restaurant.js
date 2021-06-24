@@ -2,7 +2,7 @@ const GET_ALL_RESTAURANTS = "restaurants/GET_all"
 const GET_ONE_RESTAURANT = "restaurants/GET_ONE_RESTAURANT"
 const GET_Italian="restaurants/GET_italian"
 const GET_Indian="restaurants/GET_indian"
-const GET_Mexican="restaurants/GET_mexican"
+const GET_Hispanic="restaurants/GET_hispanic"
 const GET_Sushi="restaurants/GET_sushi"
 const GET_Burgers="restaurants/GET_burgers"
 const GET_Vegetarian="restaurants/GET_vegetarian"
@@ -12,19 +12,12 @@ const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
 
 
-export const getRestaurants=(tagType)=> async(dispatch)=>{
-    const response = await fetch(`/api/restaurants/tag_select/${tagType}`);
+export const getRestaurants=(tagType,ip)=> async(dispatch)=>{
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/tag_select/${tagType}/${ip}`);
     const restaurants = await response.json();
     console.log(restaurants);
     dispatch(setRestaurants(restaurants, tagType));
-
-export const getRestaurantsByLocation=(ip)=> async(dispatch)=>{
-    ip = ip.ip;
-    const response = await fetch(`/api/restaurants/all/${ip}`);
-    const restaurants = await response.json();
-    console.log("RESTAURANTS", restaurants)
-    dispatch(setRestaurants(restaurants));
-
 }
 
 const setRestaurants=(restaurants,tagType)=>({
@@ -50,7 +43,7 @@ const setOneRestaurant = (data) => ({
 })
 
 
-const initialState = {restaurants: {}, italian:{}, indian:{}, mexican:{},sushi:{},
+const initialState = {restaurants: {}, italian:{}, indian:{}, hispanic:{},sushi:{},
 burgers:{},vegetarian:{}, barbecue:{}, pizza:{}, outdoor:{}, delivery:{}, restaurant: {}, restaurant_data: {}}
 const RestaurantReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -71,13 +64,13 @@ const RestaurantReducer = (state = initialState, action) => {
             return {
                 ...state, indian: all_indian
             }
-        case GET_Mexican:
-            let all_mexican = {};
+        case GET_Hispanic:
+            let all_hispanic = {};
             for (let key in action.restaurants){
-                all_mexican[key] = action.restaurants[key]
+                all_hispanic[key] = action.restaurants[key]
             }
             return {
-                ...state, mexican: all_mexican
+                ...state, hispanic: all_hispanic
             }
         case GET_Sushi:
             let all_sushi = {};
