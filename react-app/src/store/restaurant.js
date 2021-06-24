@@ -7,10 +7,10 @@ const EDIT_REVIEW = "restaurants/EDIT_REVIEW"
 const DELETE_REVIEW = "restaurants/DELETE_REVIEW"
 
 export const getRestaurants=(ip)=> async(dispatch)=>{
-    console.log("IP!!!!", ip.ip);
     ip = ip.ip;
     const response = await fetch(`/api/restaurants/all/${ip}`);
     const restaurants = await response.json();
+    console.log("RESTAURANTS", restaurants)
     dispatch(setRestaurants(restaurants));
 }
 
