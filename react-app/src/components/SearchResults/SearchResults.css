@@ -3,6 +3,7 @@ body {
 }
 
 .search-term-container {
+    margin-top:10px;
     margin-right: auto;
     margin-left: auto;
     max-width: 600px;
@@ -12,4 +13,20 @@ body {
     max-width: 620px;
     padding-right: 60px;
     
+}
+
+.search-bar-container {
+    background-color: #CFE8F2;
+    border-bottom: 3px solid #D8D9DB;
+}
+
+.search-filter-container {
+    position:fixed;
+    background-color: rgb(209, 49, 62);
+    display: inline-block;
+    padding: 0px 40px 40px 40px;
+    top: 200px;
+    left: 200px;
+    color: #EFF1F3;
+    border-radius: 3px;
 }

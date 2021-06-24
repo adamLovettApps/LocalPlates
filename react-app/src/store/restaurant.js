@@ -6,13 +6,15 @@ const ADD_REVIEW = "restaurants/ADD_REVIEW"
 const EDIT_REVIEW = "restaurants/EDIT_REVIEW"
 const DELETE_REVIEW = "restaurants/DELETE_REVIEW"
 
-export const getRestaurants = () => async (dispatch) => {
-    const response = await fetch('/api/restaurants/all');
+export const getRestaurants=(ip)=> async(dispatch)=>{
+    console.log("IP!!!!", ip.ip);
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/all/${ip}`);
     const restaurants = await response.json();
     dispatch(setRestaurants(restaurants));
 }
 
-export const getOneRestaurant = (id) => async (dispatch) => {
+export const getOneRestaurant=(id)=> async(dispatch)=>{
     const response = await fetch(`/api/restaurants/${id}`);
 
     if (response.ok) {

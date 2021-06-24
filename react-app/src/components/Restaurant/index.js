@@ -16,9 +16,6 @@ function Restaurant(){
 
     useEffect(() => {
         dispatch(getOneRestaurant(id));
-        if (!data.restaurant_data) {
-            setReviews(data.restaurant_data.reviews)
-        }
     }, [dispatch, id])
 
     useEffect(() => {

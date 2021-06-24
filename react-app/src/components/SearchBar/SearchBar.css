@@ -20,6 +20,7 @@ select {
     border: 0px;
     background-color: rgb(236, 236, 236);
 }
+
 .search-form-ele {
     padding: 10px;
     /* margin: 7px; */
@@ -91,4 +92,6 @@ option:active {
      background-color: #b8222d;
  }
 
-
+textarea:focus, input:focus{
+    outline: none;
+}

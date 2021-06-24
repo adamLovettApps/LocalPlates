@@ -49,13 +49,11 @@ const SignUpForm = () => {
             let profile_photo = await res.json();
             setImageLoading(false);
             const user = await dispatch(signUpRestaurant(profile_photo, username, email, password, name, address, city, state, zipcode, phoneNumber, description));
-            console.log(res)
         }
         else {
             setImageLoading(false);
             // a real app would probably use more advanced
             // error handling
-            console.log("error");
         }
       
     }
@@ -295,7 +293,7 @@ const SignUpForm = () => {
             className='form-field-input'
           ></input>
         </div>
-        <div class="file">
+        <div className="file">
             <label for="file-input" id="file-label">Choose a Primary Photo</label>
             <input 
               type="file" 

@@ -1,4 +1,7 @@
 from flask import Blueprint, jsonify
+import requests
+import os
+from sqlalchemy import func
 from flask.helpers import url_for
 from wtforms.validators import ValidationError
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, Booking, db
@@ -7,9 +10,17 @@ from app.forms.review_form import ReviewForm
 restaurant_routes = Blueprint('restaurants', __name__)
 
 
-@restaurant_routes.route('/all')
-def get_all_restaurants():
-    restaurants = Restaurant.query.all()
+@restaurant_routes.route('/all/<ip>')
+def get_all_restaurants(ip):
+    REACT_APP_IPAPI_KEY = os.environ.get('REACT_APP_IPAPI_KEY')
+    res = requests.get(
+        f"https://api.ipapi.com/api/{ip}?access_key={REACT_APP_IPAPI_KEY}")
+    location = res.json()
+    latitude = location["latitude"]
+    longitude = location["longitude"]
+    restaurants = Restaurant.query.order_by(func.ST_Distance(
+        Restaurant.geo, func.ST_MakePoint(latitude, longitude)
+    )).all()
     print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api')
     print(restaurants[0].to_dict())
     print({k: restaurant.to_dict() for k, restaurant in dict(
