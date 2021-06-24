@@ -1,7 +1,14 @@
 const SET_USER = "user/SET_USER";
+const EDIT_USER = 'user/EDIT_USER';
+
 
 const setUser = (user) => ({
     type: SET_USER,
+    user: user
+})
+
+setEditedUser = (user) => ({
+    type: EDIT_USER,
     user: user
 })
 
@@ -15,6 +22,8 @@ export const getUser = (id) => async (dispatch) => {
         dispatch(setUser(user_data))
     }
 }
+
+export const editUser = (user) =>
 
 export default function userReducer(state = {}, action) {
     switch (action.type) {

@@ -1,0 +1,56 @@
+.profile-body{
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+
+}
+
+.profile-content{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.sub-header{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15%;
+    background-color: #EFF1F3;
+    color: #080705;
+    border-bottom: .05em solid lightgrey;
+    height: 10%;
+    margin-bottom: 2%;
+
+
+}
+
+.profile-feature{
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #EFF1F3;
+    width: 50%;
+    padding: 1em;
+    min-width: 500px;
+    margin-left: 2%;
+}
+
+.account-info-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    color: #080705;
+}
+
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-user-form{
+    display: flex;
+    flex-flow: column nowrap;
+    width:100%;
+}

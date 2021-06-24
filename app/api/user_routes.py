@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, redirect
 from flask_login import login_required, current_user
-from app.models import User, Booking, Favorite, Review
+from app.models import User, Booking, Favorite, Review, Restaurant
 
 user_routes = Blueprint('users', __name__)
 
