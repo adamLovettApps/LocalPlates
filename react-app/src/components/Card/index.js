@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from "react";
 import './Card.css'
 import StarRating from "../StarRating"
-function Card({restaurant}){
-    let tagString = 'Test, TagStr'
+function Card({restaurant,collectionTitle}){
+    //formats tag str to include a '...' and cut off more than 2 tags and to not include the collection title tag in the str
+    let tagString = restaurant.tags;
+    let tagArr = tagString.split(', ');
+    let formatedTagArr = [];
+    tagArr.forEach((el,i)=>{
+        if(el.toLowerCase().includes(collectionTitle.toLowerCase())){
+            return;
+        }
+        if(formatedTagArr.length === 2){
+            formatedTagArr[1]+="..."
+        }
+        if (formatedTagArr.length < 2){
+            formatedTagArr.push(el);
+        }
+    })
+    let formatedTagStr = formatedTagArr.join(', ')
     return (
         <a>
             <div className="card-container">
@@ -21,12 +36,11 @@ function Card({restaurant}){
                     </div>
                     <div className='card-tag-city-container'>
                         <div className="card-tags">
-                                {restaurant.tags}
+                                {formatedTagStr}
                         </div>
                         <div className="card-city">
                         &nbsp; &#8226; &nbsp; {restaurant.city}
                         </div>
-
                     </div>
                     <div className="card-booking-container">
                         <div className='card-reserve'>
