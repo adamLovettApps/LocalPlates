@@ -16,8 +16,6 @@ function User() {
   const [username, setUsername] = useState(user.username)
   const [email, setEmail] = useState(user.email)
   const [reviewList, setReviewList] = useState([])
-  const [favsList, setFavsList] = useState([])
-  const [bookingsList, setBookingsList] = useState([])
 
   const updateFeature = (stri) => {
     setFeature(stri)
@@ -27,20 +25,12 @@ function User() {
   }
 
   useEffect(() => {
-    if (!userId) {
-      return;
-    }
 
     if (Number(userId) !== sessionUser.id) {
       return Redirect(`/users/${sessionUser.id}`)
     }
     dispatch(getUser(sessionUser.id))
-    let newReviews = [];
-    for (var key in user.reviews) {
-      newReviews.push(user.reviews[key])
-    }
-    console.log(newReviews)
-    setReviewList(newReviews)
+
   }, [dispatch]);
 
 
@@ -71,25 +61,35 @@ function User() {
 
     return (
       <>
-        <div>
-          <h2>Your Favorite Restaurants: </h2>
-          {user.favorites && user.favorites.map(favorite => <li key="favorite">{favorite.id}</li>)}
-        </div>
+        <h2>Your Favorite Restaurants: </h2>
+        {/* {user.favorites && user.favorites.map(favorite => <li key="favorite">{favorite.id}</li>)} */}
       </>
     )
   }
 
   function Reviews() {
-    console.log(reviewList)
+    console.log("=========================>", user.reviews, reviewList)
+    useEffect(() => {
+      let newReviews = [];
+      for (var key in user.reviews) {
+        console.log(key)
+        console.log(user.reviews[key])
+        newReviews.push(user.reviews[key])
+      }
+      setReviewList(newReviews)
+
+    }, [user])
     return (
-      <div className="review-wrapper">
-        {reviewList.map(review =>
-          <div key={review.id}>
-            <h3>{review.title}<span>{review.stars} Stars</span></h3>
-            <p>{review.body}</p>
-          </div>
-        )}
-      </div>
+      <>
+        <div className="review-wrapper">
+          {reviewList.map(review =>
+            <div key={review.id}>
+              <h3>{review.title}<span>{review.stars} Stars</span></h3>
+              <p>{review.body}</p>
+            </div>
+          )}
+        </div>
+      </>
     )
   }
 
