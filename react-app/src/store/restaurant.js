@@ -1,8 +1,10 @@
 const SET_ALL_RESTAURANTS = "session/SET_ALL_RESTAURANTS"
 const GET_ONE_RESTAURANT = "restaurants/GET_ONE_RESTAURANT"
 
-export const getRestaurants=()=> async(dispatch)=>{
-    const response = await fetch('/api/restaurants/all');
+export const getRestaurants=(ip)=> async(dispatch)=>{
+    console.log("IP!!!!", ip.ip);
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/all/${ip}`);
     const restaurants = await response.json();
     dispatch(setRestaurants(restaurants));
 }

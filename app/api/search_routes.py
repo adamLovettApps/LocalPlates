@@ -11,7 +11,7 @@ search_routes = Blueprint('search', __name__)
 
 
 @search_routes.route('/getTags')
-def get_all_tages():
+def get_all_tags():
     tags = Tag.query.all()
     tag_dict = {}
     for tag in tags:
