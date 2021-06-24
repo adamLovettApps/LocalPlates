@@ -12,12 +12,21 @@ const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
 
 
-export const getRestaurants=(tagType,ip)=> async(dispatch)=>{
+
+export const getRestaurants=(tagType, ip)=> async(dispatch)=>{
     ip = ip.ip;
     const response = await fetch(`/api/restaurants/tag_select/${tagType}/${ip}`);
     const restaurants = await response.json();
     console.log(restaurants);
     dispatch(setRestaurants(restaurants, tagType));
+}
+
+export const getRestaurantsByLocation=(ip)=> async(dispatch)=>{
+    ip = ip.ip;
+    const response = await fetch(`/api/restaurants/all/${ip}`);
+    const restaurants = await response.json();
+    console.log("RESTAURANTS", restaurants)
+    dispatch(setRestaurants(restaurants));
 }
 
 const setRestaurants=(restaurants,tagType)=>({
@@ -38,13 +47,14 @@ export const getOneRestaurant=(id)=> async(dispatch)=>{
 
 const setOneRestaurant = (data) => ({
     type: GET_ONE_RESTAURANT,
-    restaurant_data: data.data,
-    restaurant: data.restaurant
+    payload: data
 })
+
 
 
 const initialState = {restaurants: {}, italian:{}, indian:{}, hispanic:{},sushi:{},
 burgers:{},vegetarian:{}, barbecue:{}, pizza:{}, outdoor:{}, delivery:{}, restaurant: {}, restaurant_data: {}}
+
 const RestaurantReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_Italian:
@@ -138,15 +148,9 @@ const RestaurantReducer = (state = initialState, action) => {
             return {
                 ...state, restaurants : all_restaurants
             }
-        case GET_ONE_RESTAURANT:
-            let restaurant_datas = {}
-            let one_restaurant = action.restaurant
-            for (let key in action.restaurant_data){
-                restaurant_datas[key] = action.restaurant_data[key]
-            }
-
+        case GET_ONE_RESTAURANT:            
             return {
-                ...state, restaurant: one_restaurant, restaurant_data: restaurant_datas
+                ...state, restaurant: action.payload
             }
         default:
             return state;

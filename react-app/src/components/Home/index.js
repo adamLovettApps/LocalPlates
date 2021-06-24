@@ -24,10 +24,12 @@ function Home(){
     useEffect(() => {
         (async() => {
           let ip = await getIPInfo();
+
         //   await dispatch(getRestaurants("all"));
           await dispatch(getRestaurants("italian",ip));
           await dispatch(getRestaurants("outdoor",ip));
           await dispatch(getRestaurants("hispanic",ip));
+
         })();
       }, [dispatch]);
     return(

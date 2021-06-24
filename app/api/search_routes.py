@@ -17,7 +17,6 @@ def get_all_tags():
     for tag in tags:
         temp_tag = tag.to_dict()
         tag_dict[temp_tag["id"]] = temp_tag
-    print(tag_dict)
     return tag_dict
 
 

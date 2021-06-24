@@ -49,6 +49,7 @@ hours_str
 ,"description":
 "Quirky, dimly lit, rustic-chic eatery serving eclectic comfort food for happy hour, brunch & dinner."
 },
+
 {"name":
 "Amelie Wine Bar"
 ,"address":
@@ -769,24 +770,6 @@ hours_str
 },
 
 {"name":
-"Zazie"
-,"address":
-"941 Cole St"
-,"city":
-"San Francisco"
-,"state":
-"CA"
-,"zipcode":
-94117
-,"phone_number":
-"(415) 564-5332"
-,"hours":
-hours_str
-,"description":
-"Petite French bistro & popular brunch spot with an outdoor patio & weekly Bring Your Dog dinners."
-},
-
-{"name":
 "Limon"
 ,"address":
 "1001 S Van Ness Ave"
@@ -1123,6 +1106,25 @@ hours_str
 hours_str
 ,"description":
 "Lively wine bar & restaurant presenting New American small plates & entrees in modern-rustic digs."
+},
+
+{"name":
+"CreoLa"
+,"address":
+"900 Stanyan St"
+,"city":
+"San Francisco"
+,"state":
+"CA"
+
+,"zipcode":
+94117
+,"phone_number":
+"(415) 260-3143"
+,"hours":
+hours_str
+,"description":
+"Cajun and creole food done right in a fun and friendly setting."
 },
 # {"name":
 
