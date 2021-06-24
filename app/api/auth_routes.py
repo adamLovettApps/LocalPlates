@@ -40,7 +40,6 @@ def login():
     Logs a user in
     """
     form = LoginForm()
-    print(request.get_json())
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -96,18 +95,15 @@ def sign_up_restaurant():
     stateForGoogle = form.data["state"].replace(" ", "+")
     googleKey = os.environ.get("GOOGLE_KEY")
 
-    print(googleKey)
     res = requests.get(
         f"https://maps.googleapis.com/maps/api/geocode/json?address={addressForGoogle},+{cityForGoogle},+{stateForGoogle}&key={googleKey}")
 
     if res.status_code == 200:
         location = res.json()
-        print(location["results"][0]['geometry']['location'])
         lat = location["results"][0]['geometry']['location']['lat']
         lng = location["results"][0]['geometry']['location']['lng']
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            print("HERE!")
             profile_photo = form.data["profile_photo"]
             user = User(
                 username=form.data['username'],
@@ -138,7 +134,6 @@ def sign_up_restaurant():
             login_user(user)
             return user.to_dict()
         else:
-            print("ERRORS!!!!!!!!!!!", form.errors)
             return {'errors': validation_errors_to_error_messages(form.errors)}, 401
     else:
         return {'errors': "Please provide a valid address."}, 404

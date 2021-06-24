@@ -31,29 +31,52 @@ def get_all_restaurants(ip):
     restaurants = Restaurant.query.order_by(func.ST_Distance(
         Restaurant.geo, func.ST_MakePoint(latitude, longitude)
     )).all()
-    print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api')
-    print(restaurants[0].to_dict())
-
-    print({k: restaurant.to_dict() for k, restaurant in dict(
-        zip(range(len(restaurants)), restaurants)).items()})
     # every restaurant is assigned a key from 0 to length of total restaurants
     return {k: restaurant.to_dict() for k, restaurant in dict(zip(range(len(restaurants)), restaurants)).items()}
 
 
 @restaurant_routes.route('/<int:id>')
 def get_restaurant(id):
-    print("In Route>>>>>>>>>>>>>>>>>>>>>>>>>>>>:  ", int(id))
     restaurant = Restaurant.query.get(id)
     reviews = Review.query.filter_by(restaurant_id=id).all()
     photos = Photo.query.filter_by(restaurant_id=id).all()
     menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
     # loop through iterables and call to_dict
-    data = {"restaurant": restaurant, "data": {
-        "reviews": reviews, "menu_photos": menu_photos, "photos": photos}}
+    return restaurant.to_dict()
+
+
+@restaurant_routes.route('/reviews/<int:id>')
+def get_reviews(id):
+    reviews = Review.query.filter_by(restaurant_id=id).all()
     new_reviews = {k: review.to_dict() for k, review in dict(
         zip(range(len(reviews)), reviews)).items()}
+    return new_reviews
+
+
+@restaurant_routes.route('/photos/<int:id>')
+def get_photos(id):
+    photos = Photo.query.filter_by(restaurant_id=id).all()
     new_photos = {k: photo.to_dict() for k, photo in dict(
         zip(range(len(photos)), photos)).items()}
+    return new_photos
+
+
+@restaurant_routes.route('/menuphotos/<int:id>')
+def get_menu_photos(id):
+    menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
     new_menu_photos = {k: menu_photo.to_dict() for k, menu_photo in dict(
         zip(range(len(menu_photos)), menu_photos)).items()}
-    return {"restaurant": restaurant.to_dict(), "data": {"reviews": new_reviews, "photos": new_photos, "menu_photos": new_menu_photos}}
+    return new_menu_photos
+
+
+@restaurant_routes.route('/tags/<int:id>')
+def get_restaurant_tags(id):
+    print("HEEEEEEEEEEERRRRRRRREEEEEEEEEEEEEEE!")
+    data = db.session.execute(
+        f"SELECT tags.type FROM tags JOIN restaurant_tags ON tag_id=tags.id WHERE restaurant_tags.restaurant_id = {id}")
+    rows = data.fetchall()
+    tags = {}
+    for row in rows:
+        tags[row[0]] = row[0]
+        
+    return tags
