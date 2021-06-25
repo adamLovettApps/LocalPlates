@@ -20,10 +20,17 @@ export const getSearchResults = (ip, searchString) => async(dispatch) => {
     ip = ip.ip;
     const response = await fetch(`/api/search/${searchString}/${ip}`);
     const results = await response.json();
+    console.log(results)
     Object.keys(results).forEach(result => {
         results[result].tags = Object.keys(results[result].tags).map(key => `${results[result].tags[key]} `)
     })
-    dispatch(setResults(results));
+    let reorder = {}
+    Object.keys(results).forEach(result => {
+        let num = results[result].order
+        console.log(num)
+        reorder[num]  = results[result]
+    })
+    dispatch(setResults(reorder));
 }
 
 export const getCurrentSelection = (choices) => async(dispatch) => {

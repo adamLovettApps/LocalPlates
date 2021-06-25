@@ -1,4 +1,12 @@
-.body-wrapper {
+.search-bar-container {
+    background-color: #fd5b68;
+    background-image: url('/header-bg.png');
+    border-bottom: 3px solid #D8D9DB;
+}
+
+
+
+/* .body-wrapper {
     display: grid;
     grid-template-areas:
         "gallery gallery gallergy gallery"
@@ -60,16 +68,4 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-}
-
-.review-form-wrapper{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-}
-
-.review-form-wrapper form {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-}
+} */

@@ -13,17 +13,31 @@ const getIPInfo = async () => {
 function Home(){
     const dispatch = useDispatch();
     const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
+    const italian = useSelector((state)=>Object.values(state.restaurant.italian))
+    const outdoor = useSelector((state)=>Object.values(state.restaurant.outdoor))
+    const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
+    const user = useSelector(state => state.session.user);
+    if (user){
+        console.log('user authenticated')
+    }
+    let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
           let ip = await getIPInfo();
-          await dispatch(getRestaurants(ip));
+
+        //   await dispatch(getRestaurants("all"));
+          await dispatch(getRestaurants("italian",ip));
+          await dispatch(getRestaurants("outdoor",ip));
+          await dispatch(getRestaurants("hispanic",ip));
 
         })();
       }, [dispatch]);
     return(
         <div>
             <SplashDisplay/>
-            {restaurants &&<CardScroll restaurants={restaurants}/>}
+            {outdoor &&<CardScroll collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
+            {italian &&<CardScroll collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic &&<CardScroll collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
         </div>
     );
 }
