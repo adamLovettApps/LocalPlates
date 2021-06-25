@@ -16,6 +16,7 @@ def users():
 @login_required
 def user(id):
     if current_user.to_dict()["id"] == id:
+
         user = User.query.get(id)
         # print("uuuuuuuusssssssseeeeeerrrrrrr", user.to_dict)
         bookings = Booking.query.filter_by(user_id=id).all()

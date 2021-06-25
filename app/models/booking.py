@@ -10,7 +10,7 @@ class Booking(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey(
         "restaurants.id"), nullable=False)
     user_id = db.Column(db.Integer,  db.ForeignKey("users.id"), nullable=False)
-    booked_at = db.Column(db.DateTime, nullable=False)
+    booked_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     booked_for = db.Column(db.DateTime, nullable=False)
     confirmation_status = db.Column(db.Integer, nullable=False)
     party_size = db.Column(db.Integer, nullable=False)

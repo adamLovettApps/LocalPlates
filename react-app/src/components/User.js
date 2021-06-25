@@ -13,9 +13,9 @@ function User() {
   const user = useSelector(state => state.user)
   const sessionUser = useSelector(state => state.session.user)
   const [feature, setFeature] = useState("account")
-  const [username, setUsername] = useState(user.username)
-  const [email, setEmail] = useState(user.email)
-  const [photo, setPhoto] = useState(user.photo)
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState("")
+  const [photo, setPhoto] = useState("")
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [reviewList, setReviewList] = useState([])
@@ -41,6 +41,9 @@ function User() {
     setConfirm(stri)
   }
 
+  const updateEmail = (stri) => {
+    setEmail(stri)
+  }
   useEffect(() => {
 
     if (Number(userId) !== sessionUser.id) {
@@ -105,19 +108,24 @@ function User() {
         <img href="user.profile_photo" />
         <div className="form-wrapper">
           <form className="edit-user-form" onSubmit={onEditUser}>
-            <div><label htmlFor="username">Username: </label>
-              <input type="text" id="username" name="username" value={user.username} onChange={(e) => updateUsername(e.target.value)} />
+            <div>
+              <label htmlFor="username">Username: </label>
+              <input type="text" id="username" name="username" value={username} onChange={(e) => updateUsername(e.target.value)} />
             </div>
-            <div><label htmlFor="email">Email Address: </label>
-              <input type="email" id="email" name="email" value={user.email} onChange={(e) => setEmail(e.target.value)} />
+            <div>
+              <label htmlFor="email">Email Address: </label>
+              <input type="email" id="email" name="email" value={email} onChange={(e) => updateEmail(e.target.value)} />
             </div>
-            <div><label htmlFor="profile_photo">Profile Photo URL: </label>
-              <input type="profile_photo" id="profile_photo" name="profile_photo" />
-            </div><div><label htmlFor="password">Change Password: </label>
+            <div>
+              <label htmlFor="profile_photo">Profile Photo URL: </label>
+              <input type="profile_photo" id="profile_photo" name="profile_photo" value={photo} onChange={(e)=>updatePhoto(e.target.value)}/>
+            </div>
+            <div>
+              <label htmlFor="password">Change Password: </label>
               <input id="password" name="password" type="password" value={password} onChange={(e) => updatePassword(e.target.value)} />
             </div>
-            <div><label htmlFor="confirm_password">Confirm Password: </label>
-              <input type="password" value={confirm} onChange={(e) => updateConfirm(e.target.value)} />
+            <div><label htmlFor="confirm">Confirm Password: </label>
+              <input type="password" id="confirm" value={confirm} onChange={(e) => updateConfirm(e.target.value)} />
             </div>
             <div className="button"><button>Save Changes</button></div>
           </form>

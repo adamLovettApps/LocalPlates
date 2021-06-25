@@ -8,7 +8,6 @@ restaurant_routes = Blueprint('restaurants', __name__)
 
 
 @restaurant_routes.route('/tag_select/<string:tag>/<ip>')
-
 def get_collection_of_restaurants(tag, ip):
 
     # restaurants = Restaurant.query.all()
@@ -21,14 +20,14 @@ def get_collection_of_restaurants(tag, ip):
     print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api', tag)
     results = db.session.execute(
         f"SELECT restaurants.id FROM restaurants JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id JOIN tags ON tags.id=restaurant_tags.tag_id  WHERE tags.type ILIKE \'%{tag}%\'  LIMIT 20")
-    restaurantsWithTup = results.fetchall();
+    restaurantsWithTup = results.fetchall()
     restaurant_id_list = list({id[0] for id in restaurantsWithTup})
-    print('>>>>>>>>>>>>>>>>>>>>>>>got past query', restaurant_id_list )
+    print('>>>>>>>>>>>>>>>>>>>>>>>got past query', restaurant_id_list)
     restaurants = Restaurant.query.order_by(func.ST_Distance(
 
         Restaurant.geo, func.ST_MakePoint(latitude, longitude))).filter(Restaurant.id.in_(restaurant_id_list)).all()
     # print('>>>>>>>>>>>>>>>>>>>>>>>got past query and reassigned', restaurantsWithTup )
-    print('>>>>>>>>>>>>>>>>>>>>>>>got past reassign ', restaurants )
+    print('>>>>>>>>>>>>>>>>>>>>>>>got past reassign ', restaurants)
     return {k: restaurant.to_dict() for k, restaurant in dict(zip(range(len(restaurants)), restaurants)).items()}
 # @restaurant_routes.route('/all/<ip>')
 # def get_all_restaurants(ip):
