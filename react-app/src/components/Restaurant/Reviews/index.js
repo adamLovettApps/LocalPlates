@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams , useHistory} from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getReviews } from '../../../store/review';
@@ -7,7 +7,9 @@ import ReviewDisplay from '../ReviewDisplay'
 import './Reviews.css'
 function Reviews({restaurant}){
     const dispatch = useDispatch();
+    const history = useHistory();
     const allReviews =  Object.values(useSelector((state)=>Object.values(state.reviews))[0]);
+    const sessionUser = useSelector(state => state.session.user)
     const { id } = useParams();
     console.log('THIS SHOULD BE EVERY REVIEW', allReviews)
 
@@ -23,6 +25,9 @@ function Reviews({restaurant}){
         return null;
     }
     const toggleForm= () => {
+        if (!sessionUser){
+            history.push("/login")
+        }
         if (showReviewForm){
             setShowReviewForm(false);
         }else{

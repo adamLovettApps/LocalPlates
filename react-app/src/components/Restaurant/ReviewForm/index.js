@@ -33,7 +33,7 @@ function ReviewForm({restaurant}){
                     placeholder='Title'
                     name='title'
                 />
-                <label>How many stars would you rate your stay?</label>
+                <label>How many stars would you rate your visit?</label>
                 <select
                     className='form-element'
                     onChange={(e)=>{

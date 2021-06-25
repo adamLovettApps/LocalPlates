@@ -1,0 +1,100 @@
+
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+.form-title {
+    margin:10px;
+}
+form {
+    display: flex;
+    justify-content: space-around;;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputBox {
+    justify-content:flex-start
+}
+.form-label {
+    color:white;
+    font-weight: 400;
+    align-self: center;
+}
+.input-group {
+    width:90%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px outset rgb(236, 236, 236);
+    border-radius: 4px;
+    display: flexbox;
+}
+#description-group {
+    width:90%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px outset rgb(236, 236, 236);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element {
+    padding:5px;
+    margin: 10px;
+    width:60%;
+    background-color:rgba(0, 0, 0, 0.2);
+    color:white;
+}
+
+.form {
+    width: 70vw;
+    height: 85vh;
+    display:flex;
+    align-items: center;
+    border: 0.2rem outset rgb(211, 141, 11);
+    -moz-box-shadow:0 8px 8px rgba(5, 5, 5, 0.75);
+    -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    background-color: rgba(18, 78, 0,.3);
+}
+.inputBox {
+    padding: 5px;
+    /* background-image: url('http://permacultureapprentice.com/wp-content/uploads/2016/02/cover.jpg'); */
+    background-color: rgb(18, 78, 0);
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+#description {
+    height: 10vh;
+    width: 95%;
+
+}
+#current-photo {
+    max-width: 30vw;
+    max-height: 35vh;
+    margin:auto;
+    align-self: center;
+}
+#submit-form {
+    width:35vw;
+    height:5vw;
+    color: white;
+    text-decoration: none;
+    font-size: 2.5vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: linear-gradient(rgba(56, 230, 177, 0.5), rgba(240, 136, 1, 0.788));
+    border-radius: 9px;
+    max-height: 45px;
+    max-width: 400px;
+}
+
+#submit-form:hover{
+    background: linear-gradient(rgba(240, 136, 1, 0.788),rgba(56, 230, 177, 0.5));
+}
