@@ -3,9 +3,13 @@ window.addEventListener('DOMContentLoaded',(event)=>{
 
     const timer = setTimeout(()=> {
         let leftButtons = document.getElementsByClassName("left-button");
+        let buttonCount =  leftButtons.length
+
         let leftButtonsArr = Array.from(leftButtons)
         let cardScroll = document.querySelector(".card-scroll");
         console.log("LOADED JS");
+        console.log("NUMBER OF ROWS: ", buttonCount);
+        console.log("after PRINT >>>>>>>>>>>>>>>>>>")
 
         function scrollAnimation(isLeft){
             let x = 1;
