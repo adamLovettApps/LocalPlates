@@ -66,7 +66,7 @@ def get_search_results(searchString, ip):
                             "state": row[4], "phone_number": row[6],
                             "bookings": row[9], "rating": row[10],
                             "reviews": row[11], "photo": row[20],
-                            "tags": new_tags, "review": row[29], 
+                            "tags": new_tags, "review": row[29], "id": row[0],
                             "order": count}
 
     print(data)
