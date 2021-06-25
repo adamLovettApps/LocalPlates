@@ -83,3 +83,6 @@
 .card-booking-display {
     margin-left: 30px;
 }
+.card-link {
+    text-decoration: none;
+}

@@ -38,7 +38,7 @@ function Card({restaurant,collectionTitle}){
                     bucket: "localplates",
                     key: baseURL,
                     edits: {
-                        
+
                         resize: {
                             width: 240,
                             height:110,
@@ -50,7 +50,7 @@ function Card({restaurant,collectionTitle}){
     const url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
 
     return (
-        <>
+        <Link to={`/restaurants/${restaurant.id}`} className="card-link">
             <div className="card-container">
                 <div className='zoom-image'>
                     <img className="card-image" src={url}></img>
@@ -61,9 +61,6 @@ function Card({restaurant,collectionTitle}){
                     </div>
                     <div className="card-stars">
                         <StarRating reviewNum ={restaurant.review_count} rating={restaurant.star_rating}/>
-                        <div>
-
-                        </div>
                     </div>
                     <div className='card-tag-city-container'>
                         <div className="card-tags">
@@ -83,7 +80,7 @@ function Card({restaurant,collectionTitle}){
                     </div>
                 </div>
             </div>
-        </>
+        </Link>
     )
 }
 
