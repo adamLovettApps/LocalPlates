@@ -29,6 +29,8 @@ class Review(db.Model):
             "stars": self.stars,
             "title": self.title,
             "image": self.image,
+            "user_photo": self.user.profile_photo,
+            "username":self.user.username,
             "created_at": self.created_at,
             "updated_at": self.updated_at
         }

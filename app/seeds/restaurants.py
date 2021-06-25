@@ -21,8 +21,6 @@ def seed_restaurants():
             f"https://maps.googleapis.com/maps/api/geocode/json?address={addressForGoogle},+{cityForGoogle},+{stateForGoogle}&key={googleKey}")
         if res.json()["status"] == 'OK':
             location = res.json()
-            print(f"\n")
-            print(location)
             lat = location["results"][0]['geometry']['location']['lat']
             lng = location["results"][0]['geometry']['location']['lng']
             geo_str=f'POINT({lat} {lng})'
