@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect, useParams } from "react-router-dom";
 import { getUser, editUser } from "../store/user"
 import "./User.css"
+import StarRating from "./StarRating"
+import CardScroll from './CardScroll'
+
 
 function User() {
   // const [user, setUser] = useState({});
@@ -12,12 +15,12 @@ function User() {
   const { userId } = useParams();
   const user = useSelector(state => state.user)
   const sessionUser = useSelector(state => state.session.user)
-  const [feature, setFeature] = useState("account")
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState("")
-  const [photo, setPhoto] = useState("")
-  const [password, setPassword] = useState('')
-  const [confirm, setConfirm] = useState('')
+  const [feature, setFeature] = useState("bookings")
+  const [username, setUsername] = useState(user.username)
+  const [email, setEmail] = useState(user.email)
+  const [photo, setPhoto] = useState(user.photo)
+  const [password, setPassword] = useState(user.password)
+  const [confirm, setConfirm] = useState(user.password)
   const [reviewList, setReviewList] = useState([])
   const [favsList, setFavs] = useState([])
   const [bookingsList, setBookings] = useState([])
@@ -44,36 +47,86 @@ function User() {
   const updateEmail = (stri) => {
     setEmail(stri)
   }
+
   useEffect(() => {
 
     if (Number(userId) !== sessionUser.id) {
       return Redirect(`/users/${sessionUser.id}`)
     }
-
-    dispatch(getUser(sessionUser.id))
+    if (!user.id) {
+      dispatch(getUser(sessionUser.id))
+    }
 
   }, [dispatch]);
 
 
-  function Bookings() {
-    useEffect(() => {
+  useEffect(() => {
+    if (!bookingsList.length) {
       let newBookings = [];
       for (let key in user.bookings) {
         newBookings.push(user.bookings[key])
       }
-      if (!bookingsList.length) {
-        setBookings(newBookings)
+      setBookings(newBookings)
+    }
+
+    if (!favsList.length) {
+      let newFavs = [];
+      for (let key in user.favorites) {
+        newFavs.push(user.favorites[key])
       }
-    }, [dispatch])
+      setFavs(newFavs)
+    }
+
+    if (!reviewList.length) {
+
+      let newReviews = [];
+      for (let key in user.reviews) {
+        newReviews.push(user.reviews[key])
+      }
+      setReviewList(newReviews)
+    }
+
+  }, [user])
+
+  function Bookings() {
     return (
-      <>
+
+      <div>
         <h2>Your Upcoming Reservations: </h2>
         {bookingsList.map(booking =>
-          <div>
-            <h3>{booking.id}</h3>
+          <div className="restaurant-wrapper">
+            <h3>{booking.restaurant.name}<span><StarRating rating={booking.restaurant.star_rating} reviewNum={booking.restaurant.review_count} /></span></h3>
+            <div className="separator">
+              <div className="restaurant-photo">
+                <img src={booking.restaurant.profile_photo} />
+              </div>
+              <div className="reservation-details">
+                <div>
+                  Reservation for: {booking.booked_for}
+                </div>
+                  Status:
+                  {booking.confirmation_status === 0 && <div>Pending</div>}
+                  {booking.confirmation_status === 1 && <div>Approved</div>}
+                  {booking.confirmation_status === 2 && <div>Cancelled</div>}
+                <div>
+                  {booking.party_size} People
+                </div>
+              </div>
+              <div>
+                <div classname="restaurant-data">
+                  <div className="description">{booking.restaurant.description}</div>
+                  <div>
+                    {booking.restaurant.phone_number}
+                  </div>
+                  <div>
+                    {booking.restaurant.address} {booking.restaurant.city}, {booking.restaurant.state}  {booking.restaurant.zipcode}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
-      </>
+      </div>
     )
   }
 
@@ -107,7 +160,7 @@ function User() {
         <h2>About me: </h2>
         <img href="user.profile_photo" />
         <div className="form-wrapper">
-          <form className="edit-user-form" onSubmit={onEditUser}>
+          <form className="edit-user-form" onSubmit={onEditUser} action={`/api/users/${sessionUser.id}`}>
             <div>
               <label htmlFor="username">Username: </label>
               <input type="text" id="username" name="username" value={username} onChange={(e) => updateUsername(e.target.value)} />
@@ -118,13 +171,14 @@ function User() {
             </div>
             <div>
               <label htmlFor="profile_photo">Profile Photo URL: </label>
-              <input type="profile_photo" id="profile_photo" name="profile_photo" value={photo} onChange={(e)=>updatePhoto(e.target.value)}/>
+              <input type="profile_photo" id="profile_photo" name="profile_photo" value={photo} onChange={(e) => updatePhoto(e.target.value)} />
             </div>
             <div>
               <label htmlFor="password">Change Password: </label>
               <input id="password" name="password" type="password" value={password} onChange={(e) => updatePassword(e.target.value)} />
             </div>
-            <div><label htmlFor="confirm">Confirm Password: </label>
+            <div>
+              <label htmlFor="confirm">Confirm Password: </label>
               <input type="password" id="confirm" value={confirm} onChange={(e) => updateConfirm(e.target.value)} />
             </div>
             <div className="button"><button>Save Changes</button></div>
@@ -136,49 +190,36 @@ function User() {
 
   function Favs() {
 
-    useEffect(() => {
-      let newFavs = [];
-      for (let key in user.favorites) {
-        newFavs.push(user.favorites[key])
-      }
-      if (!favsList.length) {
-        setFavs(newFavs)
-      }
-    }, [dispatch])
-
     return (
 
       <div>
-        <h2>Your Favorite Restaurants: </h2>
-        {favsList.map(fav =>
-          <div key={fav.id}>
-            <h4>{fav.restaurant_id}</h4>
-          </div>
-        )}
+        <CardScroll order={1} collectionTitle="Favorite Restaurants" restaurants={favsList} />
       </div>
 
     )
   }
 
   function Reviews() {
-    useEffect(() => {
-      let newReviews = [];
-      for (let key in user.reviews) {
-        newReviews.push(user.reviews[key])
-      }
-      if (!reviewList.length) {
-        setReviewList(newReviews)
-      }
-    }, [dispatch])
 
     return (
       <>
         <div className="review-wrapper">
           <h2>Your Reviews: </h2>
           {reviewList.map(review =>
-            <div key={review.id}>
-              <h3>{review.title}<span>{review.stars} Stars</span></h3>
+            <div key={review.id} className="review-body">
+              <div className="review-title">
+                <h3>{review.title}</h3>
+                <div className='rating-span'>
+                  {review.stars > 0 ? <span className="fa fa-star checked star" ></span> : <span className="fa fa-star not-checked star" ></span>}
+                  {review.stars > 1 ? <span className="fa fa-star checked star" ></span> : <span className="fa fa-star not-checked star" ></span>}
+                  {review.stars > 2 ? <span className="fa fa-star checked star" ></span> : <span className="fa fa-star not-checked star" ></span>}
+                  {review.stars > 3 ? <span className="fa fa-star checked star" ></span> : <span className="fa fa-star not-checked star" ></span>}
+                  {review.stars > 4 ? <span className="fa fa-star checked star" ></span> : <span className="fa fa-star not-checked star" ></span>}
+                  <div className="star-rating-num"> {review.stars} Stars</div>
+                </div>
+              </div>
               <p>{review.body}</p>
+              <button className="buttons">Edit</button>
             </div>
           )}
         </div>

@@ -40,9 +40,9 @@ class Restaurant(db.Model):
         str = ""
         for instance in self.tags:
             str = str + instance.type + ", "
-        str = str[:-2];
-        return str;
-        
+        str = str[:-2]
+        return str
+
     def to_dict(self):
         data = User.query.get(self.owner_id)
         owner_info = data.to_dict()
@@ -62,5 +62,5 @@ class Restaurant(db.Model):
             "star_rating": self.star_rating,
             "review_count": self.review_count,
             "description": self.description,
-            "tags": self.tags_to_str()
+            "tags": self.tags_to_str(),
         }

@@ -15,5 +15,6 @@ class Favorite(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "restaurant_id": self.restaurant_id
+            "restaurant_id": self.restaurant_id,
+            "restaurant": self.restaurant.to_dict()
         }

@@ -18,9 +18,13 @@ def user(id):
     if current_user.to_dict()["id"] == id:
 
         user = User.query.get(id)
+        # restaurant = Booking.query.filter(Booking.restaurant)
+
         # print("uuuuuuuusssssssseeeeeerrrrrrr", user.to_dict)
         bookings = Booking.query.filter_by(user_id=id).all()
-        # print("BBBooooooooooooooooooookings", bookings)
+
+        # print("BBBooooooooooooooooooookings", bookings[0].restaurant.to_dict())
+
         favorites = Favorite.query.filter_by(user_id=id).all()
         # print("faaaaaaaaaaavorittes", favorites)
         reviews = Review.query.filter_by(user_id=id).all()
@@ -31,7 +35,7 @@ def user(id):
         if bookings:
             new_user["bookings"] = {k: booking.to_dict() for k, booking in dict(
                 zip(range(len(bookings)), bookings)).items()}
-            # print("Booooooooooooookings", new_user["bookings"])
+
         if reviews:
             new_user["reviews"] = {k: review.to_dict() for k, review in dict(
                 zip(range(len(reviews)), reviews)).items()}
@@ -40,7 +44,6 @@ def user(id):
             new_user["favorites"] = {k: favorite.to_dict() for k, favorite in dict(
                 zip(range(len(favorites)), favorites)).items()}
             # print(new_user["favorites"])
-        print(new_user)
         return new_user
     else:
         return redirect("http://localhost:3000/", 302)

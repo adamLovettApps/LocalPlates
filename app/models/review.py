@@ -30,5 +30,6 @@ class Review(db.Model):
             "title": self.title,
             "image": self.image,
             "created_at": self.created_at,
-            "updated_at": self.updated_at
+            "updated_at": self.updated_at,
+            "restaurant": self.restaurant.to_dict()
         }

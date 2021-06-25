@@ -16,5 +16,5 @@ class MenuPhoto(db.Model):
         return {
             "id": self.id,
             "image": self.image,
-            "restaurant_id": self.restaurant_id
+            "restaurant_id": self.restaurant_id,
         }

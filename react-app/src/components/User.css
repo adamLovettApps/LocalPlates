@@ -18,7 +18,22 @@
     width:100%;
 }
 
-/* form >div> button {
+.review-title{
+    display: flex;
+    fles-flow: row wrap;
+}
+.review-title > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-title > h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-edit-form >div> button {
     background-color: #D1313E;
     margin-top: 1em;
     border: none;
@@ -26,19 +41,57 @@
     height: 2.5em;
     border-radius: .2em;
     width: 100%;
-} */
+}
 
-/* form >div> input {
+.user-edit-form >div> input {
 
     height: 3em;
     border: .1px solid #D8D9DB;
     background-color: white;
     width: 100%;
-} */
+}
 
-/* form >div> button:hover {
+.user-edit-form>.button> button:hover {
     background-color: #AC2A21;
-} */
+}
+.restaurant-wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #EFF1F3;
+    padding: 1em;
+}
+.restaurant-wrapper:hover{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #AC2A21;
+    color: #EFF1F3;
+    padding: 1em;
+}
+
+.reservation-details{
+    display: flex;
+    flex-flow: column wrap;
+    width: 10em;
+}
+
+.restaurant-data{
+    margin-left: 2em;
+    display: flex;
+    align-items: stretch;
+}
+.restaurant-data>.description {
+    margin: 1em;
+}
+
+.separator{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.review-body.buttons{
+    background-color: #D1313E;
+}
 
 @media screen and (min-width: 900px) {
     .profile-content{
@@ -51,6 +104,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
 
     .profile-feature{
@@ -101,10 +155,12 @@
         margin: 1em;
         color: #287391;
     }
-    div.button {
+    .user-edit-form>div.button {
         display: flex;
         justify-content: center;
     }
+
+
 }
 
 @media screen and (max-width: 899px) {
@@ -155,8 +211,6 @@
         color: #080705;
         border-bottom: .05em solid #D8D9DB;
         height: 15%;
-
-
     }
     .edit-user-form{
         display: flex;

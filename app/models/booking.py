@@ -27,5 +27,6 @@ class Booking(db.Model):
             "booked-at": self.booked_at,
             "booked-for": self.booked_for,
             "confirmation_status": self.confirmation_status,
-            "party_size": self.party_size
+            "party_size": self.party_size,
+            "restaurant": self.restaurant.to_dict(),
         }
