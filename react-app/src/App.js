@@ -10,6 +10,7 @@ import User from "./components/User";
 
 import Home from "./components/Home"
 import SearchResults from "./components/SearchResults"
+import Footer from "./components/Footer"
 
 import Restaurant from "./components/Restaurant";
 import { authenticate } from "./store/session";
@@ -61,6 +62,7 @@ function App() {
           <Restaurant />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
