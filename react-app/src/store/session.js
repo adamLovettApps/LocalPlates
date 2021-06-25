@@ -17,7 +17,7 @@ export const authenticate = () => async(dispatch) => {
         }
     });
     const data = await response.json();
-    
+
     if (data.errors) {
         return data;
     }
@@ -27,6 +27,7 @@ export const authenticate = () => async(dispatch) => {
 }
 
 export const login = (email, password) => async (dispatch) => {
+    console.log("USER HAS BEEN SIGNED IN");
     const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
@@ -101,7 +102,7 @@ export default function reducer(state=initialState, action) {
             return { user: action.payload };
         case REMOVE_USER:
             return { user: null }
-        default: 
+        default:
             return state;
     }
 }

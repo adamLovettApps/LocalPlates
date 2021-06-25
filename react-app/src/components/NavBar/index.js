@@ -2,16 +2,24 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { useDispatch, useSelector } from "react-redux";
-
+import {login} from "../../store/session"
 import './NavBar.css'
 
 
 
 
 const NavBar = ({  }) => {
+  const dispatch = useDispatch();
+  const handleSubmit = async (e)=>{
+    console.log("demo user clicked");
+    const data= await dispatch(login("fake@email.com","password"));
+    console.log(data);
+  }
+
 
   const user = useSelector(state => state.session.user);
-  let authenticated = user !== null
+  useEffect(()=>{
+  },[user])
   return (
     <nav className="nav-bar-container">
 
@@ -25,6 +33,12 @@ const NavBar = ({  }) => {
             </div>}
         </div>
         <div className="nav-right">
+
+          { (user===null) &&
+            <button to="/sign-up" className="nav-buttons demo-user-button" onClick={handleSubmit}>
+              Demo User
+            </button>}
+
           { (user===null) &&
             <NavLink to="/sign-up" exact={true} className="link nav-signup nav-buttons" activeClassName="active">
               Sign Up
