@@ -21,6 +21,7 @@ function User() {
   const [reviewList, setReviewList] = useState([])
   const [favsList, setFavs] = useState([])
   const [bookingsList, setBookings] = useState([])
+  const [errors, setErrors] = useState([])
 
   const updateFeature = (stri) => {
     setFeature(stri)
@@ -75,48 +76,55 @@ function User() {
 
   const onEditUser = async (e) => {
     e.preventDefault();
-    const newUser = {errors:[]}
+    const newUser = { id: user.id, errors: [] }
 
     if (password === confirm && password.length > 0) {
       newUser.password = password
-      newUser.confirm_password = confirm
     }
     else newUser.errors.push("You must provide a Password and matching Confirm Password.")
-    if (photo.length){
+    if (photo.length) {
       newUser.photo = photo
     }
-    if (email.length && email !== user.email){
+    if (email.length && email !== user.email) {
       newUser.email = email
     }
     if (username.length && username !== user.username) {
       newUser.username = username
     }
-    dispatch(editUser(newUser))
+    const res = await dispatch(editUser(newUser))
+    if (res.errors.length) {
+      let newErrors = [...errors, ...res.errors]
+      setErrors(newErrors)
+    }
   }
 
-    function Account() {
-      return (
-        <div className="account-info-wrapper">
-          <h2>About me: </h2>
-          <img href="user.profile_photo" />
-          <div className="form-wrapper">
-            <form className="edit-user-form" onSubmit={onEditUser}>
-              <label htmlFor="username">Username: </label>
+  function Account() {
+    return (
+      <div className="account-info-wrapper">
+        <h2>About me: </h2>
+        <img href="user.profile_photo" />
+        <div className="form-wrapper">
+          <form className="edit-user-form" onSubmit={onEditUser}>
+            <div><label htmlFor="username">Username: </label>
               <input type="text" id="username" name="username" value={user.username} onChange={(e) => updateUsername(e.target.value)} />
-              <label htmlFor="email">Email Address: </label>
+            </div>
+            <div><label htmlFor="email">Email Address: </label>
               <input type="email" id="email" name="email" value={user.email} onChange={(e) => setEmail(e.target.value)} />
-              <label htmlFor="profile_photo">Profile Photo: </label>
+            </div>
+            <div><label htmlFor="profile_photo">Profile Photo URL: </label>
               <input type="profile_photo" id="profile_photo" name="profile_photo" />
-              <label htmlFor="password">Change Password: </label>
+            </div><div><label htmlFor="password">Change Password: </label>
               <input id="password" name="password" type="password" value={password} onChange={(e) => updatePassword(e.target.value)} />
-              <label htmlFor="confirm_password">Confirm Password: </label>
-              <input name="confirm_password" type="password" value={confirm} onChange={(e) => updateConfirm(e.target.value)} />
-              <button>Save Changes</button>
-            </form>
-          </div>
+            </div>
+            <div><label htmlFor="confirm_password">Confirm Password: </label>
+              <input type="password" value={confirm} onChange={(e) => updateConfirm(e.target.value)} />
+            </div>
+            <div className="button"><button>Save Changes</button></div>
+          </form>
         </div>
-      )
-    }
+      </div>
+    )
+  }
 
   function Favs() {
 
@@ -183,10 +191,10 @@ function User() {
       </div>
       <div className="profile-content">
         <div className="profile-links">
-          <p onClick={() => updateFeature("bookings")}>Bookings</p>
-          <p onClick={() => updateFeature("account")}>Account Details</p>
-          <p onClick={() => updateFeature("favs")}>Favorites</p>
-          <p onClick={() => updateFeature("reviews")}>Reviews</p>
+          <div onClick={() => updateFeature("bookings")}>Bookings</div>
+          <div onClick={() => updateFeature("account")}>Account Details</div>
+          <div onClick={() => updateFeature("favs")}>Favorites</div>
+          <div onClick={() => updateFeature("reviews")}>Reviews</div>
         </div>
         <div className="profile-feature">
           {feature === "bookings" && <Bookings />}

@@ -1,39 +1,9 @@
 .profile-body{
     display: flex;
     width: 100%;
-    flex-flow: column wrap;
-
-}
-
-.profile-content{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-}
-
-.sub-header{
-    display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 15%;
-    background-color: #EFF1F3;
     color: #080705;
-    border-bottom: .05em solid lightgrey;
-    height: 10%;
-    margin-bottom: 2%;
-
-
-}
-
-.profile-feature{
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: #EFF1F3;
-    width: 50%;
-    padding: 1em;
-    min-width: 500px;
-    margin-left: 2%;
+    padding: none;
 }
 
 .account-info-wrapper{
@@ -42,15 +12,164 @@
     color: #080705;
 }
 
-.form-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .edit-user-form{
     display: flex;
     flex-flow: column nowrap;
     width:100%;
+}
+
+form >div> button {
+    background-color: #D1313E;
+    margin-top: 1em;
+    border: none;
+    color: #EFF1F3;
+    height: 2.5em;
+    border-radius: .2em;
+    width: 100%;
+}
+
+form >div> input {
+
+    height: 3em;
+    border: .1px solid #D8D9DB;
+    background-color: white;
+    width: 100%;
+}
+
+form >div> button:hover {
+    background-color: #AC2A21;
+}
+
+@media screen and (min-width: 900px) {
+    .profile-content{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+
+    .form-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-feature{
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #EFF1F3;
+        width: 620px;
+        padding: 2em;
+        margin: 2em;
+    }
+
+    .sub-header{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 8em;
+        background-color: #EFF1F3;
+        color: #080705;
+        border-bottom: .05em solid #D8D9DB;
+        height: 10%;
+        margin-bottom: 2%;
+
+
+    }
+    .form-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .edit-user-form{
+        display: flex;
+        flex-flow: column nowrap;
+        width:100%;
+    }
+    .profile-links{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        margin-top: 4em;
+    }
+
+    .profile-links > div {
+        margin: 1em;
+    }
+    .profile-links > div:hover {
+        margin: 1em;
+        color: #287391;
+    }
+    div.button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .profile-content{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+    .profile-links{
+       display: flex;
+       align-items: center;
+       justify-items: center;
+       flex-flow: row nowrap;
+       justify-content: flex-start;
+       background-color: #EFF1F3;
+       border-bottom: .1px solid #D8D9DB;
+    }
+
+    .profile-links>div {
+        width: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 25px;
+        color: #287391;
+    }
+
+    .form-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-feature{
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #EFF1F3;
+        padding: 2em;
+        margin: 2em;
+    }
+
+    .sub-header{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 5em;
+        background-color: #EFF1F3;
+        color: #080705;
+        border-bottom: .05em solid #D8D9DB;
+        height: 15%;
+
+
+    }
+    .edit-user-form{
+        display: flex;
+        flex-flow: column nowrap;
+        width:100%;
+    }
+
+    .review-wrapper{
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #EFF1F3;
+        width: 90%;
+        padding: 1em;
+        margin-left: 2%;
+    }
 }
