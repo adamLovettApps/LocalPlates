@@ -1,5 +1,6 @@
 .search-bar-container {
-    background-color: #CFE8F2;
+    background-color: #fd5b68;
+    background-image: url('/header-bg.png');
     border-bottom: 3px solid #D8D9DB;
 }
 

@@ -11,7 +11,6 @@ import './NavBar.css'
 const NavBar = ({  }) => {
 
   const user = useSelector(state => state.session.user);
-  console.log(user)
   let authenticated = user !== null
   return (
     <nav className="nav-bar-container">

@@ -32,10 +32,16 @@ select {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-right: 1px solid #d8d9db;
+    border-top: 1px solid  #2D333F;
+    border-left: 1px solid  #2D333F;
+    border-bottom: 1px solid  #2D333F;
 }
 
 .search-time {
     border-right: 1px solid #d8d9db;
+    border-top: 1px solid  #2D333F;
+
+    border-bottom: 1px solid  #2D333F;
 }
 
 .search-button {
@@ -47,6 +53,7 @@ select {
     padding-left: 40px;
     padding-right: 40px;
     font-size: 18px;
+    border: 1px solid  #2D333F;
 }
 
 .search-button:hover {
@@ -60,6 +67,9 @@ select {
     display: flex;
     align-items: center;
     padding-left: 10px;
+    border-top: 1px solid  #2D333F;
+    border-left: 1px solid  #2D333F;
+    border-bottom: 1px solid  #2D333F;
 }
 .search-input-field {
     background-color: rgb(236, 236, 236);
@@ -67,6 +77,9 @@ select {
     border-bottom-right-radius: 5px;
     margin-right: 25px;
     width: 300px;
+    border-top: 1px solid  #2D333F;
+    border-right: 1px solid  #2D333F;
+    border-bottom: 1px solid  #2D333F;
 
 }
 
@@ -76,6 +89,9 @@ select {
     align-items: center;
     padding-left: 8px;
     padding-right: 5px;
+    border-top: 1px solid  #2D333F;
+    
+    border-bottom: 1px solid  #2D333F;
 }
 
 .search-party-size {
@@ -83,6 +99,9 @@ select {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-right: 15px;
+    border-top: 1px solid  #2D333F;
+    border-right: 1px solid  #2D333F;
+    border-bottom: 1px solid  #2D333F;
 }
 
 

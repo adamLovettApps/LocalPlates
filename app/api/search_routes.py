@@ -33,22 +33,28 @@ def get_search_results(searchString, ip):
     longitude = location["longitude"]
     results = db.session.execute(
         f"SELECT * FROM restaurants FULL JOIN users ON users.id=restaurants.owner_id FULL JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id FULL JOIN tags ON tags.id=restaurant_tags.tag_id FULL JOIN reviews ON reviews.restaurant_id=restaurants.id WHERE restaurants.name ILIKE \'%{searchString}%\' OR restaurants.description ILIKE \'%{searchString}%\' OR restaurants.city ILIKE \'%{searchString}%\' OR restaurants.state ILIKE \'%{searchString}%\' OR tags.type ILIKE \'%{searchString}%\' ORDER BY ST_Distance(geo, ST_MakePoint({latitude}, {longitude}):: geography)")
+    print("HITTTTTTT!")
+    print("IP!!!!", ip)
     rows = results.fetchall()
     data = {}
+    count = 0
     for row in rows:
         if row[0] not in data:
+            count += 1
             if row[25] is not None:
                 data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
                                 "state": row[4], "phone_number": row[6],
                                 "bookings": row[9], "rating": row[10],
                                 "reviews": row[11], "photo": row[20],
-                                "tags": {"1": row[25]}, "review": row[29]}
+                                "tags": {"1": row[25]}, "review": row[29], "id": row[0],
+                                "order": count}
             else:
                 data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
                                 "state": row[4], "phone_number": row[6],
                                 "bookings": row[9], "rating": row[10],
                                 "reviews": row[11], "photo": row[20],
-                                "tags": {}, "review": row[29]}
+                                "tags": {}, "review": row[29], "id": row[0],
+                                "order": count}
         else:
             prev_tags = data[row[0]]["tags"]
             new_tag_num = len(prev_tags) + 1
@@ -60,6 +66,8 @@ def get_search_results(searchString, ip):
                             "state": row[4], "phone_number": row[6],
                             "bookings": row[9], "rating": row[10],
                             "reviews": row[11], "photo": row[20],
-                            "tags": new_tags, "review": row[29]}
+                            "tags": new_tags, "review": row[29], 
+                            "order": count}
 
+    print(data)
     return data

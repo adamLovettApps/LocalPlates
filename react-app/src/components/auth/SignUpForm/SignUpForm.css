@@ -8,6 +8,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    margin-top: 50px;
 }
 
 .sign-up-form-header {
@@ -42,6 +43,10 @@ body {
     font-family: 'Mukta', sans-serif;
     height: 120px;
     resize: none;
+}
+
+textarea {
+    border: 2px solid rgb(107, 107, 107);
 }
 
 .form-field-button-container {
