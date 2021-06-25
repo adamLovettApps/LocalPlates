@@ -5,6 +5,7 @@ import { getOneRestaurant } from "../../store/restaurant";
 import RestaurantHeader from "./RestaurantHeader";
 import RestaurantInfo from "./RestaurantInfo"
 import SeachBar from "../SearchBar"
+import Reviews from "./Reviews"
 import "./Restaurant.css"
 
 function Restaurant(){
@@ -23,6 +24,7 @@ function Restaurant(){
         <div className="search-bar-container"><SeachBar></SeachBar></div>
         <RestaurantHeader></RestaurantHeader>
         <RestaurantInfo></RestaurantInfo>
+        <Reviews restaurant={restaurant_data}/>
         </>
 
     )
