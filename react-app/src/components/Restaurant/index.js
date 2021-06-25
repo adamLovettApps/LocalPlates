@@ -6,6 +6,7 @@ import RestaurantHeader from "./RestaurantHeader";
 import RestaurantInfo from "./RestaurantInfo"
 import BookingCard from "./BookingCard";
 import SeachBar from "../SearchBar"
+import Reviews from "./Reviews"
 import "./Restaurant.css"
 
 function Restaurant(){
@@ -30,7 +31,7 @@ function Restaurant(){
                 <div className="map-container"></div>
             </div>
         </div>
-        
+        <Reviews restaurant={restaurant_data}/>
         </>
 
     )

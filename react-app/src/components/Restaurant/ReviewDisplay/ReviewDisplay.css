@@ -1,0 +1,45 @@
+.review-display-div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #d8d9db;
+    display: flex;
+}
+.review-star-display {
+ margin-left: 20px;
+ font-size: 20px;
+}
+.review-user-profile-pic {
+    height:70px;
+    width:70px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 35px;
+    color:#ffffff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.review-user {
+    margin-top: 10px;
+}
+
+.review-body-container {
+    margin-left: 10px;
+}
+
+.review-title {
+    font-size: 25px;
+    display: flex;
+}
+.review-user-container {
+    width: 170px;
+}
+
+.review-body {
+    margin-top: 20px;
+
+}
