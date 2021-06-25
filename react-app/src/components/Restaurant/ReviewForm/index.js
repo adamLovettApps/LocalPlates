@@ -11,15 +11,8 @@ function ReviewForm({restaurant}){
     const [stars, setStars] = useState(0);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const newComment = {
-            title,
-            body,
-            stars,
-            tree_id: restaurant.id,
-            reviewer:sessionUser.id
-        }
-        await dispatch(addOneReview(newComment))
-        console.log('NEW COOMENT BUILT FRONTEND', newComment);
+        console.log("ATTEMPT TO POST REVIEW: ", restaurant.id, sessionUser.id, body, stars, title)
+        await dispatch(addOneReview(restaurant.id, sessionUser.id, body, stars, title))
     }
     return(
         <div>
