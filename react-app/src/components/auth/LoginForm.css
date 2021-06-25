@@ -1,0 +1,12 @@
+
+@media screen and (min-width: 800px) {
+
+    .form-wrapper{
+        background-color: #EFF1F3;
+        width: 600px;
+    }
+
+    form {
+        background-color: #EFF1F3;
+    }
+}

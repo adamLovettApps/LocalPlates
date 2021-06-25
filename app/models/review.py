@@ -1,4 +1,5 @@
 from .db import db
+from datetime import datetime
 
 
 class Review(db.Model):
@@ -12,8 +13,8 @@ class Review(db.Model):
     stars = db.Column(db.Integer, nullable=False)
     title = db.Column(db.String, nullable=False)
     image = db.Column(db.String, nullable=False)
-    created_at = db.Column(db.Date, nullable=False)
-    updated_at = db.Column(db.Date, nullable=False)
+    created_at = db.Column(db.Date, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.Date, nullable=False, default=datetime.utcnow)
 
     restaurant = db.relationship("Restaurant", back_populates="review")
     user = db.relationship("User", back_populates="review")
