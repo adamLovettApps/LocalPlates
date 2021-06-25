@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, redirect
 from flask_login import login_required, current_user
+from sqlalchemy import desc
 from app.models import User, Booking, Favorite, Review, Restaurant
 
 user_routes = Blueprint('users', __name__)
@@ -19,9 +20,9 @@ def user(id):
 
         user = User.query.get(id)
         # restaurant = Booking.query.filter(Booking.restaurant)
-
+        bookings = Booking.query.filter_by(user_id=id).order_by(Booking.booked_for).all()
         # print("uuuuuuuusssssssseeeeeerrrrrrr", user.to_dict)
-        bookings = Booking.query.filter_by(user_id=id).all()
+        # bookings = Booking.query.filter_by(user_id=id).all()
 
         # print("BBBooooooooooooooooooookings", bookings[0].restaurant.to_dict())
 
@@ -35,7 +36,9 @@ def user(id):
         if bookings:
             new_user["bookings"] = {k: booking.to_dict() for k, booking in dict(
                 zip(range(len(bookings)), bookings)).items()}
-
+            # new_user["test_bookings"] = {k: booking.to_dict() for k, booking in dict(
+                # zip(range(len(bookings)), bookings)).items()}
+            print("HHHHHHHHHHHHHHHHHHHHHHH", new_user["bookings"])
         if reviews:
             new_user["reviews"] = {k: review.to_dict() for k, review in dict(
                 zip(range(len(reviews)), reviews)).items()}

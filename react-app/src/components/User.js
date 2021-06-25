@@ -67,6 +67,7 @@ function User() {
         newBookings.push(user.bookings[key])
       }
       setBookings(newBookings)
+      console.log(bookingsList[0])
     }
 
     if (!favsList.length) {
@@ -92,14 +93,17 @@ function User() {
     return (
 
       <div>
-        <h2>Your Upcoming Reservations: </h2>
+        <h2 className="head-title">Your Upcoming Reservations: </h2>
         {bookingsList.map(booking =>
           <div className="restaurant-wrapper">
-            <h3>{booking.restaurant.name}<span><StarRating rating={booking.restaurant.star_rating} reviewNum={booking.restaurant.review_count} /></span></h3>
+            <div className="title-wrapper">
+            <h3>{booking.restaurant.name}</h3>
+            <StarRating rating={booking.restaurant.star_rating} reviewNum={booking.restaurant.review_count} />
+            </div>
             <div className="separator">
-              <div className="restaurant-photo">
+              {/* <div className="restaurant-photo">
                 <img src={booking.restaurant.profile_photo} />
-              </div>
+              </div> */}
               <div className="reservation-details">
                 <div>
                   Reservation for: {booking.booked_for}
@@ -113,7 +117,7 @@ function User() {
                 </div>
               </div>
               <div>
-                <div classname="restaurant-data">
+                <div className="restaurant-data">
                   <div className="description">{booking.restaurant.description}</div>
                   <div>
                     {booking.restaurant.phone_number}

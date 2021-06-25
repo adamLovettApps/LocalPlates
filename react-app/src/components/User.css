@@ -20,7 +20,7 @@
 
 .review-title{
     display: flex;
-    fles-flow: row wrap;
+    flex-flow: row wrap;
 }
 .review-title > div{
     display: flex;
@@ -54,6 +54,7 @@
 .user-edit-form>.button> button:hover {
     background-color: #AC2A21;
 }
+
 .restaurant-wrapper{
     display: flex;
     flex-flow: column wrap;
@@ -66,14 +67,25 @@
     background-color: #AC2A21;
     color: #EFF1F3;
     padding: 1em;
+    border-radius: .2em;
+}
+.restaurant-wrapper>h3{
+    border-bottom:.1px solid #D8D9DB
 }
 
+.head-title{
+    border-bottom: .1px solid #D8D9DB;
+}
 .reservation-details{
     display: flex;
     flex-flow: column wrap;
     width: 10em;
 }
-
+.title-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
 .restaurant-data{
     margin-left: 2em;
     display: flex;
