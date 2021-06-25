@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getOneRestaurant } from "../../store/restaurant";
 import RestaurantHeader from "./RestaurantHeader";
 import RestaurantInfo from "./RestaurantInfo"
+import BookingCard from "./BookingCard";
 import SeachBar from "../SearchBar"
 import Reviews from "./Reviews"
 import "./Restaurant.css"
@@ -23,7 +24,13 @@ function Restaurant(){
         <>
         <div className="search-bar-container"><SeachBar></SeachBar></div>
         <RestaurantHeader></RestaurantHeader>
-        <RestaurantInfo></RestaurantInfo>
+        <div className="top-level-container"> 
+            <div classNam="restaurant-card-container"><RestaurantInfo></RestaurantInfo></div>
+            <div className="right-side-container">
+                <div className="booking-card-container"><BookingCard></BookingCard></div>
+                <div className="map-container"></div>
+            </div>
+        </div>
         <Reviews restaurant={restaurant_data}/>
         </>
 

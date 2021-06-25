@@ -1,0 +1,162 @@
+.booking-card-container {
+    height: 300px;
+    width: 320px;
+    margin-top: -25px;
+    background-color: rgb(236, 236, 236);
+}
+
+.divider {
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid rgb(211, 212, 214);
+    margin: 1em 0; 
+    padding: 0;
+}
+
+
+.booking-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr .1fr repeat(2, 1fr) .1fr repeat(2, 1fr) .1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.booking-title { 
+    grid-area: 1 / 1 / 2 / 3;
+    font-size: 21px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+}
+.divider1 { 
+    grid-area: 2 / 1 / 3 / 3;
+    width: 300px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: -10px;
+}
+
+.party-size { 
+    grid-area: 3 / 1 / 4 / 3; 
+    font-size: 14px;
+    padding-left: 20px;
+    margin-top: -10px;
+    font-weight: 700;
+}
+.for-select { 
+    grid-area: 4 / 1 / 5 / 3;
+    margin-top: -3px;
+}
+
+.people-select, .people-select:focus {
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 100;
+    font-size: .875rem;
+    display: block;
+    outline: none;
+    border: none;
+    width: 300px;
+    height: 35px;
+    padding-left:6px;
+    margin-left: 10px;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(211, 212, 214);
+    background-color: rgb(236, 236, 236);
+    margin-right: 10px;
+}
+
+.divider2 { 
+    grid-area: 5 / 1 / 6 / 3;
+    background-color: rgb(236, 236, 236);
+}
+.date { 
+    grid-area: 6 / 1 / 7 / 2;
+    font-size: 14px;
+    padding-left: 20px;
+    font-weight: 700;
+    margin-top: 3px;
+    background-color: rgb(236, 236, 236);
+}
+.date-select { 
+    grid-area: 7 / 1 / 8 / 2;
+    background-color: rgb(236, 236, 236);
+    width: 100px;
+    
+}
+.time { 
+    grid-area: 6 / 2 / 7 / 3;
+    font-size: 14px;
+    padding-left: 20px;
+    font-weight: 700;
+    background-color: rgb(236, 236, 236);
+    margin-left: 200px;
+    margin-top: -50px;
+}
+.time-select { 
+    grid-area: 7 / 2 / 8 / 3; 
+    margin-top: 5px;
+    background-color: rgb(236, 236, 236);
+    padding-left: 215px;
+    font-weight: 100;
+    font-size: 12px;
+    display: block;
+    outline: none;
+    border: none;
+}
+.divider3 { 
+    grid-area: 8 / 1 / 9 / 2;
+    background-color: rgb(236, 236, 236);
+    width: 300px;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+.divider4 { 
+    grid-area: 8 / 2 / 9 / 3;
+    background-color: rgb(236, 236, 236);
+}
+.book-button-container { 
+    grid-area: 9 / 1 / 10 / 3; 
+    background-color: rgb(236, 236, 236);
+    margin-left: auto;
+    margin-right:auto;
+    width: 288px;
+    height: 48px;
+}
+
+.book-button {
+    border:none;
+    color: white;
+    margin-left: auto;
+    margin-right:auto;
+    width: 288px;
+    height: 48px;
+    background-color: #da3743;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.2rem;
+    
+}
+
+.date-select input {
+    font-family: inherit;
+    border: none;
+    box-sizing: border-box;
+    outline: 0;
+    margin-left: 18px;
+    position: relative;
+    width: 130px;
+    background-color: rgb(236, 236, 236);
+}
+/* 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+    width: 15px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+} */
+
