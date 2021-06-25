@@ -18,7 +18,7 @@
     width:100%;
 }
 
-form >div> button {
+/* form >div> button {
     background-color: #D1313E;
     margin-top: 1em;
     border: none;
@@ -26,19 +26,19 @@ form >div> button {
     height: 2.5em;
     border-radius: .2em;
     width: 100%;
-}
+} */
 
-form >div> input {
+/* form >div> input {
 
     height: 3em;
     border: .1px solid #D8D9DB;
     background-color: white;
     width: 100%;
-}
+} */
 
-form >div> button:hover {
+/* form >div> button:hover {
     background-color: #AC2A21;
-}
+} */
 
 @media screen and (min-width: 900px) {
     .profile-content{
