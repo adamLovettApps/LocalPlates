@@ -5,3 +5,16 @@
     align-items: flex-start;
     flex-direction: column;
 }
+
+.write-review-btn {
+    border: solid 1px #247f9e;
+    background-color: #247f9e;
+    color: rgb(239,241,243);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    margin-right: 30px;
+    height:29px;
+    display: flex;
+    align-items: center;
+}

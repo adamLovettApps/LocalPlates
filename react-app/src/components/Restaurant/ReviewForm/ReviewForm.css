@@ -1,15 +1,13 @@
-
-::placeholder {
-    color: rgb(255, 255, 255);
-}
 .form-title {
     margin:10px;
 }
-form {
+.review-form {
     display: flex;
     justify-content: space-around;;
     flex-direction: column;
-    width: 100%;
+    width: 300px;
+    justify-content: center;
+    background-color:rgb(236, 236, 236);
 }
 
 .inputBox {
@@ -20,30 +18,29 @@ form {
     font-weight: 400;
     align-self: center;
 }
-.input-group {
-    width:90%;
-    margin: 5px;
-    padding: 5px;
-    border: 1px outset rgb(236, 236, 236);
-    border-radius: 4px;
-    display: flexbox;
-}
-#description-group {
-    width:90%;
-    margin: 5px;
-    padding: 5px;
-    border: 1px outset rgb(236, 236, 236);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
+.how-was-your-food {
+    color:#2d333f;
 }
 
-.form-element {
+.review-form-body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #2d333f;
+    border-radius: 4px;
+    background-color:rgba(209, 49, 62, 0.2);
     padding:5px;
-    margin: 10px;
-    width:60%;
-    background-color:rgba(0, 0, 0, 0.2);
-    color:white;
+    width: 500px;
+}
+
+.review-form-title {
+    padding:5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:100%;
+    border: 1px solid #2d333f;
+    border-radius: 4px;
+    background-color:rgba(209, 49, 62, 0.2);
+    color:#2d333f;
 }
 
 .form {
@@ -67,34 +64,19 @@ form {
     align-items: center;
     flex-direction: column;
   }
-#description {
-    height: 10vh;
-    width: 95%;
 
-}
-#current-photo {
-    max-width: 30vw;
-    max-height: 35vh;
-    margin:auto;
-    align-self: center;
-}
-#submit-form {
-    width:35vw;
-    height:5vw;
-    color: white;
-    text-decoration: none;
-    font-size: 2.5vh;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: linear-gradient(rgba(56, 230, 177, 0.5), rgba(240, 136, 1, 0.788));
-    border-radius: 9px;
-    max-height: 45px;
-    max-width: 400px;
-}
+  .submit-review {
+    border: solid 1px #247f9e;
+    background-color: #247f9e;
+    color: rgb(239,241,243);
 
-#submit-form:hover{
-    background: linear-gradient(rgba(240, 136, 1, 0.788),rgba(56, 230, 177, 0.5));
-}
+    margin-top: 20px;
+    border-radius: 4px;
+    margin-right: 30px;
+    height:29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 5px;
+  }

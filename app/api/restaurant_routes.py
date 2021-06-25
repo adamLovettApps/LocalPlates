@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify
 import requests
 import os
+from requests.api import request
 from sqlalchemy import func
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
@@ -63,6 +64,10 @@ def get_reviews(id):
         zip(range(len(reviews)), reviews)).items()}
     return new_reviews
 
+@restaurant_routes.route('/reviews', methods=['POST'])
+def add_review():
+    print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    # update review count and score on the user obj
 
 @restaurant_routes.route('/photos/<int:id>')
 def get_photos(id):

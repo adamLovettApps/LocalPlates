@@ -11,30 +11,24 @@ function ReviewForm({restaurant}){
     const [stars, setStars] = useState(0);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const newComment = {
-            title,
-            body,
-            stars,
-            tree_id: restaurant.id,
-            reviewer:sessionUser.id
-        }
-        await dispatch(addOneReview(newComment))
-        console.log('NEW COOMENT BUILT FRONTEND', newComment);
+        console.log("ATTEMPT TO POST REVIEW: ", restaurant.id, sessionUser.id, body, stars, title)
+        await dispatch(addOneReview(restaurant.id, sessionUser.id, body, stars, title))
     }
     return(
         <div>
             <form onSubmit={handleSubmit} className='review-form'>
-                <label>Title</label>
                 <input
-                    className='form-element'
+                    className='review-form-title'
                     type='text'
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
                     placeholder='Title'
                     name='title'
                 />
-                <label>How many stars would you rate your visit?</label>
-                <select
+                <div className="how-was-your-food">How was your food?</div>
+
+
+                {/* <select
                     className='form-element'
                     onChange={(e)=>{
                         setStars(e.target.value)
@@ -47,17 +41,24 @@ function ReviewForm({restaurant}){
                         <option key={3} value={3}>3</option>
                         <option key={4} value={4}>4</option>
                         <option key={5} value={5}>5</option>
-                </select>
-                <label>Leave your thoughts here</label>
+                </select> */}
+
+                <div className = "form-ratings">
+                        {stars>0 ?<span onClick={()=>setStars(1)} className="fa fa-star checked star" ></span> : <span  onClick={()=>setStars(1)} className="fa fa-star not-checked star" ></span>}
+                        {stars>1 ?<span onClick={()=>setStars(2)}className="fa fa-star checked star" ></span> : <span  onClick={()=>setStars(2)} className="fa fa-star not-checked star" ></span>}
+                        {stars>2 ?<span onClick={()=>setStars(3)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(3)} className="fa fa-star not-checked star" ></span>}
+                        {stars>3 ?<span onClick={()=>setStars(4)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(4)}className="fa fa-star not-checked star" ></span>}
+                        {stars>4 ?<span onClick={()=>setStars(5)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(5)} className="fa fa-star not-checked star" ></span>}
+                </div>
                 <textarea
                 id='description'
-                className='form-element'
+                className='review-form-body'
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 name='body'
-                placeholder='Enter your description'
+                placeholder='Leave your thoughts here...'
                 ></textarea>
-                <button id='submit-review' type='submit'>Submit Your Review</button>
+                <button className='submit-review' type='submit'>Submit Your Review</button>
             </form>
         </div>
     )

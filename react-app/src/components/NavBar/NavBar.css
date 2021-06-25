@@ -66,6 +66,9 @@
     padding-right: 10px;
     border-radius: 4px;
     margin-right: 30px;
+    height:29px;
+    display: flex;
+    align-items: center;
 }
 .nav-signup:hover {
     box-shadow: 0px 3px 5px -2px black;
@@ -94,7 +97,7 @@
     overflow:visible;
 }
 .nav-welcome {
-    color:#1e2025;
+    color:rgb(239,241,243);
     font-weight: bold;
     font-size: 18px;
 }
