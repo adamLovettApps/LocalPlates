@@ -36,11 +36,12 @@ const SearchRestultCard = (restaurant) => {
         }
 
         let count = 0;
+        console.log("RES ID", restaurant.restaurant.id)
         return (
             <>
             <div className="search-result-card-container">
-                <div className="photo-container"><Link className="restaurant-page-link" to={`/restaurants/${restaurant.id}}}`}><img src={url} className="restaurant-main-photo"></img></Link></div>
-                <div className="name-container"><Link className="restaurant-page-link" to={`/restaurants/${restaurant.id}}}`}><h2>{restaurant.restaurant.name}</h2></Link></div>
+                <div className="photo-container"><Link className="restaurant-page-link" to={`/restaurants/${restaurant.restaurant.id}`}><img src={url} className="restaurant-main-photo"></img></Link></div>
+                <div className="name-container"><Link className="restaurant-page-link" to={`/restaurants/${restaurant.restaurant.id}`}><h2>{restaurant.restaurant.name}</h2></Link></div>
                 <div className="location-container">{restaurant.restaurant.city}, {restaurant.restaurant.state}</div>
                 <div className="stars-container"><StarRating rating={restaurant.restaurant.rating} reviewNum={restaurant.restaurant.reviews} ></StarRating></div>
                 <div className="tags-container">{restaurant.restaurant.tags.map(tag => {if (count < restaurant.restaurant.tags.length -1 && count < 4 ) {count++; ; return `${tag} • `;} if (count < 4) {count++; return `${tag}`;}} )}</div>
