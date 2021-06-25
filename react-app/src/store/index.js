@@ -1,7 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
-import RestaurantReducer from './restaurant';
+import RestaurantReducer from './restaurant'
+import userReducer from "./user"
 import search from './search';
 import photos from './photo';
 import menuphotos from './menuphotos';
@@ -11,6 +12,7 @@ import tags from './tags'
 const rootReducer = combineReducers({
     session,
     restaurant: RestaurantReducer,
+    user: userReducer,
     search,
     photos,
     menuphotos,

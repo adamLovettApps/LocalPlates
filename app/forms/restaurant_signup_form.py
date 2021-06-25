@@ -1,3 +1,4 @@
+from app.models.restaurant import Restaurant
 from typing import Text
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, TextAreaField, IntegerField

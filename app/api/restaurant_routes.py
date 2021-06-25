@@ -56,6 +56,7 @@ def get_restaurant(id):
     reviews = Review.query.filter_by(restaurant_id=id).all()
     photos = Photo.query.filter_by(restaurant_id=id).all()
     menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
+    bookings = Booking.filter_by(restaurant_id=id).all()
     # loop through iterables and call to_dict
     return restaurant.to_dict()
 
@@ -93,5 +94,5 @@ def get_restaurant_tags(id):
     tags = {}
     for row in rows:
         tags[row[0]] = row[0]
-        
+
     return tags

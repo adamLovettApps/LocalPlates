@@ -7,7 +7,7 @@ import RestaurantInfo from "./RestaurantInfo"
 import SeachBar from "../SearchBar"
 import "./Restaurant.css"
 
-const Restaurant = () => {
+function Restaurant(){
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -15,7 +15,7 @@ const Restaurant = () => {
     const sessionUser = useSelector(state => state.session.user)
     const restaurant_data = useSelector(state => state.restaurant.restaurant)
 
-    
+
 
 
     return (

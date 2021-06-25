@@ -40,7 +40,20 @@ export const getOneRestaurant=(id)=> async(dispatch)=>{
     if (response.ok){
         const data = await response.json();
         dispatch(setOneRestaurant(data))
-        return data;
+    }
+}
+
+export const addReview = (review) => async (dispatch) => {
+    const response = await fetch(`/api/restaurants/${review.restaurant_id}/reviews`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(review)
+    })
+    if (response.ok){
+        const data = await response.json()
+        dispatch(setReview(data))
     }
 }
 
@@ -50,6 +63,10 @@ const setOneRestaurant = (data) => ({
     payload: data
 })
 
+const setReview = (review) => ({
+    type: ADD_REVIEW,
+    review: review
+})
 
 
 const initialState = {restaurants: {}, italian:{}, indian:{}, hispanic:{},sushi:{},
@@ -141,17 +158,18 @@ const RestaurantReducer = (state = initialState, action) => {
 
         case GET_ALL_RESTAURANTS:
             let all_restaurants = {}
-            for (let key in action.restaurants){
+            for (let key in action.restaurants) {
                 all_restaurants[key] = action.restaurants[key]
             }
 
             return {
-                ...state, restaurants : all_restaurants
+                ...state, restaurants: all_restaurants
             }
-        case GET_ONE_RESTAURANT:            
+        case GET_ONE_RESTAURANT:
             return {
                 ...state, restaurant: action.payload
             }
+            break
         default:
             return state;
     }

@@ -14,18 +14,24 @@
         "tcard tcard rcard"
         "review review ."
         "review review .";
+        padding: 5%;
+
 }
 
 .gallery-slider{
     display: flex;
     flex-direction: row;
     grid-area: "gallery";
+    border: 1px solid red;
+
 }
 
 .title-card{
     display: flex;
     justify-content: flex-start;
     grid-area: "tcard";
+    border: 1px solid green;
+    width: 60%;
 }
 
 .reservation-card{
