@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card"
 import "./CardScroll.css"
-function CardScroll({collectionTitle,restaurants}){
+function CardScroll({order,collectionTitle,restaurants}){
 
     return (
 
@@ -15,16 +15,16 @@ function CardScroll({collectionTitle,restaurants}){
             <div className="scroll-border-bar"></div>
             <div className='scroll'>
                 <div className='scroll-button-container'>
-                    <div className='left-button scroll-button'>
+                    <div className='left-button scroll-button' id={`${order}-left-scroll-btn`}>
                         <div className="fas fa-angle-left chevron-left"></div>
                     </div>
 
-                    <div className='right-button scroll-button'>
+                    <div className='right-button scroll-button' id={`${order}-right-scroll-btn`}>
                         <div className="fas fa-angle-right chevron-right"></div>
                     </div>
 
                 </div>
-                <div className="card-scroll">
+                <div className="card-scroll" id={`${order}-scroll-div`}>
                     {restaurants && restaurants.map((restaurant,index)=>(
                         <div><Card collectionTitle={collectionTitle}restaurant={restaurant}/> </div>
                         ))}

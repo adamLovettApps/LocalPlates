@@ -42,13 +42,6 @@ const NavBar = ({  }) => {
           {(user!==null) &&
             <LogoutButton className="nav-logout"/>}
         </div>
-
-
-
-
-
-
-
     </nav>
   );
 }

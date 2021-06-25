@@ -35,9 +35,9 @@ function Home(){
     return(
         <div>
             <SplashDisplay/>
-            {outdoor &&<CardScroll collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
-            {italian &&<CardScroll collectionTitle={"Italian Food"} restaurants={italian}/>}
-            {hispanic &&<CardScroll collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {outdoor &&<CardScroll order={1} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
+            {italian &&<CardScroll order={2}collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic &&<CardScroll order={3}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
         </div>
     );
 }
