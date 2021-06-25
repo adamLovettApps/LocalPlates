@@ -38,6 +38,7 @@ function Home(){
             {outdoor &&<CardScroll order={1} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
             {italian &&<CardScroll order={2}collectionTitle={"Italian Food"} restaurants={italian}/>}
             {hispanic &&<CardScroll order={3}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            
         </div>
     );
 }
