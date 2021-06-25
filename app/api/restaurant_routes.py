@@ -52,11 +52,7 @@ def get_collection_of_restaurants(tag, ip):
 @restaurant_routes.route('/<int:id>')
 def get_restaurant(id):
     restaurant = Restaurant.query.get(id)
-    reviews = Review.query.filter_by(restaurant_id=id).all()
-    photos = Photo.query.filter_by(restaurant_id=id).all()
-    menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
-    bookings = Booking.filter_by(restaurant_id=id).all()
-    # loop through iterables and call to_dict
+
     return restaurant.to_dict()
 
 
