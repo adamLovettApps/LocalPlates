@@ -15,75 +15,43 @@
   <script>
     const timer = setTimeout(() => {
         let leftButtons = document.getElementsByClassName("left-button");
-        let leftButtonsArr = Array.from(leftButtons)
-        let cardScroll = document.querySelector(".card-scroll");
-        console.log("LOADED JS");
+        let rowCount =  leftButtons.length
 
-        function scrollAnimation(isLeft) {
-          let x = 1;
-          if (isLeft) {
-            x = -1
+        function scrollAnimation(isLeft, scrollRow) {
+          console.log(">>>>>>>>>>>>>>>>HIII scrollAnimation")
+          let x = isLeft? -1 : 1;
+          function intervalMaker(cb, count, delay) {
+            const intervalObj = setInterval(()=>{
+              cb();
+              count --;
+              if(count === 0 ) {
+                clearInterval(intervalObj);
+              }
+            },delay)
           }
-          let count = 0;
-          let movementSpeed;
-          const scroll = setInterval(() => {
-            if (count < 40) {
-              movementSpeed = 4;
-            }
-            else if (count < 60) {
-              movementSpeed = 6;
-            }
-            else if (count < 150) {
-              movementSpeed = 3;
-            }
-            else {
-
-              movementSpeed = 1;
-            }
-            cardScroll.scrollLeft += x * movementSpeed;
-            count += 1;
-            if (count === 200) {
-              let shakeCount = 0
-              const shake = setInterval(() => {
-                cardScroll.scrollLeft += (x * -1);
-                shakeCount += 1;
-                const shakeDist = 5;
-                if (shakeCount === shakeDist) {
-                  let shakeBackCount = 0
-                  const shakeBack = setInterval(() => {
-                    cardScroll.scrollLeft += x;
-                    shakeBackCount += 1;
-                    if (shakeBackCount == shakeDist) {
-                      clearInterval(shakeBack)
-                    }
-                  }, 4);
-                  clearInterval(shake)
-                }
-              }, 4);
-              clearInterval(scroll)
-            }
-          }, 4);
-
-
-
+          //fast
+          intervalMaker(()=>{
+            scrollRow.scrollLeft += (x *5);
+          }, 120, 5)
+          //slower
+          intervalMaker(()=>{
+            scrollRow.scrollLeft += (x *4);
+          }, 90, 12)
+          //very slow
+          intervalMaker(()=>{
+            scrollRow.scrollLeft += x ;
+          }, 90, 15)
         }
-        leftButtonsArr.forEach(el => {
-          el.addEventListener("click", (e) => {
-            // cardScroll.scrollLeft -=70;
-            console.log("REGISTERED CLICK")
-            scrollAnimation(true);
+        for(let i = 1; i<=  rowCount; i++){
+          console.log(">>>>>>>>>>>>>>>>HIII ROW COUNT LOOP")
+          let scrollHolder = document.getElementById(`${i}-scroll-div`);
+          document.getElementById(`${i}-left-scroll-btn`).addEventListener("click", (e)=>{
+            scrollAnimation(true, scrollHolder);
           })
-        })
-
-        let rightButtons = document.querySelectorAll(".right-button");
-        let rightButtonsArr = Array.from(rightButtons)
-        rightButtonsArr.forEach(el => {
-          el.addEventListener("click", (e) => {
-            scrollAnimation(false);
+          document.getElementById(`${i}-right-scroll-btn`).addEventListener("click",(e)=>{
+            scrollAnimation(false, scrollHolder);
           })
-        })
-
-
+        }
       }, 500)
   </script>
 </html>

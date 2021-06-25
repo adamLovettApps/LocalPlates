@@ -10,7 +10,8 @@ const GET_Barbecue="restaurants/GET_barbecue"
 const GET_Pizza="restaurants/GET_pizza"
 const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
-const ADD_REVIEW = "restaurants/ADD_REVIEW"
+const ADD_REVIEW="restaurants/ADD_review"
+
 
 
 export const getRestaurants=(tagType, ip)=> async(dispatch)=>{

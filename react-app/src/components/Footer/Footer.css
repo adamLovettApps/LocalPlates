@@ -1,0 +1,26 @@
+.footer-container {
+    background-color: #2d333f;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 60px;
+}
+
+.footer-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dev-info {
+    color: #fff;
+    text-decoration: none;
+}
+.dev-info:hover {
+   color:#D1313E;
+}
+.dev-container {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
