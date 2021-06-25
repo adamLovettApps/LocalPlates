@@ -34,7 +34,7 @@ const RestaurantInfo = () => {
                     {restaurant.name}
                 </div>
                 <div className="hr-container"><hr></hr></div>
-                <div className="stars-container"><StarRating rating={restaurant.star_rating} reviewNum={restaurant.review_count}></StarRating></div>
+                <div className="restaurant-page-stars-container"><StarRating rating={restaurant.star_rating} reviewNum={restaurant.review_count}></StarRating></div>
                 <div className="tag-container"> 
                     {Object.keys(tags).map(key => {
                         if (count < Object.keys(tags).length -1 && count < 4 ) 
