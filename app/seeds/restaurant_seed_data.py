@@ -1671,14 +1671,305 @@ hours_str
 "Stylish Japanese restaurant with sushi, seafood, steaks, sake & cocktails."
 },
 
+# LA
+
+
+{"name":
+"Republique"
+,"address":
+"624 South La Brea Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13103626115"
+,"hours":
+hours_str
+,"description":
+"Modern French plates served in a striking space with communal tables, plus a bakery & cocktail bar."
+},
+
+{"name":
+"The Front Yard"
+,"address":
+"4222 Vineland Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+91602
+,"phone_number":
+"+18182557290"
+,"hours":
+hours_str
+,"description":
+"Bright, airy, all-day spot for modern Californian fare and cocktails inside The Garland Hotel."
+},
+
+{"name":
+"L'Antica Pizzeria"
+,"address":
+"1534 N McCadden Pl
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90028
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+"Historic Italian pizzeria serving traditional pies in a breezy indoor-outdoor space."
+},
+
+{"name":
+"Met Her At A Bar"
+,"address":
+"759 South La Brea Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13238475013"
+,"hours":
+hours_str
+,"description":
+"We specialize in delicious, authentic Belgian waffles, La Colombe coffees, and so much more!"
+},
+
+{"name":
+"Hangari Kalguksu"
+,"address":
+"3470 West 6th Street"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133882326"
+,"hours":
+hours_str
+,"description":
+"Popular restaurant offering generous servings of Korean fare such as bibimbap in an unfussy setting."
+},
+
+{"name":
+"Openaire"
+,"address":
+"3515 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90010
+,"phone_number":
+"+12133683065"
+,"hours":
+hours_str
+,"description":
+"Dine amid the twinkling greenhouse of the Line Hotel patio, where seasonal California fare awaits."
+},
+
+{"name":
+"Chadolpoong"
+,"address":
+"3470 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12132632004"
+,"hours":
+hours_str
+,"description":
+"At Chadolpoong, you can choose from a variety of comfort Korean foods including famous intestine combo and dishes with "Chadol", which means beef brisket in Korean"
+},
+
+{"name":
+"Woo Hyang Woo"
+,"address":
+"3429 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133155080"
+,"hours":
+hours_str
+,"description":
+"Pair the finest Korean BBQ with our selected 25+ wines, 8 draft beers, Sakes, Sojus, and Cocktails!"
+},
+
+{"name":
+"Slurpin Ramen Bar"
+,"address":
+"3500 W 8th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90005
+,"phone_number":
+"+12133888607"
+,"hours":
+hours_str
+,"description":
+"Laid-back restaurant dishing up Japanese ramen with homemade noodles, plus meat & veggie options."
+},
+
+{"name":
+"Pasta Sisters"
+,"address":
+"3343 W Pico Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90019
+,"phone_number":
+"+13238705271"
+,"hours":
+hours_str
+,"description":
+"This casual & cozy Italian deli with limited seating offers handmade pasta classics & panini."
+},
+
+{"name":
+"Osteria Mamma"
+,"address":
+"5732 Melrose Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90004
+,"phone_number":
+"+13232847060"
+,"hours":
+hours_str
+,"description":
+"Family-run trattoria serves Italian comfort food, including handmade pasta, amid modest decor."
+},
+
+{"name":
+"Yuk Dae Jang"
+,"address":
+"3033 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133521331"
+,"hours":
+hours_str
+,"description":
+"Korean Traditional Comfort Food Restaurant. Specialties: Yuk Gae Jang & Bossam"
+},
+
+{"name":
+"Running Goose"
+,"address":
+"1620 N Cahuenga Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90028
+,"phone_number":
+"+13234691080"
+,"hours":
+hours_str
+,"description":
+"Simple-yet-stylish spot for globally inspired fare served indoors or on the shaded patio."
+},
+
+{"name":
+"Yup Dduk"
+,"address":
+"3603 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12132632355"
+,"hours":
+hours_str
+,"description":
+"Compact kitchen serving traditional Korean fare, including a signature spicy rice & fish-cake dish."
+},
+
+{"name":
+"Yuko Kitchen"
+,"address":
+"5484 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13239334020"
+,"hours":
+hours_str
+,"description":
+"Rice bowls & udon noodles are favorites at this arty cafe with an outdoor patio & free WiFi."
+},
+
+{"name":
+"The Ppong"
+,"address":
+"4003 Wilshire Place"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90010
+,"phone_number":
+"+12135683953"
+,"hours":
+hours_str
+,"description":
+"Classic Korean and Chineese dishes served in a industrial style setting."
+},
+
 {"name":
 ""
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1694,9 +1985,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1712,9 +2003,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1730,9 +2021,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1748,9 +2039,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1766,9 +2057,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1784,9 +2075,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1802,9 +2093,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1820,9 +2111,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1838,9 +2129,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1856,9 +2147,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1874,9 +2165,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1892,9 +2183,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1910,9 +2201,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1928,9 +2219,9 @@ hours_str
 ,"address":
 ""
 ,"city":
-"Baltimore"
+"Los Angeles"
 ,"state":
-"Maryland"
+"California"
 ,"zipcode":
 
 ,"phone_number":
@@ -1941,95 +2232,7 @@ hours_str
 ""
 },
 
-{"name":
-""
-,"address":
-""
-,"city":
-"Baltimore"
-,"state":
-"Maryland"
-,"zipcode":
-
-,"phone_number":
-""
-,"hours":
-hours_str
-,"description":
-""
-},
-
-{"name":
-""
-,"address":
-""
-,"city":
-"Baltimore"
-,"state":
-"Maryland"
-,"zipcode":
-
-,"phone_number":
-""
-,"hours":
-hours_str
-,"description":
-""
-},
-
-{"name":
-""
-,"address":
-""
-,"city":
-"Baltimore"
-,"state":
-"Maryland"
-,"zipcode":
-
-,"phone_number":
-""
-,"hours":
-hours_str
-,"description":
-""
-},
-
-{"name":
-""
-,"address":
-""
-,"city":
-"Baltimore"
-,"state":
-"Maryland"
-,"zipcode":
-
-,"phone_number":
-""
-,"hours":
-hours_str
-,"description":
-""
-},
-
-{"name":
-""
-,"address":
-""
-,"city":
-"Baltimore"
-,"state":
-"Maryland"
-,"zipcode":
-
-,"phone_number":
-""
-,"hours":
-hours_str
-,"description":
-""
-},
+{
 
 
 
