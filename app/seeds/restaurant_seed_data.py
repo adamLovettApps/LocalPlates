@@ -1126,23 +1126,912 @@ hours_str
 ,"description":
 "Cajun and creole food done right in a fun and friendly setting."
 },
-# {"name":
 
-# ,"address":
+{"name":
+"Thames Street Oyster House"
+,"address":
+"1728 Thames St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"(443) 449-7726"
+,"hours":
+hours_str
+,"description":
+"Brass-&-wood-trimmed eatery offering a raw bar, Eastern coastal fare & upstairs harbor-view seating."
 
-# ,"city":
+},
 
-# ,"state":
 
-# ,"zipcode":
+{"name":
+"Busboys and Poets"
+,"address":
+"3224 St Paul St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21218
+,"phone_number":
+"+14104977114"
+,"hours":
+hours_str
+,"description":
+"Classic American Specialties with unique Baltimore Flavor"
+},
 
-# ,"phone_number":
 
-# ,"hours":
-# hours_str
-# ,"description":
+{"name":
+"Blackwall Hitch"
+,"address":
+"700 E Pratt St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437597176"
+,"hours":
+hours_str
+,"description":
+"From the moment you enter Blackwall Hitch, you sense the attention to detail that has been harnessed to bring you and your companions a complete and satisfying dining experience."
+},
 
-# },
+{"name":
+"Woodberry Kitchen"
+,"address":
+"2010 Clipper Park Rd
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14104648000"
+,"hours":
+hours_str
+,"description":
+"Old factory turned hip, rustic-chic place for refined New American fare with a farm-to-table bent."
+},
+
+{"name":
+"Ouzo Bay"
+,"address":
+"1000 Lancaster St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437085818"
+,"hours":
+hours_str
+,"description":
+"Upscale Greek seafood specialist, with a lounge offering creative cocktails & small-batch spirits."
+},
+
+{"name":
+"Underground Pizza"
+,"address":
+"30 Market Pl"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14433476190"
+,"hours":
+hours_str
+,"description":
+"Our Detroit Style Pizzas combine 2 1/2 lbs of dough and cheese which are cooked off in a 10×14 steel pan."
+},
+
+{"name":
+"Joe Benny's"
+,"address":
+"313 S High St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14438354866"
+,"hours":
+hours_str
+,"description":
+"Down-to-earth eatery serving focaccia pizzas & Italian small plates in a narrow space with a bar."
+},
+
+{"name":
+"Wicked Sisters Tavern"
+,"address":
+"3845 Falls Rd"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14108780884"
+,"hours":
+hours_str
+,"description":
+"New American tavern offering burgers & crab cakes, with 20-plus beer taps, TVs & a game room."
+},
+
+{"name":
+"Topside"
+,"address":
+"101 W Monument St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14107270065"
+,"hours":
+hours_str
+,"description":
+"Stylish, airy rooftop bar & eatery offering local seafood specials plus cocktails & craft beers."
+},
+
+{"name":
+"Clavel"
+,"address":
+"225 W 23rd St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14439008983"
+,"hours":
+hours_str
+,"description":
+"Mexican-inspired cocktails & elevated cuisine are served in a simple room with hip hanging lights."
+},
+
+{"name":
+"Creole Soul Restaurant"
+,"address":
+"301 W 29th St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14108649839"
+,"hours":
+hours_str
+,"description":
+"That taste where Creole Spice, meets Southern Soul Comfort. Our caring and committed staff will ensure you have a fantastic experience with us."
+},
+
+{"name":
+"Miss Shirley's Cafe"
+,"address":
+"513 W Cold Spring Ln"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21210
+,"phone_number":
+"+14108895272"
+,"hours":
+hours_str
+,"description":
+"Brunch cafe boasting local ingredients & outdoor seating plus a pancake-of-the-month special."
+},
+
+{"name":
+"Ekiben"
+,"address":
+"1622 Eastern Ave"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14108895272"
+,"hours":
+hours_str
+,"description":
+"No-frills Asian spot with a focus on unusual steamed buns, plus bowls & small plates."
+},
+
+{"name":
+"Charmed."
+,"address":
+"824 N Calvert St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14438352803"
+,"hours":
+hours_str
+,"description":
+"Our idea is to create, produce, and serve delicious, full-flavored food and establish Charmed. as a favorite local restaurant."
+},
+
+{"name":
+"Charming Elephant"
+,"address":
+"2324 Boston St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21224
+,"phone_number":
+"+14437087762"
+,"hours":
+hours_str
+,"description":
+"We hope to bring Lao food to the streets of Baltimore, to embody Lao culture through our authentic cuisine, and to bring the warmth of a sticky rice basket!"
+},
+
+{"name":
+"Tagliata"
+,"address":
+"1012 Fleet St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14102445830"
+,"hours":
+hours_str
+,"description":
+"Contemporary Italian steakhouse boasting steaks, fresh pasta & a 1,000+ wine list plus live music."
+},
+
+
+{"name":
+"Blue Moon Cafe"
+,"address":
+"1621 Aliceanna St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14105223940"
+,"hours":
+hours_str
+,"description":
+"Popular cafe serving American breakfast meals in a bright, funky setting, open 24 hours on weekends."
+},
+
+{"name":
+"Gordon Ramsay Steak"
+,"address":
+"1525 Russell St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21230
+,"phone_number":
+"+14439314254"
+,"hours":
+hours_str
+,"description":
+"Horseshoe Baltimore casino’s offshoot of the chic, celebrity chef–owned Las Vegas chophouse."
+},
+
+{"name":
+"Alma Cocina Latina"
+,"address":
+"1701 N Charles St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+16672124273"
+,"hours":
+hours_str
+,"description":
+"Latin-inspired soups, salads, arepas & entrees are served in a modern space with an open kitchen."
+},
+
+{"name":
+"Foraged"
+,"address":
+"3520 Chestnut Ave"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14102350035"
+,"hours":
+hours_str
+,"description":
+"Farm-fresh seasonal dishes with lots of salt, beer & wine served in a warm, casual space lined with greenery."
+},
+
+{"name":
+"NiHao"
+,"address":
+"2322 Boston St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21224
+,"phone_number":
+"+14438352036"
+,"hours":
+hours_str
+,"description":
+"Nihao is a contemporary Chinese restaurant located in the historic district of Canton, opening in 2020."
+},
+
+{"name":
+"Ramen Utsuke"
+,"address":
+"414 Light St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14435632977"
+,"hours":
+hours_str
+,"description":
+"A casual dining restaurant serving a diverse selection of Japanese comfort food.  Offering Kyushu-style Tonkotsu Ramen and Sapporo-style Miso Ramen."
+},
+
+{"name":
+"Water for Chocolate"
+,"address":
+"1841 E Lombard St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14106757778"
+,"hours":
+hours_str
+,"description":
+"Clever cafe eats with regional flair dished up in snug, laid-back digs with sidewalk seating."
+},
+
+{"name":
+"Magdalena"
+,"address":
+"205 E Biddle St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14105140303"
+,"hours":
+hours_str
+,"description":
+"Tony brasserie serving refined French-influenced cuisine in an elegant expanse at the Ivy Hotel."
+},
+
+{"name":
+"Charleston"
+,"address":
+"1000 Lancaster St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14103327373"
+,"hours":
+hours_str
+,"description":
+"Celebrated pick for New American plates & a well-curated wine list in white-tablecloth environs."
+},
+
+{"name":
+"Orto"
+,"address":
+"1709 N Charles St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14437597200"
+,"hours":
+hours_str
+,"description":
+"Through the love and execution brought to life on each plate combined with our thoughtful service, Orto is a space for all to gather, savor and enjoy."
+},
+
+{"name":
+"The Capital Grille"
+,"address":
+"500 E Pratt St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437034064"
+,"hours":
+hours_str
+,"description":
+"Outpost of the upscale steakhouse chain offers classic American fare in a clubby, refined setting."
+},
+
+{"name":
+"Kong Pocha"
+,"address":
+"12 W 20th St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21218
+,"phone_number":
+"+14108018963"
+,"hours":
+hours_str
+,"description":
+"Korean BBQ, Asian fusion and classic cocktails"
+},
+
+{"name":
+"Puerto 511"
+,"address":
+"102 Clay St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14102448837"
+,"hours":
+hours_str
+,"description":
+"Prix-fixe Peruvian meals, including ceviche & veal skewers, served in a minimalist BYOB cafe."
+},
+
+{"name":
+"Azumi"
+,"address":
+"725 Aliceanna St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14432200477"
+,"hours":
+hours_str
+,"description":
+"Stylish Japanese restaurant with sushi, seafood, steaks, sake & cocktails."
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+{"name":
+""
+,"address":
+""
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+
+,"phone_number":
+""
+,"hours":
+hours_str
+,"description":
+""
+},
+
+
 
 
 ]
