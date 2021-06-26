@@ -9,6 +9,10 @@
 
 }
 
+.restaurant-page-restaurant-info-divider {
+    width: 600px;
+}
+
 .restaurant-name-container { 
     grid-area: 2 / 2 / 3 / 4; 
     display: flex;

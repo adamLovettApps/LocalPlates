@@ -16,7 +16,7 @@ export const getRestaurantPhotos=(id)=> async(dispatch)=>{
     }
 }
 
-const initialState = {photos : []}
+const initialState = {photos : {}}
 export default function reducer(state = initialState, action){
     switch (action.type) {
         case SET_PHOTOS:

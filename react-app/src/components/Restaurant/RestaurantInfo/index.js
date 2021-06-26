@@ -33,7 +33,7 @@ const RestaurantInfo = () => {
                 <div className="restaurant-name-container">
                     {restaurant.name}
                 </div>
-                <div className="hr-container"><hr></hr></div>
+                <div className="hr-container"><hr className="restaurant-page-restaurant-info-divider"></hr></div>
                 <div className="restaurant-page-stars-container"><StarRating rating={restaurant.star_rating} reviewNum={restaurant.review_count}></StarRating></div>
                 <div className="tag-container"> 
                     {Object.keys(tags).map(key => {
