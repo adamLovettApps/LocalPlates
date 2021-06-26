@@ -183,6 +183,7 @@ grid-row-gap: 0px;
     position: relative;
     text-align: center;
     color:#2D333F;
+    
 }
 
 .image-with-bg {
@@ -195,6 +196,7 @@ grid-row-gap: 0px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 22px;
 }
 
 .gallery-img-container {
