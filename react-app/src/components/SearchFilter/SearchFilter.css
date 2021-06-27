@@ -1,3 +1,9 @@
 .filter-list {
     display: block;
+    font-size: 7px;;
+}
+.filer-checkbox {
+    padding: 0px;
+    margin: 0px;
+
 }

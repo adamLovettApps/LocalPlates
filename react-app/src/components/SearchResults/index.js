@@ -37,7 +37,7 @@ const SearchResults = () => {
         if (user.is_owner) {
             console.log(user)
             return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
-        } 
+        }
     }
 
     if (!loaded) {
@@ -45,25 +45,25 @@ const SearchResults = () => {
     }
     let count = 0;
     return (
-        <>
+        <div className="search-results-container">
 
         <div className="search-bar-container"><SearchBar></SearchBar></div>
         <div className="header-container">
             <div className="search-term-container"><h1>You Searched For "{searchString.substring(1)}"</h1></div>
             <hr className="restaurant-divider"></hr>
-            {Object.keys(currentResults).map(key => { 
-                if (count < Object.keys(currentResults).length - 1) { 
-                    count++; 
-                    return (<><SearchRestultCard className="restaurant-search-card" key={uuidv4()} restaurant={currentResults[key]} id={key}></SearchRestultCard><hr key={uuidv4()} className="restaurant-divider"></hr></>) 
+            {Object.keys(currentResults).map(key => {
+                if (count < Object.keys(currentResults).length - 1) {
+                    count++;
+                    return (<><SearchRestultCard className="restaurant-search-card" key={uuidv4()} restaurant={currentResults[key]} id={key}></SearchRestultCard><hr key={uuidv4()} className="restaurant-divider"></hr></>)
                 } else {
                     return (<><SearchRestultCard className="restaurant-search-card"  key={uuidv4()} restaurant={currentResults[key]} id={key}></SearchRestultCard></>)
                 }
             }
             )}
-            
+
         </div>
         <div className="search-filter-container"><SearchFilter></SearchFilter></div>
-        </>
+        </div>
     )
 
 }
