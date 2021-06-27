@@ -70,7 +70,7 @@ const Bookings = () => {
             <div className="pending-bookings-table">
                 <div className="pending-bookings-header"><div className="pending-bookings-header-title">Pending Reservations</div><hr></hr></div>
                 <table className="pending-bookings-table">
-                    <tr>
+                    <tr className="first-row-booking-table">
                         <th>Reservation Time</th>
                         <th>Guest Name</th>
                         <th>Number of Guests</th>
@@ -81,7 +81,7 @@ const Bookings = () => {
 
                         console.log(pending[key])
                         return (
-                            <tr>
+                            <tr className="pending-booking-row">
                                 <td>{dateToString(pending[key].booked_for)}</td>
                                 <td>{pending[key].username}</td>
                                 <td>{pending[key].party_size}</td>
@@ -109,7 +109,7 @@ const Bookings = () => {
 
                         console.log(accepted[key])
                         return (
-                            <tr>
+                            <tr className="accepted-booking-row">
                                 <td>{dateToString(accepted[key].booked_for)}</td>
                                 <td>{accepted[key].username}</td>
                                 <td>{accepted[key].party_size}</td>
@@ -133,7 +133,7 @@ const Bookings = () => {
 
                         console.log(cancelled[key])
                         return (
-                            <tr>
+                            <tr className="cancelled-booking-row">
                                 <td>{dateToString(cancelled[key].booked_for)}</td>
                                 <td>{cancelled[key].username}</td>
                                 <td>{cancelled[key].party_size}</td>

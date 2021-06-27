@@ -1,5 +1,109 @@
-.add-photo-form {
-    max-width: 300px;
+.add-photo-form-management {
+    max-width: 660px;
     margin-left: 21.7%;
-    margin-top: 50px;
+    margin-top: 47px;
+}
+
+.file-upload-selector { 
+    position: relative;
+    height: 40px;
+    width: 436px;
+    margin-top: -27px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+.file-upload-selector > input[type="file"] { 
+    border-radius: 2px;
+    position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 
+}
+.file-upload-selector > label { 
+    border-radius: 2px;
+    position: absolute; top: 0; right: 0; left: 0; bottom: 0; background-color: #666; color: #fff; line-height: 30px; text-align: center; cursor: pointer; 
+}
+.file-upload-selector > input[type="file"]:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+.file-upload-selector:hover {
+    background-color: rgb(68, 68, 68);  
+}
+
+.file-upload-selector > label:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+
+
+.file-upload-selected { 
+    position: relative;
+    height: 40px;
+    width: 436px;
+    margin-top: -27px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+.file-upload-selected > input[type="file"] { 
+    border-radius: 2px;
+    position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 
+}
+.file-upload-selected > label { 
+    border-radius: 2px;
+    position: absolute; top: 0; right: 0; left: 0; bottom: 0; background-color: #287391; color: #fff; line-height: 30px; text-align: center; cursor: pointer; 
+}
+.file-upload-selected > input[type="file"]:hover {
+    background-color: #1A4C60;
+}
+.file-upload-selected:hover {
+    background-color: #1A4C60;  
+}
+
+.file-upload-selected > label:hover {
+    background-color: #1A4C60;
+}
+
+
+
+
+
+
+.flex-form {
+    display: flex;
+}
+
+
+.form-field-button-image-upload-container {
+    margin-top: -20px;
+    width: 600px;
+}
+
+.form-field-button-image-upload {
+    font-family: 'Mukta', sans-serif;
+    color: white;
+    border-radius: 2px;
+    background-color: rgb(209, 49, 62);
+    font-size: 18px;
+    width: 280px;
+    height: 40px;
+    border: none;
+    margin-top: -52px;
+    margin-left: 43px;
+}
+
+.form-field-button-image-upload:hover {
+    background-color: rgb(172, 32, 43);
+}
+
+.choose-photo-text {
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    font-size: 18px;
 }

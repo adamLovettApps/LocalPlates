@@ -1,3 +1,4 @@
+
 .restaurant-management-photo-container{
     display: flex;
     justify-content: left;
@@ -5,6 +6,7 @@
     margin-left: 21.8%;
     margin-right: 27%;
     row-gap: 10px;
+    margin-bottom: 100px;
     
 }
 

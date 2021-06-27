@@ -1,5 +1,5 @@
 .photo-management-header {
-    margin-top: 60px;
+    margin-top: 40px;
     width: 600px;
     margin-left: 21.8%;
     margin-bottom: 20px;
@@ -12,6 +12,13 @@
 }
 
 .photo-adder-header-title {
-    font-size: 36px;
-    margin-bottom: -20px;
+    margin-top: -22px;
+    font-size: 28px;
+    margin-bottom: -16px;
+}
+
+.photo-delete-header-title {
+    font-size: 28px;
+    margin-top: -15px;
+    margin-bottom: -16px;
 }

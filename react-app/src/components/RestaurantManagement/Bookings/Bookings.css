@@ -10,11 +10,19 @@
 
 .booking-tables-container table, th, td {
     width:600x;
-    border: 1px solid #2D333F;
     padding: 10px;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
+
+.booking-tables-container tr{
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.booking-tables-container tr:last-child {
+    border-bottom: none;
+}
+
 
 .booking-tables-container th {
     text-align: left;
@@ -71,4 +79,17 @@
 
 .resize-column {
     width: 167px;
+}
+
+.pending-booking-row {
+    background-color: #e9e9e9;
+}
+
+.accepted-booking-row {
+    background-color: #DFF0F6
+}
+
+
+.cancelled-booking-row {
+    background-color: #F7DEE0
 }
