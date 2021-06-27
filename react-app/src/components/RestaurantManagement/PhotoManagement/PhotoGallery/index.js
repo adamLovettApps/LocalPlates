@@ -63,7 +63,7 @@ const PhotoGallery = () => {
                                 return (
                                     <>
                                     <span className="restaurant-management-photo">
-                                        <img src={url} ></img>
+                                        <img src={url} className="restaurant-management-photo-img"></img>
                                     </span>
                                         <div className='delete-icon-container'>
                                             <i className="fas fa-times-circle delete-image-icon"  onClick={(() => clickHandler(photos[photo].id))}>

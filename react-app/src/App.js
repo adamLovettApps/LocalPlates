@@ -66,7 +66,8 @@ function App() {
           <Restaurant />
         </Route>
       </Switch>
-      <Footer />
+
+        <Footer />
     </BrowserRouter>
   );
 }

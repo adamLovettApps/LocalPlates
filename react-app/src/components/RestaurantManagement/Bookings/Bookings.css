@@ -1,9 +1,9 @@
 .booking-tables-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+
+    margin-left:21.8%;;
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
@@ -16,6 +16,35 @@
     margin-bottom: 10px;
 }
 
+.booking-tables-container th {
+    text-align: left;
+}
+
+.accepted-bookings-header {
+
+    width: 600px;
+    margin-left: 0%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.accepted-bookings-header-title {
+    font-size: 28px;
+    margin-bottom: -14px;
+}
+
+.pending-bookings-header {
+
+    width: 600px;
+    margin-left: 0%;
+    margin-bottom: 20px;
+}
+
+.pending-bookings-header-title {
+    font-size: 28px;
+    margin-bottom: -14px;
+}
+
 .bookings-header {
     margin-top: -70px;
     width: 600px;
@@ -26,4 +55,20 @@
 .bookings-header-title {
     font-size: 48px;
     margin-bottom: -20px;
+}
+
+.accepted-bookings-table{
+    width: 800px;
+} 
+
+.pending-bookings-table{
+    width: 800px;
+} 
+
+.cancelled-bookings-table{
+    width: 800px;
+} 
+
+.resize-column {
+    width: 167px;
 }
