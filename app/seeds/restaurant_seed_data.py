@@ -1187,7 +1187,7 @@ hours_str
 {"name":
 "Woodberry Kitchen"
 ,"address":
-"2010 Clipper Park Rd
+"2010 Clipper Park Rd"
 ,"city":
 "Baltimore"
 ,"state":
@@ -1713,7 +1713,7 @@ hours_str
 {"name":
 "L'Antica Pizzeria"
 ,"address":
-"1534 N McCadden Pl
+"1534 N McCadden Pl"
 ,"city":
 "Los Angeles"
 ,"state":
@@ -1797,7 +1797,7 @@ hours_str
 ,"hours":
 hours_str
 ,"description":
-"At Chadolpoong, you can choose from a variety of comfort Korean foods including famous intestine combo and dishes with "Chadol", which means beef brisket in Korean"
+"At Chadolpoong, you can choose from a variety of comfort Korean foods including famous intestine combo and dishes with Chadol, which means beef brisket in Korean"
 },
 
 {"name":
@@ -2213,28 +2213,6 @@ hours_str
 ,"description":
 "This humble market and takeout restaurant has a smaller but excellent array of mostly Pakistani dishes, starting with flavor-packed biryani."
 },
-
-{"name":
-"Al-Noor"
-,"address":
-"90260"
-,"city":
-"Lawndale"
-,"state":
-"California"
-,"zipcode":
-90260
-,"phone_number":
-"(310) 675-4700"
-,"hours":
-hours_str
-,"description":
-"This Lawndale gem offers great takes on all the favorites, as well as rarer dishes like the Pakistani nehrani, a braised beef shank topped with fresh ginger and jalapeno and served with a wheat flour paratha."
-},
-
-{
-
-
 
 
 ]
