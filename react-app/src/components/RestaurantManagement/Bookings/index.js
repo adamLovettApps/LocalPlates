@@ -67,30 +67,9 @@ const Bookings = () => {
     return (
         <><div className="bookings-header"><div className="bookings-header-title">Manage Reservations</div><hr></hr></div>
         <div className="booking-tables-container">
-            <div className="accepted-bookings-table">
-                <table>
-                    <tr>
-                        <th>Reservation Time</th>
-                        <th>Guest Name</th>
-                        <th>Number of Guests</th>
-                        <th>Cancel Booking</th>
-                    </tr>
-                    {Object.keys(accepted).map((key) => {
-
-                        console.log(accepted[key])
-                        return (
-                            <tr>
-                                <td>{dateToString(accepted[key].booked_for)}</td>
-                                <td>{accepted[key].username}</td>
-                                <td>{accepted[key].party_size}</td>
-                                <td><input type="checkbox" checked={false} onClick={() => handleBookingChange(accepted[key].id, -1)}></input></td>
-                            </tr>
-                        )
-                    })}
-                </table>
-            </div>
-            <div className="accepted-bookings-table">
-                <table>
+            <div className="pending-bookings-table">
+                <div className="pending-bookings-header"><div className="pending-bookings-header-title">Pending Reservations</div><hr></hr></div>
+                <table className="pending-bookings-table">
                     <tr>
                         <th>Reservation Time</th>
                         <th>Guest Name</th>
@@ -113,13 +92,42 @@ const Bookings = () => {
                     })}
                 </table>
             </div>
+            
+            
+            
+            
             <div className="accepted-bookings-table">
-                <table>
+                <div className="accepted-bookings-header"><div className="accepted-bookings-header-title">Accepted Reservations</div><hr></hr></div>
+                <table className="accepted-bookings-table">
                     <tr>
                         <th>Reservation Time</th>
                         <th>Guest Name</th>
                         <th>Number of Guests</th>
-                        <th>Un-Cancel Booking</th>
+                        <th>Cancel Booking</th>
+                    </tr>
+                    {Object.keys(accepted).map((key) => {
+
+                        console.log(accepted[key])
+                        return (
+                            <tr>
+                                <td>{dateToString(accepted[key].booked_for)}</td>
+                                <td>{accepted[key].username}</td>
+                                <td>{accepted[key].party_size}</td>
+                                <td><input type="checkbox" checked={false} onClick={() => handleBookingChange(accepted[key].id, -1)}></input></td>
+                            </tr>
+                        )
+                    })}
+                </table>
+            </div>
+            
+            <div className="cancelled-bookings-table">
+                <div className="accepted-bookings-header"><div className="accepted-bookings-header-title">Cancelled Reservations</div><hr></hr></div>
+                <table className="cancelled-bookings-table">
+                    <tr>
+                        <th>Reservation Time</th>
+                        <th>Guest Name</th>
+                        <th>Number of Guests</th>
+                        <th className="resize-column">Un-Cancel Booking</th>
                     </tr>
                     {Object.keys(cancelled).map((key) => {
 

@@ -3,6 +3,7 @@ import requests
 import os
 from requests.api import request
 from sqlalchemy import func
+from sqlalchemy import desc
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
 restaurant_routes = Blueprint('restaurants', __name__)
@@ -71,7 +72,8 @@ def add_review():
 
 @restaurant_routes.route('/photos/<int:id>')
 def get_photos(id):
-    photos = Photo.query.filter_by(restaurant_id=id).all()
+    photos = Photo.query.order_by(
+        desc(Photo.id)).filter_by(restaurant_id=id).all()
     new_photos = {k: photo.to_dict() for k, photo in dict(
         zip(range(len(photos)), photos)).items()}
     return new_photos
