@@ -77,6 +77,28 @@ def get_photos(id):
     return new_photos
 
 
+@restaurant_routes.route('/photos/add/<int:id>/<url>')
+def add_photo(id, url):
+    print("GOT TO THE ADD PHOTO ROUTE WHAT IS HAPPENING HERE")
+    new_url = "https://localplates.s3.amazonaws.com/" + url
+    photo = Photo(
+        image=new_url,
+        restaurant_id=id,
+        caption=""
+    )
+    db.session.add(photo)
+    db.session.commit()
+    return {}
+
+
+@restaurant_routes.route('/photos/remove/<int:id>')
+def remove_photo(id):
+    photo = Photo.query.filter_by(id=id).first()
+    db.session.delete(photo)
+    db.session.commit()
+    return {}
+
+
 @restaurant_routes.route('/menuphotos/<int:id>')
 def get_menu_photos(id):
     menu_photos = MenuPhoto.query.filter_by(restaurant_id=id).all()
