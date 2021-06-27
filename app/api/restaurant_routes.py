@@ -1,10 +1,11 @@
-from flask import Blueprint, jsonify
+from flask import Flask, Blueprint, jsonify, request
 import requests
 import os
 from requests.api import request
 from sqlalchemy import func
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
+from app.forms import ReviewForm
 restaurant_routes = Blueprint('restaurants', __name__)
 
 
@@ -66,7 +67,23 @@ def get_reviews(id):
 
 @restaurant_routes.route('/reviews', methods=['POST'])
 def add_review():
+    print(request)
     print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    form = ReviewForm()
+    print(form.data)
+
+    form_validates = False
+    if form['body'] and form['title'] and form['stars']:
+        form_validates = True
+    if form_validates:
+        new_review = Review()
+        form.populate_obj(new_review)
+        print('REVIEW SUCCESS', new_review)
+        db.session.add(new_review)
+        db.session.commit()
+        return {}
+    print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ERROR")
+    return {}
     # update review count and score on the user obj
 
 @restaurant_routes.route('/photos/<int:id>')
