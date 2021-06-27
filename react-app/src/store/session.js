@@ -42,6 +42,7 @@ export const login = (email, password) => async (dispatch) => {
     if (data.errors) {
         return data;
     }
+    console.log("DATA!!!!!!", data)
     dispatch(setUser(data));
     return {};
 }

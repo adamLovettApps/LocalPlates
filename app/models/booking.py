@@ -19,13 +19,15 @@ class Booking(db.Model):
     user = db.relationship("User", back_populates="bookings")
 
     def to_dict(self):
-
+        user = self.user
+        username = user.username
         return {
             "id": self.id,
             "restaurant_id": self.restaurant_id,
             "user_id": self.user_id,
-            "booked-at": self.booked_at,
-            "booked-for": self.booked_for,
+            "booked_at": self.booked_at,
+            "booked_for": self.booked_for,
             "confirmation_status": self.confirmation_status,
-            "party_size": self.party_size
+            "party_size": self.party_size,
+            "username": username
         }
