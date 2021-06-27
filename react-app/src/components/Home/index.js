@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from 'react-router-dom';
 import SplashDisplay from "../SplashDisplay"
 import CardScroll from "../CardScroll"
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +21,9 @@ function Home(){
     if (user){
         console.log('user authenticated')
     }
+
+    
+
     let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
@@ -32,6 +36,14 @@ function Home(){
 
         })();
       }, [dispatch]);
+
+      if (user) {
+      if (user.is_owner) {
+        console.log(user)
+        return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
+      } 
+    }
+
     return(
         <div>
             <SplashDisplay/>

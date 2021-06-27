@@ -8,6 +8,7 @@ import photos from './photo';
 import menuphotos from './menuphotos';
 import reviews from './review';
 import tags from './tags'
+import booking from "./booking"
 
 const rootReducer = combineReducers({
     session,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     photos,
     menuphotos,
     reviews,
-    tags
+    tags,
+    booking
 });
 
 let enhancer;

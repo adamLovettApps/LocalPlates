@@ -38,3 +38,15 @@ class User(db.Model, UserMixin):
           "is_owner": self.is_owner,
           "profile_photo": self.profile_photo
         }
+
+    def to_dict_rest_owner(self):
+        id = self.restaurant[0].id
+        print("IDDDDDD!!!!!!", id)
+        return {
+            "id": self.id,
+            "username": self.username,
+            "email": self.email,
+            "is_owner": self.is_owner,
+            "profile_photo": self.profile_photo,
+            "restaurant_id": id
+        }

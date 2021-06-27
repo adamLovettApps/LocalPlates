@@ -96,3 +96,12 @@ def get_restaurant_tags(id):
         tags[row[0]] = row[0]
 
     return tags
+
+
+@restaurant_routes.route('/getRestaurantId/<int:id>')
+def get_restaurant_id(id):
+    restaurant = Restaurant.query.filter_by(owner_id=id).first()
+    print("RESTAURANT!!!!!!!!!", restaurant.id)
+
+    return {"id": restaurant.id}
+

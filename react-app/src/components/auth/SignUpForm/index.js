@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Redirect } from 'react-router-dom';
 import { signUp, signUpRestaurant } from '../../../store/session';
+import SearchBar from "../../SearchBar";
 import './SignUpForm.css'
 
 const SignUpForm = () => {
@@ -110,7 +111,12 @@ const SignUpForm = () => {
     }
 
   if (user) {
+    if (user.is_owner) {
+      console.log(user)
+      return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
+    } else {
     return <Redirect to="/" />;
+    }
   }
 
   const toggleVisibility = () => {
@@ -129,6 +135,7 @@ const SignUpForm = () => {
   
   return (
     <>
+    <div className="search-bar-container"><SearchBar></SearchBar></div>
     <form onSubmit={onSignUp} >
       <div className='sign-up-form' style={{display: visibilityStateUser}}>
         <div className='sign-up-form-header'>Welcome to LocalPlates!</div>

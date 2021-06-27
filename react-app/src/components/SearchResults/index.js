@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { getSearchResults } from "../../store/search"
 import SearchRestultCard from "../SearchResultCard";
@@ -19,6 +19,7 @@ const SearchResults = () => {
     const dispatch = useDispatch();
     const [loaded, setLoaded] = useState(false);
     const currentResults = useSelector(state => state.search.currentResults);
+    const user = useSelector(state => state.session.user)
     const { searchString } = useParams();
     let tags;
 
@@ -31,6 +32,13 @@ const SearchResults = () => {
             setLoaded(true);
         })();
     }, []);
+
+    if (user) {
+        if (user.is_owner) {
+            console.log(user)
+            return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
+        } 
+    }
 
     if (!loaded) {
         return null;

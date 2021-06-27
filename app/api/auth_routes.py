@@ -31,6 +31,8 @@ def authenticate():
     Authenticates a user.
     """
     if current_user.is_authenticated:
+        if current_user.is_owner:
+            return current_user.to_dict_rest_owner()
         print(current_user.to_dict())
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
@@ -49,6 +51,9 @@ def login():
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.email == form.data['email']).first()
         login_user(user)
+        if user.is_owner:
+            print("USER", user.to_dict_rest_owner())
+            return user.to_dict_rest_owner()
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 

@@ -1,0 +1,29 @@
+.booking-tables-container {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.booking-tables-container table, th, td {
+    width:600x;
+    border: 1px solid #2D333F;
+    padding: 10px;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.bookings-header {
+    margin-top: -70px;
+    width: 600px;
+    margin-left: 21.8%;
+    margin-bottom: 20px;
+}
+
+.bookings-header-title {
+    font-size: 48px;
+    margin-bottom: -20px;
+}
