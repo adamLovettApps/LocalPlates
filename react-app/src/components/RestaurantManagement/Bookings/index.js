@@ -71,8 +71,8 @@ const Bookings = () => {
                 <div className="pending-bookings-header"><div className="pending-bookings-header-title">Pending Reservations</div><hr></hr></div>
                 <table className="pending-bookings-table">
                     <tr className="first-row-booking-table">
-                        <th>Reservation Time</th>
-                        <th>Guest Name</th>
+                        <th className="accepted-res-res-time-col">Reservation Time</th>
+                        <th className="accepted-res-res-gues-col">Guest Name</th>
                         <th>Number of Guests</th>
                         <th>Accept Booking</th>
                         <th>Cancel Booking</th>
