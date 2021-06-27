@@ -1963,273 +1963,273 @@ hours_str
 },
 
 {"name":
-""
+"Two Hands Hotdog"
 ,"address":
-""
+"450 S Western Ave"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90020
 ,"phone_number":
-""
+"+12133757518"
 ,"hours":
 hours_str
 ,"description":
-""
+"Unlike your typical hot dog in a bun, we specialize in using a stick to deep fry our signature item until it crisps golden brown. It's the perfect snack filled with your choice of mozzarella cheese, squid-ink, rice cake, potato, and more!"
 },
 
 {"name":
-""
+"Vernetti"
 ,"address":
-""
+"225 N Larchmont Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90004
 ,"phone_number":
-""
+"+13237985886"
 ,"hours":
 hours_str
 ,"description":
-""
+"Northern Italian dishes at a small neighborhood staple with sidewalk tables & a corkage fee."
 },
 
 {"name":
-""
+"Chang Hwa Dang"
 ,"address":
-""
+"3377 Wilshire Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90010
 ,"phone_number":
-""
+"+12133344333"
 ,"hours":
 hours_str
 ,"description":
-""
+"Come see us for the Best Korean Dumpling in the US!"
 },
 
 {"name":
-""
+"Easy Street Burgers"
 ,"address":
-""
+"1000 N Western Ave"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90029
 ,"phone_number":
-""
+"+18189663009"
 ,"hours":
 hours_str
 ,"description":
-""
+"It all started with an idea to try making smash burgers in the backyard. Ground Beef, american cheese, burger buns & a 12-in cast iron skillet were all Easy Street Burgers needed."
 },
 
 {"name":
-""
+"Pine & Crane"
 ,"address":
-""
+"1521 Griffith Park Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90026
 ,"phone_number":
-""
+"+13236681128"
 ,"hours":
 hours_str
 ,"description":
-""
+"Casual eatery offering a seasonal menu of Taiwanese small plates, plus noodle & rice dishes."
 },
 
 {"name":
-""
+"Genwa Korean BBQ"
 ,"address":
-""
+"5115 Wilshire Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90036
 ,"phone_number":
-""
+"+13235490760"
 ,"hours":
 hours_str
 ,"description":
-""
+"Wood-accented eatery where diners cook Korean BBQ dishes on smokeless grills at their tables."
 },
 
 {"name":
-""
+"Apey Kade"
 ,"address":
-""
+"19662 Ventura Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+91356
 ,"phone_number":
-""
+"8186097683"
 ,"hours":
 hours_str
 ,"description":
-""
+"Tucked into a Tarzana strip mall, Apey Kade’s husband and wife owners Lalith Rodrigo and Niza Hashim prepare Sri Lankan dishes, including a specialty dish called chicken lamprais made with chicken or beef curry in coconut milk and wrapped in banana leaf."
 },
 
 {"name":
-""
+"Lal Mirch"
 ,"address":
-""
+"11138 Ventura Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+91604
 ,"phone_number":
-""
+"(818) 980-2273"
 ,"hours":
 hours_str
 ,"description":
-""
+"Lal Mirch’s friendly owners and attentive staff bring out flavorful plates of southern Indian food including naan, korma, biryani, sag paneer, and masala."
 },
 
 {"name":
-""
+"Cardamom"
 ,"address":
-""
+"7233 Beverly Blvd"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90036
 ,"phone_number":
-""
+"(323) 936-1000"
 ,"hours":
 hours_str
 ,"description":
-""
+"Mostly known for its white tablecloths and sleek dining room, Cardamom cooks nearly everything on its menu to-go in the heart of Beverly Grove."
 },
 
 {"name":
-""
+"Biriyani Kabob House"
 ,"address":
-""
+"3525 W 3rd St"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90020
 ,"phone_number":
-""
+"(213) 384-3570"
 ,"hours":
 hours_str
 ,"description":
-""
+"Biriyani Kabob House serves some of the best lamb biryani in town, fluffy basmati rice with tender chunks of lamb."
 },
 
 {"name":
-""
+"Bombay Beach"
 ,"address":
-""
+"1338 W 7th St"
 ,"city":
 "Los Angeles"
 ,"state":
 "California"
 ,"zipcode":
-
+90017
 ,"phone_number":
 ""
 ,"hours":
 hours_str
 ,"description":
-""
+"Bombay Beach’s Northern Indian menu boasts favorites like butter chicken, samosas, and incredible vegan tikka masala (ask the kitchen for spicy). In a nod to Angat’s Los Angeles roots, the kitchen also crafts chicken tikka tacos and new menu item: tandoori chicken pizza."
 },
 
 {"name":
-""
+"Mayura"
 ,"address":
-""
+"10406 Venice Blvd"
 ,"city":
-"Los Angeles"
+"Culver City"
 ,"state":
 "California"
 ,"zipcode":
-
+90232
 ,"phone_number":
-""
+"(310) 559-9644"
 ,"hours":
 hours_str
 ,"description":
-""
+"One of Los Angeles ’s most beloved Indian restaurants and a longtime Jonathan Gold favorite, Mayura, specializes in Kerala-style food with dosas, uthappam, and fish curry."
 },
 
 {"name":
-""
+"Tumbi"
 ,"address":
-""
+"115 Santa Monica Blvd"
 ,"city":
-"Los Angeles"
+"Santa Monica"
 ,"state":
 "California"
 ,"zipcode":
-
+90401
 ,"phone_number":
-""
+"(310) 829-7200"
 ,"hours":
 hours_str
 ,"description":
-""
+"Santa Monica is filled with casual Indian concepts, but Tumbi takes a modern approach with farmers market ingredients and fanciful presentations."
 },
 
 {"name":
-""
+"Zam Zam Market"
 ,"address":
-""
+"13649 S Inglewood Ave"
 ,"city":
-"Los Angeles"
+"Hawthorne"
 ,"state":
 "California"
 ,"zipcode":
-
+90250
 ,"phone_number":
-""
+"(310) 978-1927"
 ,"hours":
 hours_str
 ,"description":
-""
+"This humble market and takeout restaurant has a smaller but excellent array of mostly Pakistani dishes, starting with flavor-packed biryani."
 },
 
 {"name":
-""
+"Al-Noor"
 ,"address":
-""
+"90260"
 ,"city":
-"Los Angeles"
+"Lawndale"
 ,"state":
 "California"
 ,"zipcode":
-
+90260
 ,"phone_number":
-""
+"(310) 675-4700"
 ,"hours":
 hours_str
 ,"description":
-""
+"This Lawndale gem offers great takes on all the favorites, as well as rarer dishes like the Pakistani nehrani, a braised beef shank topped with fresh ginger and jalapeno and served with a wheat flour paratha."
 },
 
 {
