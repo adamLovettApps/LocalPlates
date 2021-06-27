@@ -93,3 +93,12 @@
 .cancelled-booking-row {
     background-color: #F7DEE0
 }
+
+
+.accepted-res-res-time-col {
+    width: 214px;
+}
+
+.accepted-res-res-gues-col {
+    width: 138px;
+}
