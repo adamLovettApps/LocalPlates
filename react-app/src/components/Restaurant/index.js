@@ -23,7 +23,7 @@ function Restaurant(){
         if (sessionUser.is_owner) {
 
             return <Redirect to={`/restaurantmanagement/${sessionUser.restaurant_id}`}></Redirect>
-        } 
+        }
     }
 
 
@@ -31,13 +31,13 @@ function Restaurant(){
         <>
         <div className="search-bar-container"><SearchBar></SearchBar></div>
         <RestaurantHeader></RestaurantHeader>
-        <div className="top-level-container"> 
+        <div className="top-level-container">
             <div classNam="restaurant-card-container">
                 <RestaurantInfo></RestaurantInfo>
                 <div classnmae="photo-gallery-container"><PhotoGallery></PhotoGallery></div>
             </div>
             <div className="right-side-container">
-                <div className="booking-card-container"><BookingCard></BookingCard></div>
+                <div className="booking-container"><BookingCard></BookingCard></div>
                 <div className="map-container"></div>
             </div>
         </div>
