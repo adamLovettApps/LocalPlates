@@ -38,7 +38,7 @@ def get_search_results(searchString, ip):
     rows = results.fetchall()
     data = {}
     count = 0
-    print(rows)
+    print("ROW", rows)
     for row in rows:
         if row[0] not in data:
             count += 1
