@@ -29,7 +29,10 @@ const AddPhotoForm = () => {
             dispatch(addRestaurantPhoto(id, photo))
             dispatch(getRestaurantPhotos(id));
             setImageLoading(false);
-
+            document.querySelector('.choose-photo-text-inner').innerText = "Choose a File"
+            document.getElementById('file-upload-selector-div').classList.remove("file-upload-selected");
+            document.getElementById('file-upload-selector-div').classList.add("file-upload-selector");
+        
         }
         else {
             setImageLoading(false);
@@ -40,16 +43,19 @@ const AddPhotoForm = () => {
 
     const updateImage = (e) => {
         const file = e.target.files[0];
-        document.getElementById('file-label').innerText = "File Chosen"
+        document.querySelector('.choose-photo-text-inner').innerText = "Photo Chosen"
+        document.getElementById('file-upload-selector-div').classList.remove("file-upload-selector");
+        document.getElementById('file-upload-selector-div').classList.add("file-upload-selected");
         setImage(file);
     }
 
     return (
         <>
-            <div className='add-photo-form'>
+            <div className='add-photo-form-management'>
                 <form onSubmit={addPhoto} >
-                    <div className="file">
-                        <label for="file-input" id="file-label">Choose a Photo</label>
+                    <div className="flex-form">
+                    <div id="file-upload-selector-div" className="file-upload-selector">
+                        <label for="file-input" id="file-label"><div className="choose-photo-text"><div className="choose-photo-text-inner">Choose a Photo</div></div></label>
                         <input 
                             type="file" 
                             id="file-input"
@@ -57,9 +63,11 @@ const AddPhotoForm = () => {
                             onChange={updateImage}
                         ></input>
                     </div>
-                    <div className="form-field-button-container"><button type="submit" className="form-field-button">Upload Photo</button></div>
-                    {(imageLoading)&& <p>Loading...</p>}
+                    <div className="form-field-button-image-upload-container"><button type="submit" className="form-field-button-image-upload">Upload Photo</button></div>
+                    
+                    </div>
                 </form>
+                <div>{(imageLoading)&& <p>Loading...</p>}</div>
             </div>
         </>
     )
