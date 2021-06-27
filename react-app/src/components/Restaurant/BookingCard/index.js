@@ -109,7 +109,7 @@ const BookingCard = () => {
                             <option value="12:00:00">12:00 PM</option>
                             <option value="12:30:00">12:30 PM</option>
                             <option value="13:00:00">1:00 PM</option>
-                            <option value="13:30:00">11:30 PM</option>
+                            <option value="13:30:00">1:30 PM</option>
                             <option value="14:00:00">2:00 PM</option>
                             <option value="14:30:00">2:30 PM</option>
                             <option value="15:00:00">3:00 PM</option>
