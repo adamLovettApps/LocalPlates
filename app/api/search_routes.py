@@ -38,6 +38,7 @@ def get_search_results(searchString, ip):
     rows = results.fetchall()
     data = {}
     count = 0
+    print(rows)
     for row in rows:
         if row[0] not in data:
             count += 1
@@ -45,28 +46,28 @@ def get_search_results(searchString, ip):
                 data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
                                 "state": row[4], "phone_number": row[6],
                                 "bookings": row[9], "rating": row[10],
-                                "reviews": row[11], "photo": row[20],
-                                "tags": {"1": row[25]}, "review": row[29], "id": row[0],
+                                "reviews": row[11], "photo": row[18],
+                                "tags": {"1": row[23]}, "review": row[27], "id": row[0],
                                 "order": count}
             else:
                 data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
                                 "state": row[4], "phone_number": row[6],
                                 "bookings": row[9], "rating": row[10],
-                                "reviews": row[11], "photo": row[20],
-                                "tags": {}, "review": row[29], "id": row[0],
+                                "reviews": row[11], "photo": row[18],
+                                "tags": {}, "review": row[27], "id": row[0],
                                 "order": count}
         else:
             prev_tags = data[row[0]]["tags"]
             new_tag_num = len(prev_tags) + 1
-            new_tag = {f"'{new_tag_num}'": row[25]}
+            new_tag = {f"'{new_tag_num}'": row[23]}
             new_tags = {}
             new_tags.update(prev_tags)
             new_tags.update(new_tag)
             data[row[0]] = {"name": row[1], "address": row[2], "city": row[3],
                             "state": row[4], "phone_number": row[6],
                             "bookings": row[9], "rating": row[10],
-                            "reviews": row[11], "photo": row[20],
-                            "tags": new_tags, "review": row[29], "id": row[0],
+                            "reviews": row[11], "photo": row[18],
+                            "tags": new_tags, "review": row[27], "id": row[0],
                             "order": count}
 
     print(data)

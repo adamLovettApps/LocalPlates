@@ -30,13 +30,14 @@ export const getSearchResults = (ip, searchString) => async(dispatch) => {
         console.log(num)
         reorder[num]  = results[result]
     })
+    console.log('SEARCH RESULTS DATA', reorder)
     dispatch(setResults(reorder));
 }
 
 export const getCurrentSelection = (choices) => async(dispatch) => {
     if (choices.length === 0) {
         dispatch(restoreSelection());
-    } 
+    }
     else {
         dispatch(setSelection(choices));
     }
@@ -61,17 +62,17 @@ export default function reducer(state=initialState, action) {
                         console.log(state.allResults[key].tags[i], action.payload[j]);
                         if (state.allResults[key].tags[i].trim() === action.payload[j].trim()) {
                             newState[key] = state.allResults[key]
-                        } 
+                        }
                     }
 
                 }
-        
+
             })
 
             console.log(newState);
             console.log("PAYLOAD", action.payload);
             return { ...state, currentResults: newState};
-        default: 
+        default:
             return state;
     }
 }

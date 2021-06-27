@@ -7,20 +7,21 @@ import "./SearchResultCard.css";
 function trimString( review, useWordBoundary ){
     if (review.length <= 145) { return review; }
     const subString = review.substr(0, 144); // the original check
-    return (useWordBoundary 
-        ? subString.substr(0, subString.lastIndexOf(" ")) 
+    return (useWordBoundary
+        ? subString.substr(0, subString.lastIndexOf(" "))
         : subString) + "...";
     };
 
 const SearchRestultCard = (restaurant) => {
-
+    console.log("SEARCH RESULT ",restaurant)
     if (restaurant.restaurant) {
+        console.log("PHOTO THATS A PROBLEM",restaurant.restaurant.photo);
         const baseURL = restaurant.restaurant.photo.split('/')[3];;
         const imageRequest = JSON.stringify({
                         bucket: "localplates",
                         key: baseURL,
                         edits: {
-                            
+
                             resize: {
                                 width: 205,
                                 height:205,
@@ -30,7 +31,7 @@ const SearchRestultCard = (restaurant) => {
                     })
         const encoded = btoa(imageRequest);
         const url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
-        
+
         if (restaurant.restaurant.review) {
             restaurant.restaurant.review = trimString(restaurant.restaurant.review);
         }
