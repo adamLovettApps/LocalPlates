@@ -238,4 +238,6 @@ image_seeds = [
     {
         "url": "https://localplates.s3.us-west-1.amazonaws.com/30sf.jpeg"
     }
+
+    
 ]
