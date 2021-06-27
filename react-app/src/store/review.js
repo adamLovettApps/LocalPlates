@@ -22,7 +22,7 @@ export const getReviews=(id)=> async(dispatch)=>{
 }
 
 export const addOneReview = (restaurant_id, user_id, body, stars, title) => async(dispatch) => {
-    console.log("INSIDE REVIEW STORE",restaurant_id, user_id, body, stars, title)
+
     const response = await fetch("/api/restaurants/reviews", {
         method: "POST",
         headers: {

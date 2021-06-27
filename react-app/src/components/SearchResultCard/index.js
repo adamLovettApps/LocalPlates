@@ -13,9 +13,9 @@ function trimString( review, useWordBoundary ){
     };
 
 const SearchRestultCard = (restaurant) => {
-    console.log("SEARCH RESULT ",restaurant)
+
     if (restaurant.restaurant) {
-        console.log("PHOTO THATS A PROBLEM",restaurant.restaurant.photo);
+
         const baseURL = restaurant.restaurant.photo.split('/')[3];;
         const imageRequest = JSON.stringify({
                         bucket: "localplates",
@@ -37,7 +37,7 @@ const SearchRestultCard = (restaurant) => {
         }
 
         let count = 0;
-        console.log("RES ID", restaurant.restaurant.id)
+
         return (
             <>
             <div className="search-result-card-container">

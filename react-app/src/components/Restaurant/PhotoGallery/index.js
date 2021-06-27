@@ -29,7 +29,7 @@ const PhotoGallery = () => {
         e.stopPropagation();
         let currentIndex = popupUrls.indexOf(image)
         let nextImage = popupUrls[currentIndex +1]
-        console.log(currentIndex)
+
         if (currentIndex === popupUrls.length - 1) {
             nextImage = popupUrls[0];
         }
@@ -55,16 +55,16 @@ const PhotoGallery = () => {
             dispatch(getRestaurantPhotos(id))
             setLoaded(true);
         })();
-        console.log("PHOTOS", photos);
+
     }, [dispatch])
 
     if (!loaded) {
-        {console.log("NOT LOADED")}
+
         return null;
     }
 
     if (photos) {
-        console.log("PHOTOS", photos)
+
         let photoLength = Object.keys(photos).length;
         let urls = []
         let width;
@@ -181,8 +181,7 @@ const PhotoGallery = () => {
                 popupUrls.push(url);
             }
         }
-        console.log("LENGTH", photoLength)
-        console.log("IMAGES!!!", popUpImages)
+
         if (photoLength === 1){
             return (<>
                 {photoSlider ? 

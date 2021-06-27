@@ -3,7 +3,7 @@ import { useDispatch,useSelector } from 'react-redux';
 
 import React, { useEffect, useState } from "react";
 function ReviewDisplay({review}){
-    console.log("THIS IS THE REVIEW OBJ",review);
+
 
     const baseURL = review.user_photo.split('/')[3];;
         const imageRequest = JSON.stringify({

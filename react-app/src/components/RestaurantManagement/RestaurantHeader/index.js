@@ -14,9 +14,9 @@ const RestaurantHeader = () => {
     useEffect(() => {
         (async() => {
             dispatch(getOneRestaurant(id));
-            console.log("RESTAURANT", restaurant)
+
             setLoaded(true);
-            console.log("RESTAURANT", restaurant)
+
         })();
     }, [dispatch]);
 

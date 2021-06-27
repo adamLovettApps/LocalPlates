@@ -21,7 +21,7 @@ function formatDate(date) {
 const BookingCard = () => {
     useEffect(() => {
         let currentDate = formatDate();
-        console.log(currentDate);
+
         setDate(currentDate);
     } )
 
@@ -34,7 +34,7 @@ const BookingCard = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         (async() => {
-            console.log(time);
+
             const response = await fetch('/api/booking', {
                 method: 'POST',
                 headers: {
@@ -93,7 +93,7 @@ const BookingCard = () => {
                     <div className="divider2"></div>
                     <div className="date">Date</div>
                     <div className="date-select">
-                        <input type="date" onChange={(e) => {console.log(e.target.value); setDate(e.target.value);}}
+                        <input type="date" onChange={(e) => {setDate(e.target.value);}}
                             value={date}
                             required></input>
                     </div>

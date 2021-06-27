@@ -19,7 +19,6 @@ function Home(){
     const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
     const user = useSelector(state => state.session.user);
     if (user){
-        console.log('user authenticated')
     }
 
     
@@ -39,7 +38,7 @@ function Home(){
 
       if (user) {
       if (user.is_owner) {
-        console.log(user)
+
         return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
       } 
     }

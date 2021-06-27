@@ -21,7 +21,7 @@ function Restaurant(){
 
     if (sessionUser) {
         if (sessionUser.is_owner) {
-            console.log(sessionUser)
+
             return <Redirect to={`/restaurantmanagement/${sessionUser.restaurant_id}`}></Redirect>
         } 
     }
