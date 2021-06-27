@@ -35,7 +35,7 @@ const SearchResults = () => {
 
     if (user) {
         if (user.is_owner) {
-            console.log(user)
+
             return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
         } 
     }

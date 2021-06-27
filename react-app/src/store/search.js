@@ -20,17 +20,17 @@ export const getSearchResults = (ip, searchString) => async(dispatch) => {
     ip = ip.ip;
     const response = await fetch(`/api/search/${searchString}/${ip}`);
     const results = await response.json();
-    console.log(results)
+
     Object.keys(results).forEach(result => {
         results[result].tags = Object.keys(results[result].tags).map(key => `${results[result].tags[key]} `)
     })
     let reorder = {}
     Object.keys(results).forEach(result => {
         let num = results[result].order
-        console.log(num)
+
         reorder[num]  = results[result]
     })
-    console.log('SEARCH RESULTS DATA', reorder)
+
     dispatch(setResults(reorder));
 }
 
@@ -59,7 +59,7 @@ export default function reducer(state=initialState, action) {
 
                 for (let i = 0; i < state.allResults[key].tags.length; i++) {
                     for (let j = 0; j < action.payload.length; j++) {
-                        console.log(state.allResults[key].tags[i], action.payload[j]);
+
                         if (state.allResults[key].tags[i].trim() === action.payload[j].trim()) {
                             newState[key] = state.allResults[key]
                         }
@@ -69,8 +69,7 @@ export default function reducer(state=initialState, action) {
 
             })
 
-            console.log(newState);
-            console.log("PAYLOAD", action.payload);
+
             return { ...state, currentResults: newState};
         default:
             return state;

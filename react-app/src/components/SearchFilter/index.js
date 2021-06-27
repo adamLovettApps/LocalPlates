@@ -14,15 +14,15 @@ const SearchFilter = () => {
         (async() => {
             let res = await fetch('/api/search/getTags');
             let tagRes = await res.json();
-            console.log(tagRes[1].id)
+
             setTags(tagRes);
             setLoaded(true);
-            console.log("tags", tags)
+
         })();
     }, []);
 
     const changeTags = (tag) => {
-        console.log(tag)
+
         if (selectedTags.includes(tag)) {
             let currentTags = selectedTags;
             const index = currentTags.indexOf(tag);

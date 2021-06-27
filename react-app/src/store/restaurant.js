@@ -17,7 +17,7 @@ export const getRestaurants=(tagType, ip)=> async(dispatch)=>{
     ip = ip.ip;
     const response = await fetch(`/api/restaurants/tag_select/${tagType}/${ip}`);
     const restaurants = await response.json();
-    console.log(restaurants);
+
     dispatch(setRestaurants(restaurants, tagType));
 }
 
@@ -25,7 +25,7 @@ export const getRestaurantsByLocation=(ip)=> async(dispatch)=>{
     ip = ip.ip;
     const response = await fetch(`/api/restaurants/all/${ip}`);
     const restaurants = await response.json();
-    console.log("RESTAURANTS", restaurants)
+
     dispatch(setRestaurants(restaurants));
 }
 
@@ -79,7 +79,7 @@ const RestaurantReducer = (state = initialState, action) => {
             for (let key in action.restaurants){
                 all_italian[key] = action.restaurants[key]
             }
-            console.log('INSIDE REDUCER', all_italian)
+
             return {
                 ...state, italian: all_italian
             }

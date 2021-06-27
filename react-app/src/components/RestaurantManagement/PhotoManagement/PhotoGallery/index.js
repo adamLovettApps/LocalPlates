@@ -34,7 +34,7 @@ const PhotoGallery = () => {
 
         let url;
         let containerName;
-        console.log("PHOTO0", photos[0])
+
         
         return (
                 <>
@@ -59,7 +59,7 @@ const PhotoGallery = () => {
                                     url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
                                 }
                                 {containerName = `delete-icon-container-${photos[photo].id}`}
-                                {console.log("CONTAINER", {containerName})}
+
                                 return (
                                     <>
                                     <span className="restaurant-management-photo">

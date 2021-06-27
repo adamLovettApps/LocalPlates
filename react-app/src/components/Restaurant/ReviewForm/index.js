@@ -11,7 +11,7 @@ function ReviewForm({restaurant}){
     const [stars, setStars] = useState(0);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("ATTEMPT TO POST REVIEW: ", restaurant.id, sessionUser.id, body, stars, title)
+
         await dispatch(addOneReview(restaurant.id, sessionUser.id, body, stars, title))
     }
     return(

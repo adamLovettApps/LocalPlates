@@ -112,7 +112,7 @@ const SignUpForm = () => {
 
   if (user) {
     if (user.is_owner) {
-      console.log(user)
+
       return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
     } else {
     return <Redirect to="/" />;

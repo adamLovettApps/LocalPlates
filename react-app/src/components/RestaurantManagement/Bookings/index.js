@@ -79,7 +79,7 @@ const Bookings = () => {
                     </tr>
                     {Object.keys(pending).map((key) => {
 
-                        console.log(pending[key])
+
                         return (
                             <tr className="pending-booking-row">
                                 <td>{dateToString(pending[key].booked_for)}</td>
@@ -107,7 +107,6 @@ const Bookings = () => {
                     </tr>
                     {Object.keys(accepted).map((key) => {
 
-                        console.log(accepted[key])
                         return (
                             <tr className="accepted-booking-row">
                                 <td>{dateToString(accepted[key].booked_for)}</td>
@@ -131,7 +130,7 @@ const Bookings = () => {
                     </tr>
                     {Object.keys(cancelled).map((key) => {
 
-                        console.log(cancelled[key])
+
                         return (
                             <tr className="cancelled-booking-row">
                                 <td>{dateToString(cancelled[key].booked_for)}</td>
