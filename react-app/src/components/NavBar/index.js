@@ -32,6 +32,7 @@ const NavBar = ({  }) => {
               Hello! {user.username}
             </div>}
         </div>
+        <div className="nav-middle"><img className="navigation-bar-logo" src="/images/localplates.png"></img></div>
         <div className="nav-right">
 
           { (user===null) &&

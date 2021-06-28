@@ -60,7 +60,6 @@ const SearchResults = () => {
                 }
             }
             )}
-
         </div>
         <div className="search-filter-container"><SearchFilter></SearchFilter></div>
         </div>
