@@ -33,6 +33,7 @@
 }
 
 .review-body-container {
+    
     margin-left: 20px;
 }
 .review-title-display {
@@ -43,6 +44,7 @@
     font-size: 25px;
     display: flex;
     border-bottom: 1px solid #2d333f;
+    width: 440px;
 
 }
 .review-user-container {
