@@ -34,7 +34,10 @@ const Bookings = () => {
     function dateToString(dateIn) {
     let date = new Date(dateIn);
     console.log(date);
-    let hour = date.getHours() + 7;
+    console.log(date.getHours())
+    let gmtHours = date.getTimezoneOffset()/60;
+    let hour = date.getHours() + gmtHours;
+    if (hour > 24) hour -= 12;
     let minute = addZero(date.getMinutes());
     let AMPM = "AM";
     let month = addZero(date.getMonth() + 1);
@@ -51,6 +54,7 @@ const Bookings = () => {
         hour = "12";
     }
 
+    hour = addZero(hour);
 
 
     return hour + ":" + minute + " " + AMPM + " " + month + "-" + day + "-" + year

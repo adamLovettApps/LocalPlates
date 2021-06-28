@@ -45,7 +45,7 @@ const NavBar = ({  }) => {
             </button>}
             { (user===null) &&
             <button to="/sign-up" className="nav-buttons demo-restaurant-button" onClick={loginDemoRestaurant}>
-              Demo Resturant
+              Demo Restaurant
             </button>}
 
           { (user===null) &&
