@@ -16,6 +16,10 @@ const NavBar = ({  }) => {
 
   }
 
+  const loginDemoRestaurant = async(e) => {
+    const data= await dispatch(login("restuarantEmail0@App_Academy.io","password0"));
+  }
+
 
   const user = useSelector(state => state.session.user);
   useEffect(()=>{
@@ -39,6 +43,10 @@ const NavBar = ({  }) => {
             <button to="/sign-up" className="nav-buttons demo-user-button" onClick={handleSubmit}>
               Demo User
             </button>}
+            { (user===null) &&
+            <button to="/sign-up" className="nav-buttons demo-restaurant-button" onClick={loginDemoRestaurant}>
+              Demo Resturant
+            </button>}
 
           { (user===null) &&
             <NavLink to="/sign-up" exact={true} className="link nav-signup nav-buttons" activeClassName="active">
@@ -50,7 +58,7 @@ const NavBar = ({  }) => {
           </NavLink>}
 
           { (user!==null) &&
-          <NavLink to="/users" exact={true} className="link nav-user" activeClassName="active">
+          <NavLink to={`/users/${user.id}`} exact={true} className="link nav-user" activeClassName="active">
             <i class="fa fa-user" aria-hidden="true"></i>
           </NavLink>}
 

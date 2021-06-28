@@ -28,3 +28,8 @@
     padding-right: 370px;
     margin-top: 70px;
 }
+
+.right-side-container {
+    margin-top: -10px;
+    z-index: 2;
+}
