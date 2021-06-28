@@ -32,6 +32,7 @@ function Home(){
         }
     },[favorites,user])
 
+
     useEffect(() =>{
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++")
         const timer = setTimeout(() => {
@@ -39,7 +40,6 @@ function Home(){
             let rowCount =  leftButtons.length
 
             function scrollAnimation(isLeft, scrollRow) {
-
                 let x = isLeft? -1 : 1;
                 function intervalMaker(cb, count, delay) {
                 const intervalObj = setInterval(()=>{
@@ -63,18 +63,38 @@ function Home(){
                 scrollRow.scrollLeft += x;
                 }, 150, 15)
             }
+            function scrollLeft(){
+
+            }
             for(let i = 1; i<=  rowCount; i++){
 
                 let scrollHolder = document.getElementById(`${i}-scroll-div`);
-                document.getElementById(`${i}-left-scroll-btn`).addEventListener("click", (e)=>{
-                scrollAnimation(true, scrollHolder);
-                })
-                document.getElementById(`${i}-right-scroll-btn`).addEventListener("click",(e)=>{
-                scrollAnimation(false, scrollHolder);
-                })
+                let leftHolder = document.getElementById(`${i}-left-scroll-btn`);
+                let rightHolder = document.getElementById(`${i}-right-scroll-btn`);
+                function leftScroll () {
+                    scrollAnimation(true, scrollHolder);
+                }
+                function rightScroll(){
+                    scrollAnimation(false, scrollHolder);
+                }
+                leftHolder.removeEventListener("click", leftScroll)
+                rightHolder.removeEventListener("click",rightScroll)
+                leftHolder.addEventListener("click", leftScroll)
+                rightHolder.addEventListener("click",rightScroll)
+
+
             }
-            }, 300)
+            }, 3000)
+
+            return ()=> {
+                Array.from(document.getElementsByClassName("left-button")).forEach(el=>{el.removeEventListener("click", (e)=>{
+                },true)})
+                Array.from(document.getElementsByClassName("right-button")).forEach(el=>{el.removeEventListener("click", (e)=>{
+                },true)})
+            }
+
     },[])
+
     useEffect(() => {
         (async() => {
           let ip = await getIPInfo();
