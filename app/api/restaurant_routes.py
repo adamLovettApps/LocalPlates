@@ -3,6 +3,7 @@ import requests
 import os
 from requests.api import request
 from sqlalchemy import func
+from datetime import datetime
 from sqlalchemy import desc
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
@@ -61,7 +62,7 @@ def get_restaurant(id):
 
 @restaurant_routes.route('/reviews/<int:id>')
 def get_reviews(id):
-    reviews = Review.query.filter_by(restaurant_id=id).all()
+    reviews = Review.query.filter_by(restaurant_id=id).order_by(desc(Review.created_at)).all()
     new_reviews = {k: review.to_dict() for k, review in dict(
         zip(range(len(reviews)), reviews)).items()}
     return new_reviews
@@ -145,4 +146,3 @@ def get_restaurant_id(id):
     print("RESTAURANT!!!!!!!!!", restaurant.id)
 
     return {"id": restaurant.id}
-
