@@ -34,11 +34,12 @@ function Reviews({restaurant}){
             setShowReviewForm(true);
         }
     };
+    console.log("ALLL REVIEWS ARE RIGHT HERE",allReviews)
     return (
         <>
             <div className='review-container'>
                     <button onClick={toggleForm} className='write-review-btn'>Post a Review</button>
-                    {showReviewForm && <ReviewForm restaurant={restaurant} />}
+                    {showReviewForm && <ReviewForm toggleForm={toggleForm}restaurant={restaurant}/>}
                     {allReviews.length>0 && allReviews.map((review,index)=>(
                         <ReviewDisplay key={index} review={review} />
                     ))}

@@ -17,6 +17,7 @@
     height:70px;
     width:70px;
     border-radius: 50%;
+    margin-right: 30px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +32,7 @@
 }
 
 .review-body-container {
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .review-title {
@@ -39,7 +40,8 @@
     display: flex;
 }
 .review-user-container {
-    width: 170px;
+    width: 100px;
+    margin-left: 10px;
 }
 
 .review-body {

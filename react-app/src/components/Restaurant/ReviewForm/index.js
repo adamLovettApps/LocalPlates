@@ -2,7 +2,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import React, { useState,useEffect } from 'react';
 import { addOneReview} from '../../../store/review';
 import './ReviewForm.css'
-function ReviewForm({restaurant}){
+function ReviewForm({toggleForm,restaurant}){
     const sessionUser = useSelector(state => state.session.user);
 
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function ReviewForm({restaurant}){
     const [stars, setStars] = useState(0);
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        toggleForm()
         await dispatch(addOneReview(restaurant.id, sessionUser.id, body, stars, title))
     }
     return(

@@ -480,6 +480,12 @@ image_seeds = [
         "url":"https://localplates.s3.us-west-1.amazonaws.com/30la.jpg"
     },
 
+]
 
+
+commenter_image_seeds= [
+    {
+        "url":"https://localplates.s3.us-west-1.amazonaws.com/30la.jpg"
+    },
 
 ]
