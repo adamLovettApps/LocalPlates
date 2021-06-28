@@ -40,7 +40,7 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 4px;
-    margin-right: 30px;
+    margin-right: 25px;
 
 }
 .demo-user-button {
@@ -54,7 +54,25 @@
     color: rgb(239,241,243);
     background: linear-gradient(rgba(36, 127, 158, 0.8), rgba(218, 55, 67, 0.5));
 }
+
+
+.demo-restaurant-button {
+    position: relative;
+    right:24px;
+    height:29px;
+    border-radius: 4px;
+    border: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(239,241,243);
+    background: linear-gradient(rgba(36, 127, 158, 0.8), rgba(218, 55, 67, 0.5));
+}
 .demo-user-button:hover {
+    background: linear-gradient( rgba(218, 55, 67, 0.5),rgba(36, 127, 158, 0.8));
+}
+
+
+.demo-restaurant-button:hover {
     background: linear-gradient( rgba(218, 55, 67, 0.5),rgba(36, 127, 158, 0.8));
 }
 
@@ -104,6 +122,6 @@
 }
 
 .nav-middle {
-    padding-left: 10%;
+    padding-left: .3%;
     padding-top: 10px;
 }

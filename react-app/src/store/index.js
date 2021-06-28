@@ -10,6 +10,7 @@ import reviews from './review';
 import tags from './tags'
 import booking from "./booking"
 import coordinates from "./coordinates"
+import favorites from "./favorite"
 
 const rootReducer = combineReducers({
     session,
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     reviews,
     tags,
     booking,
-    coordinates
+    coordinates,
+    favorites
 });
 
 let enhancer;
