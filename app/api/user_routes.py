@@ -51,7 +51,7 @@ def user(id):
 
 @user_routes.route('/getfavorites/<int:id>/<ip>')
 @login_required
-def favorites(id):
+def favorites(id,ip):
     REACT_APP_IPAPI_KEY = os.environ.get('REACT_APP_IPAPI_KEY')
     res = requests.get(
         f"https://api.ipapi.com/api/{ip}?access_key={REACT_APP_IPAPI_KEY}")

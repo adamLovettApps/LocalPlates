@@ -84,7 +84,7 @@ function Home(){
           await dispatch(getRestaurants("delivery",ip));
           await dispatch(getRestaurants("asian",ip));
           if(user.id){
-              await dispatch(getAllFavorites(user.id));
+              await dispatch(getAllFavorites(user.id,ip));
           }
         })();
       }, [dispatch]);

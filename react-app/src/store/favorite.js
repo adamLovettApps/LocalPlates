@@ -6,8 +6,9 @@ const setFavorites = (favorites) => ({
     payload: favorites
 })
 
-export const getAllFavorites = (id) => async (dispatch) => {
-    const response = await fetch(`/api/users/getfavorites/${id}`);
+export const getAllFavorites = (id,ip) => async (dispatch) => {
+    ip = ip.ip
+    const response = await fetch(`/api/users/getfavorites/${id}/${ip}`);
 
     if (response.ok){
         const data = await response.json();
