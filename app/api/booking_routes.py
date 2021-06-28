@@ -7,7 +7,7 @@ from datetime import datetime
 booking_routes = Blueprint("booking", __name__)
 
 @login_required
-@booking_routes.route("/", methods=["POST"])
+@booking_routes.route("", methods=["POST"])
 def create_booking():
     form = BookingForm()
     form['csrf_token'].data = request.cookies['csrf_token']

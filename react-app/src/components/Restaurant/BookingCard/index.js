@@ -23,7 +23,7 @@ const BookingCard = () => {
         let currentDate = formatDate();
 
         setDate(currentDate);
-    } )
+    }, [] )
 
     const [date,setDate] = useState()
     const [time,setTime] = useState("11:00:00")
