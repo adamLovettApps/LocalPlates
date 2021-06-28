@@ -8,6 +8,7 @@
     font-weight: 500px;
 }
 
+
 .photo-container-divider {
     width: 600px;
     margin-right: 145px;
@@ -200,7 +201,7 @@ grid-row-gap: 0px;
 }
 
 .gallery-img-container {
-    z-index: 1;
+    z-index: 4;
     position: fixed;
     top: 0;
     left: 0;
