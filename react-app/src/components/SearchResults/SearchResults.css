@@ -27,6 +27,7 @@ body {
     display: inline-block;
     padding: 0px 40px 40px 40px;
     top: 140px;
+    margin-top: 20px;
     left: 20px;
     color: #EFF1F3;
     border-radius: 3px;
@@ -40,4 +41,6 @@ body {
 
 .search-results-container {
     display: relative;
+    min-height: 680px;
 }
+
