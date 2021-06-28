@@ -1,0 +1,69 @@
+.form-title {
+    margin:10px;
+}
+.review-form {
+    display: flex;
+    justify-content: space-around;;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    background-color:rgb(236, 236, 236);
+    /* border: 1px solid #2d333f; */
+    border-radius: 4px;
+    padding: 15px;
+    margin-left: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    margin-bottom: 35px;
+}
+
+.inputBox {
+    justify-content:flex-start
+}
+.form-label {
+    color:white;
+    font-weight: 400;
+    align-self: center;
+}
+.how-was-your-food {
+    color:#2d333f;
+}
+
+.review-form-body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 4px;
+    background-color:rgba(138, 138, 138, 0.2);
+    padding:5px;
+    width: 80%;
+    height: 100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.review-form-title {
+    padding:5px;
+    margin-bottom: 10px;
+    width: 80%;
+    border: 0px;
+    border-radius: 4px;
+    background-color:rgba(138, 138, 138, 0.2);
+    color:#2d333f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+  .submit-review {
+    border: 0px;
+    background-color: #247f9e;
+    color: rgb(239,241,243);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    margin-top: 20px;
+    border-radius: 4px;
+    margin-right: 30px;
+    height:29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 5px;
+  }

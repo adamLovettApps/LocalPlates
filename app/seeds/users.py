@@ -10,15 +10,17 @@ def seed_users():
     # geo = 'POINT({} {})'.format(lon1, lat1)
 
     # creating 200 restaurant owners
-    for i in range(60):
+    for i in range(120):
         username = fake.unique.name()
         email= f'restuarantEmail{i}@App_Academy.io'
         password= f'password{i}'
-        db.session.add(User(username=username,email=email,password=password,profile_photo=image_seeds[i]["url"],is_owner=True))
-    db.session.add(User(username="Demo User",email="fake@email.com",password="password",is_owner=False))
+        db.session.add(User(username=username,email=email,password=password,
+        profile_photo=image_seeds[i]["url"],
+        is_owner=True))
+    db.session.add(User(username="Demo User",email="fake@email.com",password="password", profile_photo="https://files.thehandbook.com/uploads/2014/10/Gordon-Ramsay.jpg",is_owner=False))
 
-        
-        
+
+
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.

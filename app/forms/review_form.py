@@ -11,4 +11,3 @@ class ReviewForm(FlaskForm):
                          validators=[DataRequired()])
     stars = IntegerField("rating", validators=[DataRequired()])
     image = StringField("image")
-    submit = SubmitField("submit")

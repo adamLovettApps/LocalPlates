@@ -6,6 +6,7 @@ from app.models import User, Restaurant, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from app.forms import RestaurantSignUpForm
+
 from flask_login import current_user, login_user, logout_user, login_required
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
@@ -30,6 +31,8 @@ def authenticate():
     Authenticates a user.
     """
     if current_user.is_authenticated:
+        if current_user.is_owner:
+            return current_user.to_dict_rest_owner()
         print(current_user.to_dict())
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
@@ -48,6 +51,9 @@ def login():
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.email == form.data['email']).first()
         login_user(user)
+        if user.is_owner:
+            print("USER", user.to_dict_rest_owner())
+            return user.to_dict_rest_owner()
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 

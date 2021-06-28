@@ -11,9 +11,9 @@ import './NavBar.css'
 const NavBar = ({  }) => {
   const dispatch = useDispatch();
   const handleSubmit = async (e)=>{
-    console.log("demo user clicked");
+
     const data= await dispatch(login("fake@email.com","password"));
-    console.log(data);
+
   }
 
 
@@ -32,6 +32,7 @@ const NavBar = ({  }) => {
               Hello! {user.username}
             </div>}
         </div>
+        <div className="nav-middle"><img className="navigation-bar-logo" src="/images/localplates.png"></img></div>
         <div className="nav-right">
 
           { (user===null) &&

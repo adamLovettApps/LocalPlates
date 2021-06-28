@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
+import SearchBar from "../SearchBar";
 import "./LoginForm.css"
 
 const LoginForm = () => {
@@ -27,11 +28,19 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+
   if (user) {
+    if (user.is_owner) {
+      return <Redirect to={`/restaurantmanagement/${user.restaurant_id}`}></Redirect>
+    } else {
     return <Redirect to="/" />;
+    }
   }
 
+
   return (
+    <>
+      <div className="search-bar-container"><SearchBar></SearchBar></div>
     <div className="form-wrapper">
       <form onSubmit={onLogin}>
         <div>
@@ -39,29 +48,33 @@ const LoginForm = () => {
             <div>{error}</div>
           ))}
         </div>
-        <div>
-          <label htmlFor="email">Email </label>
+        <div className='log-in-form'>
+        <div className='sign-up-form-header'>Welcome to LocalPlates!</div>
+        <div className='form-field-input-container'>
           <input
-            name="email"
             type="text"
-            placeholder="Email"
-            value={email}
+            name="email"
             onChange={updateEmail}
-          />
+            value={email}
+            placeholder="Email"
+            className='form-field-input'
+          ></input>
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className='form-field-input-container'>
           <input
-            name="password"
             type="password"
-            placeholder="Password"
-            value={password}
+            name="password"
             onChange={updatePassword}
-          />
-          <button type="submit">Login</button>
+            value={password}
+            placeholder="Password"
+            className='form-field-input'
+          ></input>
+        </div>
+            <div className="form-field-button-container-login"><button type="submit" className="form-field-button">Sign In</button></div>
         </div>
       </form>
     </div>
+    </>
   );
 };
 

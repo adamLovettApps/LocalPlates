@@ -18,7 +18,7 @@
         let rowCount =  leftButtons.length
 
         function scrollAnimation(isLeft, scrollRow) {
-          console.log(">>>>>>>>>>>>>>>>HIII scrollAnimation")
+
           let x = isLeft? -1 : 1;
           function intervalMaker(cb, count, delay) {
             const intervalObj = setInterval(()=>{
@@ -39,11 +39,11 @@
           }, 90, 12)
           //very slow
           intervalMaker(()=>{
-            scrollRow.scrollLeft += x ;
+            scrollRow.scrollLeft += x;
           }, 90, 15)
         }
         for(let i = 1; i<=  rowCount; i++){
-          console.log(">>>>>>>>>>>>>>>>HIII ROW COUNT LOOP")
+
           let scrollHolder = document.getElementById(`${i}-scroll-div`);
           document.getElementById(`${i}-left-scroll-btn`).addEventListener("click", (e)=>{
             scrollAnimation(true, scrollHolder);

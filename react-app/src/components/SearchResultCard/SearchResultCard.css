@@ -28,8 +28,7 @@ body {
 }
 .stars-container { 
     grid-area: 4 / 4 / 5 / 7;
-    width: 400px;
-    padding-left: 127px;
+    
 
 }
 .tags-container { grid-area: 5 / 4 / 6 / 6; }
@@ -37,7 +36,7 @@ body {
     grid-area: 6 / 4 / 7 / 6; 
     display: flex;
 }
-.review-container { 
+.search-review-container { 
     margin-top: 7px;
     grid-area: 7 / 4 / 8 / 6;
     display: block;

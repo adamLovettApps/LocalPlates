@@ -1126,23 +1126,1093 @@ hours_str
 ,"description":
 "Cajun and creole food done right in a fun and friendly setting."
 },
-# {"name":
 
-# ,"address":
+{"name":
+"Thames Street Oyster House"
+,"address":
+"1728 Thames St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"(443) 449-7726"
+,"hours":
+hours_str
+,"description":
+"Brass-&-wood-trimmed eatery offering a raw bar, Eastern coastal fare & upstairs harbor-view seating."
 
-# ,"city":
+},
 
-# ,"state":
 
-# ,"zipcode":
+{"name":
+"Busboys and Poets"
+,"address":
+"3224 St Paul St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21218
+,"phone_number":
+"+14104977114"
+,"hours":
+hours_str
+,"description":
+"Classic American Specialties with unique Baltimore Flavor"
+},
 
-# ,"phone_number":
 
-# ,"hours":
-# hours_str
-# ,"description":
+{"name":
+"Blackwall Hitch"
+,"address":
+"700 E Pratt St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437597176"
+,"hours":
+hours_str
+,"description":
+"From the moment you enter Blackwall Hitch, you sense the attention to detail that has been harnessed to bring you and your companions a complete and satisfying dining experience."
+},
 
-# },
+{"name":
+"Woodberry Kitchen"
+,"address":
+"2010 Clipper Park Rd"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14104648000"
+,"hours":
+hours_str
+,"description":
+"Old factory turned hip, rustic-chic place for refined New American fare with a farm-to-table bent."
+},
+
+{"name":
+"Ouzo Bay"
+,"address":
+"1000 Lancaster St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437085818"
+,"hours":
+hours_str
+,"description":
+"Upscale Greek seafood specialist, with a lounge offering creative cocktails & small-batch spirits."
+},
+
+{"name":
+"Underground Pizza"
+,"address":
+"30 Market Pl"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14433476190"
+,"hours":
+hours_str
+,"description":
+"Our Detroit Style Pizzas combine 2 1/2 lbs of dough and cheese which are cooked off in a 10×14 steel pan."
+},
+
+{"name":
+"Joe Benny's"
+,"address":
+"313 S High St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14438354866"
+,"hours":
+hours_str
+,"description":
+"Down-to-earth eatery serving focaccia pizzas & Italian small plates in a narrow space with a bar."
+},
+
+{"name":
+"Wicked Sisters Tavern"
+,"address":
+"3845 Falls Rd"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14108780884"
+,"hours":
+hours_str
+,"description":
+"New American tavern offering burgers & crab cakes, with 20-plus beer taps, TVs & a game room."
+},
+
+{"name":
+"Topside"
+,"address":
+"101 W Monument St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14107270065"
+,"hours":
+hours_str
+,"description":
+"Stylish, airy rooftop bar & eatery offering local seafood specials plus cocktails & craft beers."
+},
+
+{"name":
+"Clavel"
+,"address":
+"225 W 23rd St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14439008983"
+,"hours":
+hours_str
+,"description":
+"Mexican-inspired cocktails & elevated cuisine are served in a simple room with hip hanging lights."
+},
+
+{"name":
+"Creole Soul Restaurant"
+,"address":
+"301 W 29th St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14108649839"
+,"hours":
+hours_str
+,"description":
+"That taste where Creole Spice, meets Southern Soul Comfort. Our caring and committed staff will ensure you have a fantastic experience with us."
+},
+
+{"name":
+"Miss Shirley's Cafe"
+,"address":
+"513 W Cold Spring Ln"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21210
+,"phone_number":
+"+14108895272"
+,"hours":
+hours_str
+,"description":
+"Brunch cafe boasting local ingredients & outdoor seating plus a pancake-of-the-month special."
+},
+
+{"name":
+"Ekiben"
+,"address":
+"1622 Eastern Ave"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14108895272"
+,"hours":
+hours_str
+,"description":
+"No-frills Asian spot with a focus on unusual steamed buns, plus bowls & small plates."
+},
+
+{"name":
+"Charmed."
+,"address":
+"824 N Calvert St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14438352803"
+,"hours":
+hours_str
+,"description":
+"Our idea is to create, produce, and serve delicious, full-flavored food and establish Charmed. as a favorite local restaurant."
+},
+
+{"name":
+"Charming Elephant"
+,"address":
+"2324 Boston St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21224
+,"phone_number":
+"+14437087762"
+,"hours":
+hours_str
+,"description":
+"We hope to bring Lao food to the streets of Baltimore, to embody Lao culture through our authentic cuisine, and to bring the warmth of a sticky rice basket!"
+},
+
+{"name":
+"Tagliata"
+,"address":
+"1012 Fleet St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14102445830"
+,"hours":
+hours_str
+,"description":
+"Contemporary Italian steakhouse boasting steaks, fresh pasta & a 1,000+ wine list plus live music."
+},
+
+
+{"name":
+"Blue Moon Cafe"
+,"address":
+"1621 Aliceanna St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14105223940"
+,"hours":
+hours_str
+,"description":
+"Popular cafe serving American breakfast meals in a bright, funky setting, open 24 hours on weekends."
+},
+
+{"name":
+"Gordon Ramsay Steak"
+,"address":
+"1525 Russell St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21230
+,"phone_number":
+"+14439314254"
+,"hours":
+hours_str
+,"description":
+"Horseshoe Baltimore casino’s offshoot of the chic, celebrity chef–owned Las Vegas chophouse."
+},
+
+{"name":
+"Alma Cocina Latina"
+,"address":
+"1701 N Charles St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+16672124273"
+,"hours":
+hours_str
+,"description":
+"Latin-inspired soups, salads, arepas & entrees are served in a modern space with an open kitchen."
+},
+
+{"name":
+"Foraged"
+,"address":
+"3520 Chestnut Ave"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21211
+,"phone_number":
+"+14102350035"
+,"hours":
+hours_str
+,"description":
+"Farm-fresh seasonal dishes with lots of salt, beer & wine served in a warm, casual space lined with greenery."
+},
+
+{"name":
+"NiHao"
+,"address":
+"2322 Boston St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21224
+,"phone_number":
+"+14438352036"
+,"hours":
+hours_str
+,"description":
+"Nihao is a contemporary Chinese restaurant located in the historic district of Canton, opening in 2020."
+},
+
+{"name":
+"Ramen Utsuke"
+,"address":
+"414 Light St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14435632977"
+,"hours":
+hours_str
+,"description":
+"A casual dining restaurant serving a diverse selection of Japanese comfort food.  Offering Kyushu-style Tonkotsu Ramen and Sapporo-style Miso Ramen."
+},
+
+{"name":
+"Water for Chocolate"
+,"address":
+"1841 E Lombard St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21231
+,"phone_number":
+"+14106757778"
+,"hours":
+hours_str
+,"description":
+"Clever cafe eats with regional flair dished up in snug, laid-back digs with sidewalk seating."
+},
+
+{"name":
+"Magdalena"
+,"address":
+"205 E Biddle St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14105140303"
+,"hours":
+hours_str
+,"description":
+"Tony brasserie serving refined French-influenced cuisine in an elegant expanse at the Ivy Hotel."
+},
+
+{"name":
+"Charleston"
+,"address":
+"1000 Lancaster St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14103327373"
+,"hours":
+hours_str
+,"description":
+"Celebrated pick for New American plates & a well-curated wine list in white-tablecloth environs."
+},
+
+{"name":
+"Orto"
+,"address":
+"1709 N Charles St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14437597200"
+,"hours":
+hours_str
+,"description":
+"Through the love and execution brought to life on each plate combined with our thoughtful service, Orto is a space for all to gather, savor and enjoy."
+},
+
+{"name":
+"The Capital Grille"
+,"address":
+"500 E Pratt St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14437034064"
+,"hours":
+hours_str
+,"description":
+"Outpost of the upscale steakhouse chain offers classic American fare in a clubby, refined setting."
+},
+
+{"name":
+"Kong Pocha"
+,"address":
+"12 W 20th St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21218
+,"phone_number":
+"+14108018963"
+,"hours":
+hours_str
+,"description":
+"Korean BBQ, Asian fusion and classic cocktails"
+},
+
+{"name":
+"Puerto 511"
+,"address":
+"102 Clay St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21201
+,"phone_number":
+"+14102448837"
+,"hours":
+hours_str
+,"description":
+"Prix-fixe Peruvian meals, including ceviche & veal skewers, served in a minimalist BYOB cafe."
+},
+
+{"name":
+"Azumi"
+,"address":
+"725 Aliceanna St"
+,"city":
+"Baltimore"
+,"state":
+"Maryland"
+,"zipcode":
+21202
+,"phone_number":
+"+14432200477"
+,"hours":
+hours_str
+,"description":
+"Stylish Japanese restaurant with sushi, seafood, steaks, sake & cocktails."
+},
+
+# LA
+
+
+{"name":
+"Republique"
+,"address":
+"624 South La Brea Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13103626115"
+,"hours":
+hours_str
+,"description":
+"Modern French plates served in a striking space with communal tables, plus a bakery & cocktail bar."
+},
+
+{"name":
+"The Front Yard"
+,"address":
+"4222 Vineland Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+91602
+,"phone_number":
+"+18182557290"
+,"hours":
+hours_str
+,"description":
+"Bright, airy, all-day spot for modern Californian fare and cocktails inside The Garland Hotel."
+},
+
+{"name":
+"L'Antica Pizzeria"
+,"address":
+"1534 N McCadden Pl"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90028
+,"phone_number":
+"+13238475013"
+,"hours":
+hours_str
+,"description":
+"Historic Italian pizzeria serving traditional pies in a breezy indoor-outdoor space."
+},
+
+{"name":
+"Met Her At A Bar"
+,"address":
+"759 South La Brea Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13238475013"
+,"hours":
+hours_str
+,"description":
+"We specialize in delicious, authentic Belgian waffles, La Colombe coffees, and so much more!"
+},
+
+{"name":
+"Hangari Kalguksu"
+,"address":
+"3470 West 6th Street"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133882326"
+,"hours":
+hours_str
+,"description":
+"Popular restaurant offering generous servings of Korean fare such as bibimbap in an unfussy setting."
+},
+
+{"name":
+"Openaire"
+,"address":
+"3515 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90010
+,"phone_number":
+"+12133683065"
+,"hours":
+hours_str
+,"description":
+"Dine amid the twinkling greenhouse of the Line Hotel patio, where seasonal California fare awaits."
+},
+
+{"name":
+"Chadolpoong"
+,"address":
+"3470 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12132632004"
+,"hours":
+hours_str
+,"description":
+"At Chadolpoong, you can choose from a variety of comfort Korean foods including famous intestine combo and dishes with Chadol, which means beef brisket in Korean"
+},
+
+{"name":
+"Woo Hyang Woo"
+,"address":
+"3429 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133155080"
+,"hours":
+hours_str
+,"description":
+"Pair the finest Korean BBQ with our selected 25+ wines, 8 draft beers, Sakes, Sojus, and Cocktails!"
+},
+
+{"name":
+"Slurpin Ramen Bar"
+,"address":
+"3500 W 8th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90005
+,"phone_number":
+"+12133888607"
+,"hours":
+hours_str
+,"description":
+"Laid-back restaurant dishing up Japanese ramen with homemade noodles, plus meat & veggie options."
+},
+
+{"name":
+"Pasta Sisters"
+,"address":
+"3343 W Pico Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90019
+,"phone_number":
+"+13238705271"
+,"hours":
+hours_str
+,"description":
+"This casual & cozy Italian deli with limited seating offers handmade pasta classics & panini."
+},
+
+{"name":
+"Osteria Mamma"
+,"address":
+"5732 Melrose Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90004
+,"phone_number":
+"+13232847060"
+,"hours":
+hours_str
+,"description":
+"Family-run trattoria serves Italian comfort food, including handmade pasta, amid modest decor."
+},
+
+{"name":
+"Yuk Dae Jang"
+,"address":
+"3033 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133521331"
+,"hours":
+hours_str
+,"description":
+"Korean Traditional Comfort Food Restaurant. Specialties: Yuk Gae Jang & Bossam"
+},
+
+{"name":
+"Running Goose"
+,"address":
+"1620 N Cahuenga Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90028
+,"phone_number":
+"+13234691080"
+,"hours":
+hours_str
+,"description":
+"Simple-yet-stylish spot for globally inspired fare served indoors or on the shaded patio."
+},
+
+{"name":
+"Yup Dduk"
+,"address":
+"3603 W 6th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12132632355"
+,"hours":
+hours_str
+,"description":
+"Compact kitchen serving traditional Korean fare, including a signature spicy rice & fish-cake dish."
+},
+
+{"name":
+"Yuko Kitchen"
+,"address":
+"5484 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13239334020"
+,"hours":
+hours_str
+,"description":
+"Rice bowls & udon noodles are favorites at this arty cafe with an outdoor patio & free WiFi."
+},
+
+{"name":
+"The Ppong"
+,"address":
+"4003 Wilshire Place"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90010
+,"phone_number":
+"+12135683953"
+,"hours":
+hours_str
+,"description":
+"Classic Korean and Chineese dishes served in a industrial style setting."
+},
+
+{"name":
+"Two Hands Hotdog"
+,"address":
+"450 S Western Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"+12133757518"
+,"hours":
+hours_str
+,"description":
+"Unlike your typical hot dog in a bun, we specialize in using a stick to deep fry our signature item until it crisps golden brown. It's the perfect snack filled with your choice of mozzarella cheese, squid-ink, rice cake, potato, and more!"
+},
+
+{"name":
+"Vernetti"
+,"address":
+"225 N Larchmont Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90004
+,"phone_number":
+"+13237985886"
+,"hours":
+hours_str
+,"description":
+"Northern Italian dishes at a small neighborhood staple with sidewalk tables & a corkage fee."
+},
+
+{"name":
+"Chang Hwa Dang"
+,"address":
+"3377 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90010
+,"phone_number":
+"+12133344333"
+,"hours":
+hours_str
+,"description":
+"Come see us for the Best Korean Dumpling in the US!"
+},
+
+{"name":
+"Easy Street Burgers"
+,"address":
+"1000 N Western Ave"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90029
+,"phone_number":
+"+18189663009"
+,"hours":
+hours_str
+,"description":
+"It all started with an idea to try making smash burgers in the backyard. Ground Beef, american cheese, burger buns & a 12-in cast iron skillet were all Easy Street Burgers needed."
+},
+
+{"name":
+"Pine & Crane"
+,"address":
+"1521 Griffith Park Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90026
+,"phone_number":
+"+13236681128"
+,"hours":
+hours_str
+,"description":
+"Casual eatery offering a seasonal menu of Taiwanese small plates, plus noodle & rice dishes."
+},
+
+{"name":
+"Genwa Korean BBQ"
+,"address":
+"5115 Wilshire Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"+13235490760"
+,"hours":
+hours_str
+,"description":
+"Wood-accented eatery where diners cook Korean BBQ dishes on smokeless grills at their tables."
+},
+
+{"name":
+"Apey Kade"
+,"address":
+"19662 Ventura Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+91356
+,"phone_number":
+"8186097683"
+,"hours":
+hours_str
+,"description":
+"Tucked into a Tarzana strip mall, Apey Kade’s husband and wife owners Lalith Rodrigo and Niza Hashim prepare Sri Lankan dishes, including a specialty dish called chicken lamprais made with chicken or beef curry in coconut milk and wrapped in banana leaf."
+},
+
+{"name":
+"Lal Mirch"
+,"address":
+"11138 Ventura Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+91604
+,"phone_number":
+"(818) 980-2273"
+,"hours":
+hours_str
+,"description":
+"Lal Mirch’s friendly owners and attentive staff bring out flavorful plates of southern Indian food including naan, korma, biryani, sag paneer, and masala."
+},
+
+{"name":
+"Cardamom"
+,"address":
+"7233 Beverly Blvd"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90036
+,"phone_number":
+"(323) 936-1000"
+,"hours":
+hours_str
+,"description":
+"Mostly known for its white tablecloths and sleek dining room, Cardamom cooks nearly everything on its menu to-go in the heart of Beverly Grove."
+},
+
+{"name":
+"Biriyani Kabob House"
+,"address":
+"3525 W 3rd St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90020
+,"phone_number":
+"(213) 384-3570"
+,"hours":
+hours_str
+,"description":
+"Biriyani Kabob House serves some of the best lamb biryani in town, fluffy basmati rice with tender chunks of lamb."
+},
+
+{"name":
+"Bombay Beach"
+,"address":
+"1338 W 7th St"
+,"city":
+"Los Angeles"
+,"state":
+"California"
+,"zipcode":
+90017
+,"phone_number":
+"+13238475013"
+,"hours":
+hours_str
+,"description":
+"Bombay Beach’s Northern Indian menu boasts favorites like butter chicken, samosas, and incredible vegan tikka masala (ask the kitchen for spicy). In a nod to Angat’s Los Angeles roots, the kitchen also crafts chicken tikka tacos and new menu item: tandoori chicken pizza."
+},
+
+{"name":
+"Mayura"
+,"address":
+"10406 Venice Blvd"
+,"city":
+"Culver City"
+,"state":
+"California"
+,"zipcode":
+90232
+,"phone_number":
+"(310) 559-9644"
+,"hours":
+hours_str
+,"description":
+"One of Los Angeles ’s most beloved Indian restaurants and a longtime Jonathan Gold favorite, Mayura, specializes in Kerala-style food with dosas, uthappam, and fish curry."
+},
+
+{"name":
+"Tumbi"
+,"address":
+"115 Santa Monica Blvd"
+,"city":
+"Santa Monica"
+,"state":
+"California"
+,"zipcode":
+90401
+,"phone_number":
+"(310) 829-7200"
+,"hours":
+hours_str
+,"description":
+"Santa Monica is filled with casual Indian concepts, but Tumbi takes a modern approach with farmers market ingredients and fanciful presentations."
+},
+
+{"name":
+"Zam Zam Market"
+,"address":
+"13649 S Inglewood Ave"
+,"city":
+"Hawthorne"
+,"state":
+"California"
+,"zipcode":
+90250
+,"phone_number":
+"(310) 978-1927"
+,"hours":
+hours_str
+,"description":
+"This humble market and takeout restaurant has a smaller but excellent array of mostly Pakistani dishes, starting with flavor-packed biryani."
+},
 
 
 ]

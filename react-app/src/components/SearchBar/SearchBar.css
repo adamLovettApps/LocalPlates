@@ -9,9 +9,9 @@
 .search-form {
     width: 5;
     height: 20%;
+    background-color: transparent;
     display: flex;
     justify-content: center;
-    background-color: rgba(0,0,0,0)
 }
 
 input {

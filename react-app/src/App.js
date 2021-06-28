@@ -13,6 +13,7 @@ import SearchResults from "./components/SearchResults"
 import Footer from "./components/Footer"
 
 import Restaurant from "./components/Restaurant";
+import RestaurantManagement from "./components/RestaurantManagement";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
+        <ProtectedRoute path="/restaurantmanagement/:id" exact={true} >
+          <RestaurantManagement />
+        </ProtectedRoute>
         <Route path="/" exact={true} >
           <Home />
         </Route>
@@ -62,7 +66,8 @@ function App() {
           <Restaurant />
         </Route>
       </Switch>
-      <Footer />
+
+        <Footer />
     </BrowserRouter>
   );
 }

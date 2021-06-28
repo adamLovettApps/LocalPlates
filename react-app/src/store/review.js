@@ -22,27 +22,28 @@ export const getReviews=(id)=> async(dispatch)=>{
 }
 
 export const addOneReview = (restaurant_id, user_id, body, stars, title) => async(dispatch) => {
-    
+
     const response = await fetch("/api/restaurants/reviews", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            restaurant_id,
-            user_id,
-            body,
-            stars,
-            title
+            restaurant_id:restaurant_id,
+            user_id:user_id,
+            title:title,
+            body:body,
+            stars:stars,
+            image:' '
         }),
     });
 
     const data = await response.json();
+    dispatch(getReviews(restaurant_id));
     if (data.errors) {
         return data;
     }
 
-    dispatch(addReview(data));
     return {};
 }
 
