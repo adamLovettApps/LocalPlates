@@ -26,13 +26,17 @@ export const setFavorite = (userId, restaurantId, status) => async (dispatch) =>
     }
 }
 
-const initialState = {favorites: {}}
+const initialState = {favorites: []}
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case SET_FAVORITES:
+            let favArr= []
+            for(let key in action.payload) {
+                favArr.push(action.payload[key])
+            }
             return {
-                favorites: action.payload
+                favorites: favArr
             }
         default:
             return state;
