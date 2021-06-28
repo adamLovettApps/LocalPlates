@@ -20,6 +20,7 @@ const RestaurantHeader = () => {
     const favorites = useSelector(state => state.favorites.favorites)
     const { id } = useParams();
 
+
     useEffect(() => {
         (async() => {
             let ip = await getIPInfo();
@@ -33,19 +34,28 @@ const RestaurantHeader = () => {
 
     }, []);
 
+
+
     if (!loaded) {
         return null;
     }
-
     const addFavorite = () => {
-        setFavorited(true);
+        if (favorited){
+            setFavorited(false);
+        }else{
+            setFavorited(true);
+        }
         (async() => {
             dispatch(setFavorite(user.id, id, 1));
         })();
     }
 
     const removeFavorite = () => {
-        setFavorited(false);
+        if (favorited){
+            setFavorited(false);
+        }else{
+            setFavorited(true);
+        }
         (async() => {
             dispatch(setFavorite(user.id, id, 0));
         })();
@@ -69,11 +79,7 @@ const RestaurantHeader = () => {
             const encoded = btoa(imageRequest);
             const url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
         {console.log("FAVORIdwdwdwdRES", favorites)}
-        {favorites.forEach((el) => {
-            if (el.restaurant_id === id) {
-                setFavorited(true);
-            }
-        })}
+
 
         if (user) {
             if (favorited) {
