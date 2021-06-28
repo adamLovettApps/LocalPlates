@@ -15,7 +15,6 @@ const getIPInfo = async () => {
 function Home(){
     const [offset, setOffset] = useState(-1);
     const dispatch = useDispatch();
-    const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
     const italian = useSelector((state)=>Object.values(state.restaurant.italian))
     const outdoor = useSelector((state)=>Object.values(state.restaurant.outdoor))
     const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
@@ -76,8 +75,6 @@ function Home(){
             }
             }, 300)
     },[])
-
-    let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
           let ip = await getIPInfo();
