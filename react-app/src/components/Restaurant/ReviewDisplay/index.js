@@ -23,7 +23,7 @@ function ReviewDisplay({review}){
     return(
         <div className='review-display-div'>
             <div className="review-user-container">
-                <div className="review-user-profile-pic " style={{backgroundImage: `url("${url}")`}}> {review.username[0]}</div>
+                <div className="review-user-profile-pic " style={{backgroundImage: `url("${url}")`}}> </div>
 
             <div className="review-user">{review.username}  </div>
 

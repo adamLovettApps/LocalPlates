@@ -34,7 +34,6 @@ function Reviews({restaurant}){
             setShowReviewForm(true);
         }
     };
-    console.log("ALLL REVIEWS ARE RIGHT HERE",allReviews)
     return (
         <>
             <div className='review-container'>

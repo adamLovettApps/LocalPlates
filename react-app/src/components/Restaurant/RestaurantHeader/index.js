@@ -17,7 +17,7 @@ const RestaurantHeader = () => {
     const [favorited,setFavorited] = useState(false);
     const user = useSelector(state => state.session.user);
     const restaurant = useSelector(state => state.restaurant.restaurant);
-    const favorites = useSelector(state => state.favorites.favorites)
+    let favorites = useSelector(state => state.favorites.favorites)
     const { id } = useParams();
 
 
@@ -31,11 +31,13 @@ const RestaurantHeader = () => {
             setLoaded(true);
 
         })();
-
     }, []);
 
-
-
+    useEffect(()=>{
+        if(favorites.find(el=>el.restaurant_id==id)){
+            setFavorited(true)
+        }
+    },[favorites])
     if (!loaded) {
         return null;
     }
@@ -46,16 +48,22 @@ const RestaurantHeader = () => {
             setFavorited(true);
         }
         (async() => {
-            dispatch(setFavorite(user.id, id, 1));
+            let ip = await getIPInfo();
+            dispatch(setFavorite(user.id, id, 1,ip));
         })();
     }
-
     const removeFavorite = () => {
         if (favorited){
             setFavorited(false);
         }else{
             setFavorited(true);
         }
+        let holder = favorites.filter(el=>{
+            if(!(el.restaurant_id == id)){
+                return el
+            }
+        })
+        favorites = holder;
         (async() => {
             dispatch(setFavorite(user.id, id, 0));
         })();

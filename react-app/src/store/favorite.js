@@ -17,11 +17,12 @@ export const getAllFavorites = (id,ip) => async (dispatch) => {
     }
 }
 
-export const setFavorite = (userId, restaurantId, status) => async (dispatch) => {
+export const setFavorite = (userId, restaurantId, status,ip) => async (dispatch) => {
     const response = await fetch(`/api/users/setFavorite/${userId}/${restaurantId}/${status}`);
 
     if (response.ok){
-        const data = await response.json();
+        const res2 = await await fetch(`/api/users/getfavorites/${userId}/${ip}`);
+        let data = res2.json();
         dispatch(setFavorites(data))
         return data;
     }
