@@ -41,6 +41,11 @@ function Restaurant(){
             <div className="right-side-container">
                 <div className="booking-container"><BookingCard></BookingCard></div>
                 <div className="map-container"><Map restaurant={restaurant_data}></Map></div>
+                <div className="address-and-phone-num-container">
+                    <div >{restaurant_data.address}</div>
+                    <div className="city-state-display">{restaurant_data.city}, {restaurant_data.state} {restaurant_data.zipcode}</div>
+                    <div className="phone-num-display">Call {restaurant_data.phone_number} for takeout</div>
+                </div>
             </div>
         </div>
         <div className="review-component-container">

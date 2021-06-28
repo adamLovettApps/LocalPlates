@@ -33,3 +33,11 @@
     margin-top: -10px;
     z-index: 2;
 }
+
+.address-and-phone-num-container {
+    margin-top: 10px;
+}
+
+.city-state-display {
+    margin-top: -8px;
+}
