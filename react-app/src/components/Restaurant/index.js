@@ -8,6 +8,7 @@ import BookingCard from "./BookingCard";
 import SearchBar from "../SearchBar";
 import Reviews from "./Reviews";
 import PhotoGallery from "./PhotoGallery";
+import Map from "./Map";
 import "./Restaurant.css"
 
 function Restaurant(){
@@ -27,6 +28,7 @@ function Restaurant(){
     }
 
 
+    if (restaurant_data){
     return (
         <>
         <div className="search-bar-container"><SearchBar></SearchBar></div>
@@ -38,13 +40,18 @@ function Restaurant(){
             </div>
             <div className="right-side-container">
                 <div className="booking-container"><BookingCard></BookingCard></div>
-                <div className="map-container"></div>
+                <div className="map-container"><Map restaurant={restaurant_data}></Map></div>
             </div>
         </div>
+        <div className="review-component-container">
         <Reviews restaurant={restaurant_data}/>
+        </div>
         </>
 
     )
+    } else {
+        return null;
+    }
 }
 
 export default Restaurant;

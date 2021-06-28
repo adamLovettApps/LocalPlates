@@ -9,6 +9,7 @@ import menuphotos from './menuphotos';
 import reviews from './review';
 import tags from './tags'
 import booking from "./booking"
+import coordinates from "./coordinates"
 
 const rootReducer = combineReducers({
     session,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     menuphotos,
     reviews,
     tags,
-    booking
+    booking,
+    coordinates
 });
 
 let enhancer;

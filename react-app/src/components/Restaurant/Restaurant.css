@@ -17,3 +17,14 @@
 .photo-gallery-container {
     margin-left: 300px;
 }
+
+.review-component-container {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 600px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right:auto;
+    padding-right: 370px;
+    margin-top: 70px;
+}

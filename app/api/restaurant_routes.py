@@ -18,8 +18,8 @@ def get_collection_of_restaurants(tag, ip):
     res = requests.get(
         f"https://api.ipapi.com/api/{ip}?access_key={REACT_APP_IPAPI_KEY}")
     location = res.json()
-    latitude = location["latitude"]
-    longitude = location["longitude"]
+    latitude = location["latitude"] - 2
+    longitude = location["longitude"] + 3
     print('>>>>>>>>>>>>>>>>>>>>>>>got to restaurants api', tag)
     results = db.session.execute(
         f"SELECT restaurants.id FROM restaurants JOIN restaurant_tags ON restaurant_tags.restaurant_id=restaurants.id JOIN tags ON tags.id=restaurant_tags.tag_id  WHERE tags.type ILIKE \'%{tag}%\'  LIMIT 20")
@@ -146,3 +146,25 @@ def get_restaurant_id(id):
 
     return {"id": restaurant.id}
 
+
+@restaurant_routes.route('/getcoordinates/<int:id>')
+def get_coords(id):
+    googleKey = os.environ.get("GOOGLE_KEY")
+    restaurant = Restaurant.query.filter_by(id=id).first()
+    addressForGoogle = restaurant.address.replace(" ", "+")
+    cityForGoogle = restaurant.city.replace(" ", "+")
+    stateForGoogle = restaurant.state.replace(" ", "+")
+    res = requests.get(
+        f"https://maps.googleapis.com/maps/api/geocode/json?address={addressForGoogle},+{cityForGoogle},+{stateForGoogle}&key={googleKey}")
+    if res.json()["status"] == 'OK':
+        location = res.json()
+        lat = location["results"][0]['geometry']['location']['lat']
+        lng = location["results"][0]['geometry']['location']['lng']
+        print("REsTAURANT COORDS ROUTE", lat, lng)
+        print(' ')
+        print(' ')
+        print(' ')
+        print(' ')
+        print(' ')
+        return {"lat": lat, "lng": lng}
+    return {}

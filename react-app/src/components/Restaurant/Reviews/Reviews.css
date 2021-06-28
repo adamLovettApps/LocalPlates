@@ -1,9 +1,10 @@
 .review-container {
-    margin-left: 60px;
-    margin-right: 300px;
     display:flex;
     align-items: flex-start;
+    min-width: 600px;
     flex-direction: column;
+    max-width: 900px;
+    position: relative;
 }
 
 .write-review-btn {
@@ -15,10 +16,26 @@
     border-radius: 4px;
     margin-right: 30px;
     margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 0px;
     height:29px;
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+
+.review-container-header {
+    font-size: 24px;
+    font-weight: 500px;
+}
+
+.review-container-divider {
+    width: 600px;
+    margin-right: 145px;
+}
+
+.contents-of-reviews {
+    margin-left: -3px;
+    width: 631px;
 }

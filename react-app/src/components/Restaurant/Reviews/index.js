@@ -37,11 +37,17 @@ function Reviews({restaurant}){
     return (
         <>
             <div className='review-container'>
+                <div className="review-container-header">
+                        Reviews
+                    </div>
+                    <hr className="review-container-divider"></hr>
                     <button onClick={toggleForm} className='write-review-btn'>Post a Review</button>
                     {showReviewForm && <ReviewForm restaurant={restaurant} />}
+                    <div className="contents-of-reviews">
                     {allReviews.length>0 && allReviews.map((review,index)=>(
                         <ReviewDisplay key={index} review={review} />
                     ))}
+                    </div>
             </div>
         </>
     )
