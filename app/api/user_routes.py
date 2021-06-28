@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, redirect
 from flask_login import login_required, current_user
-from app.models import User, Booking, Favorite, Review, Restaurant
+from app.models import User, Booking, Favorite, Review, Restaurant, db
 
 user_routes = Blueprint('users', __name__)
 
@@ -50,24 +50,28 @@ def user(id):
 @login_required
 def favorites(id):
     favorites = Favorite.query.filter_by(user_id=id).all()
-    new_favorites = {k: photo.to_dict() for k, photo in dict(
+    new_favorites = {k: favorite.to_dict() for k, favorite in dict(
         zip(range(len(favorites)), favorites)).items()}
     return new_favorites
 
 
-@user_routes.route('/addFavorite/<int:userid>/<int:restaurantid>', methods=["POST"])
+@user_routes.route('/setFavorite/<int:userid>/<int:restaurantid>/<int:status>')
 @login_required
-def addfavorite(id):
-    favorites = Favorite.query.filter_by(user_id=id).all()
-    new_favorites = {k: photo.to_dict() for k, photo in dict(
+def addfavorite(userid, restaurantid, status):
+    if status == 1:
+        favorite = Favorite(
+            user_id=userid,
+            restaurant_id=restaurantid
+        )
+        db.session.add(favorite)
+        db.session.commit()
+    else:
+        favorite = Favorite.query.filter_by(user_id=userid).filter_by(restaurant_id=restaurantid).first()
+        db.session.delete(favorite)
+        db.session.commit()
+    favorites = Favorite.query.filter_by(user_id=userid).all()
+    new_favorites = {k: favorite.to_dict() for k, favorite in dict(
         zip(range(len(favorites)), favorites)).items()}
     return new_favorites
 
 
-@user_routes.route('/removefavorite/<int:userid>/<int:restaurantid>', methods=["POST"])
-@login_required
-def removefavorite(id):
-    favorites = Favorite.query.filter_by(user_id=id).all()
-    new_favorites = {k: photo.to_dict() for k, photo in dict(
-        zip(range(len(favorites)), favorites)).items()}
-    return new_favorites
