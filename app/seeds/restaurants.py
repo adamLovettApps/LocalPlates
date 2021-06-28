@@ -3,7 +3,7 @@ from .restaurant_seed_data import restuarant_seeds
 import os
 import json
 import requests
-
+import random
 
 
 
@@ -25,7 +25,7 @@ def seed_restaurants():
             lng = location["results"][0]['geometry']['location']['lng']
             geo_str=f'POINT({lat} {lng})'
             db.session.add(Restaurant(name=restuarant_seeds[i]["name"], address=restuarant_seeds[i]["address"], zipcode=restuarant_seeds[i]["zipcode"],city=restuarant_seeds[i]["city"],
-                state=restuarant_seeds[i]["state"], phone_number=restuarant_seeds[i]["phone_number"], owner_id=(i+1),total_bookings=0, star_rating=0.0, review_count=0, hours=restuarant_seeds[i]["hours"],
+                state=restuarant_seeds[i]["state"], phone_number=restuarant_seeds[i]["phone_number"], owner_id=(i+1),total_bookings=random.randrange(5, 250), star_rating=random.randrange(2, 5), review_count=random.randrange(2, 100), hours=restuarant_seeds[i]["hours"],
                 description=restuarant_seeds[i]["description"], geo=geo_str))
         else:
             print(">>>>>>>>>>>>>>>>>>>>>>>ERROR>>>>>>>>>>>>>>>>>>>>>>>>>")

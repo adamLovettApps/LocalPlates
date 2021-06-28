@@ -17,7 +17,7 @@ def seed_users():
         db.session.add(User(username=username,email=email,password=password,
         profile_photo=image_seeds[i]["url"],
         is_owner=True))
-    db.session.add(User(username="Demo User",email="fake@email.com",password="password", profile_photo="https://files.thehandbook.com/uploads/2014/10/Gordon-Ramsay.jpg",is_owner=False))
+    db.session.add(User(username="Gordon Ramsay",email="hell@kitchen.com",password="password", profile_photo="https://localplates.s3.us-west-1.amazonaws.com/Gordon-Ramsay.jpg",is_owner=False))
 
 
 

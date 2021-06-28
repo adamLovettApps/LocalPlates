@@ -12,7 +12,7 @@ const NavBar = ({  }) => {
   const dispatch = useDispatch();
   const handleSubmit = async (e)=>{
 
-    const data= await dispatch(login("fake@email.com","password"));
+    const data= await dispatch(login("hell@kitchen.com","password"));
 
   }
 
@@ -29,7 +29,7 @@ const NavBar = ({  }) => {
             </NavLink>
           {(user!==null) &&
             <div className="nav-welcome">
-              Hello! {user.username}
+              Hello {user.username}!
             </div>}
         </div>
         <div className="nav-middle"><img className="navigation-bar-logo" src="/images/localplates.png"></img></div>

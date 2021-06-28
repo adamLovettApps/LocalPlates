@@ -7,51 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
     <script src='https://kit.fontawesome.com/900569a4b1.js' crossorigin="anonymous"></script>
 
-    <!-- <script src="/javascripts/homePageButtons.js" defer></script> -->
   </head>
   <body style='margin:0px; background-color:rgb(236, 236, 236);'>
     <div id="root"></div>
   </body>
-  <script>
-    const timer = setTimeout(() => {
-        let leftButtons = document.getElementsByClassName("left-button");
-        let rowCount =  leftButtons.length
 
-        function scrollAnimation(isLeft, scrollRow) {
-
-          let x = isLeft? -1 : 1;
-          function intervalMaker(cb, count, delay) {
-            const intervalObj = setInterval(()=>{
-              cb();
-              count --;
-              if(count === 0 ) {
-                clearInterval(intervalObj);
-              }
-            },delay)
-          }
-          //fast
-          intervalMaker(()=>{
-            scrollRow.scrollLeft += (x *5);
-          }, 120, 5)
-          //slower
-          intervalMaker(()=>{
-            scrollRow.scrollLeft += (x *4);
-          }, 90, 12)
-          //very slow
-          intervalMaker(()=>{
-            scrollRow.scrollLeft += x;
-          }, 90, 15)
-        }
-        for(let i = 1; i<=  rowCount; i++){
-
-          let scrollHolder = document.getElementById(`${i}-scroll-div`);
-          document.getElementById(`${i}-left-scroll-btn`).addEventListener("click", (e)=>{
-            scrollAnimation(true, scrollHolder);
-          })
-          document.getElementById(`${i}-right-scroll-btn`).addEventListener("click",(e)=>{
-            scrollAnimation(false, scrollHolder);
-          })
-        }
-      }, 500)
-  </script>
 </html>

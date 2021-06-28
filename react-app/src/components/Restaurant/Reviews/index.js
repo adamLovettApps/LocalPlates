@@ -34,6 +34,7 @@ function Reviews({restaurant}){
             setShowReviewForm(true);
         }
     };
+    console.log("ALLL REVIEWS ARE RIGHT HERE",allReviews)
     return (
         <>
             <div className='review-container'>
@@ -42,8 +43,11 @@ function Reviews({restaurant}){
                     </div>
                     <hr className="review-container-divider"></hr>
                     <button onClick={toggleForm} className='write-review-btn'>Post a Review</button>
-                    {showReviewForm && <ReviewForm restaurant={restaurant} />}
+
                     <div className="contents-of-reviews">
+
+                    {showReviewForm && <ReviewForm toggleForm={toggleForm}restaurant={restaurant}/>}
+
                     {allReviews.length>0 && allReviews.map((review,index)=>(
                         <ReviewDisplay key={index} review={review} />
                     ))}
