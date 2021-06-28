@@ -188,6 +188,13 @@
         justify-content: center;
     }
 
+    .user-edit-form>div{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
 
 }
 

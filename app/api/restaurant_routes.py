@@ -87,6 +87,24 @@ def add_review():
     return {}
     # update review count and score on the user obj
 
+@restaurant_routes.route('/<int:id>/reviews/<int:id2>', methods=['PUT'])
+def edit_review():
+    form = ReviewForm()
+    print(form.data)
+    form_validates = False
+    if form['body'] and form['title'] and form['stars']:
+        form_validates = True
+    if form_validates:
+        new_review = Review()
+        form.populate_obj(new_review)
+        print('REVIEW SUCCESS', new_review)
+        db.session.add(new_review)
+        db.session.commit()
+        return {}
+    print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ERROR")
+    return {}
+
+
 @restaurant_routes.route('/photos/<int:id>')
 def get_photos(id):
     photos = Photo.query.order_by(
@@ -145,4 +163,3 @@ def get_restaurant_id(id):
     print("RESTAURANT!!!!!!!!!", restaurant.id)
 
     return {"id": restaurant.id}
-
