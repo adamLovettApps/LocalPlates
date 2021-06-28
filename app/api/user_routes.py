@@ -68,6 +68,15 @@ def favorites(id,ip):
     return new_favorites
 
 
+@user_routes.route('/getfavoritesNoIp/<int:id>')
+@login_required
+def favorites_no_ip(id):
+    favorites = Favorite.query.filter_by(user_id=id).all()
+    new_favorites = {k: favorite.to_dict() for k, favorite in dict(
+        zip(range(len(favorites)), favorites)).items()}
+    return new_favorites
+
+
 @user_routes.route('/setFavorite/<int:userid>/<int:restaurantid>/<int:status>')
 @login_required
 def addfavorite(userid, restaurantid, status):
