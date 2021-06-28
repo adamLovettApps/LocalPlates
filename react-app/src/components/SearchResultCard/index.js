@@ -45,7 +45,7 @@ const SearchRestultCard = (restaurant) => {
                 <div className="name-container"><Link className="restaurant-page-link" to={`/restaurants/${restaurant.restaurant.id}`}><h2>{restaurant.restaurant.name}</h2></Link></div>
                 <div className="location-container">{restaurant.restaurant.city}, {restaurant.restaurant.state}</div>
                 <div className="stars-container"><StarRating rating={restaurant.restaurant.rating} reviewNum={restaurant.restaurant.reviews} ></StarRating></div>
-                <div className="tags-container">{restaurant.restaurant.tags.map(tag => {if (count < restaurant.restaurant.tags.length -1 && count < 4 ) {count++; ; return `${tag} • `;} if (count < 4) {count++; return `${tag}`;}} )}</div>
+                <div className="tags-container">{restaurant.restaurant.tags.map(tag => {if (count < restaurant.restaurant.tags.length -1 && count < 2 ) {count++; ; return `${tag} • `;} if (count < 3) {count++; return `${tag}`;}} )}</div>
                 <div className="book-container"><Link to={`/restaurants/${restaurant.id}}`}><button className="booking-button">Book Now</button></Link> <div className="booking-count-container">Booked {restaurant.restaurant.bookings} times previously.</div></div>
                 <div className="search-review-container">{restaurant.restaurant.review ? `"${restaurant.restaurant.review}"` : null}</div>
             </div>
