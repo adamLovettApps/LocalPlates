@@ -36,7 +36,7 @@ const NavBar = ({  }) => {
               Hello {user.username}!
             </div>}
         </div>
-        <div className="nav-middle"><img className="navigation-bar-logo" src="/images/localplates.png"></img></div>
+        <div className="nav-middle"><img className="navigation-bar-logo" src="https://i.ibb.co/JBgDjjQ/localplates.png"></img></div>
         <div className="nav-right">
 
           { (user===null) &&
