@@ -81,6 +81,7 @@ function Home(){
           await dispatch(getRestaurants("delivery",ip));
           await dispatch(getRestaurants("burgers",ip));
           await dispatch(getRestaurants("pizza",ip));
+          await dispatch(getRestaurants("asian",ip));
         })();
       }, [dispatch]);
 
@@ -95,8 +96,10 @@ function Home(){
         <div>
             <SplashDisplay/>
             {outdoor &&<CardScroll order={1} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
-            {italian &&<CardScroll order={2}collectionTitle={"Italian Food"} restaurants={italian}/>}
-            {hispanic &&<CardScroll order={3}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {delivery &&<CardScroll order={2} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
+            {italian &&<CardScroll order={3}collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic &&<CardScroll order={4}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {asian &&<CardScroll order={5} collectionTitle={"Asian Flavors"} restaurants={asian}/>}
 
         </div>
     );
