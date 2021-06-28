@@ -30,7 +30,7 @@ function Home(){
         }else{
             setOffset(-1);
         }
-    },[favorites])
+    },[favorites,user])
 
     useEffect(() =>{
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++")
@@ -83,7 +83,7 @@ function Home(){
           await dispatch(getRestaurants("hispanic",ip));
           await dispatch(getRestaurants("delivery",ip));
           await dispatch(getRestaurants("asian",ip));
-          if(user.id){
+          if(user){
               await dispatch(getAllFavorites(user.id,ip));
           }
         })();
@@ -99,7 +99,7 @@ function Home(){
     return(
         <div>
             <SplashDisplay/>
-            {favorites.length >0 &&<CardScroll order={1+offset} collectionTitle={"Favorites of Yours!"} restaurants={favorites}/>}
+            { (user && favorites.length>0) &&<CardScroll order={1+offset} collectionTitle={"Favorites of Yours!"} restaurants={favorites}/>}
             {outdoor && <CardScroll order={2+offset} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
             {delivery && <CardScroll order={3+offset} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
             {italian && <CardScroll order={4+offset}collectionTitle={"Italian Food"} restaurants={italian}/>}
