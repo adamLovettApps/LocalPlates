@@ -370,6 +370,7 @@ def seed_restaurant_tags():
     db.session.execute(restaurant_tags.insert().values(tag_id=14,restaurant_id=120));
     db.session.execute(restaurant_tags.insert().values(tag_id=2,restaurant_id=120));
     db.session.execute(restaurant_tags.insert().values(tag_id=6,restaurant_id=120));
+
     # LA
 
     db.session.commit();

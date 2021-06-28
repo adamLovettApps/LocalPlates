@@ -17,6 +17,10 @@ function Home(){
     const italian = useSelector((state)=>Object.values(state.restaurant.italian))
     const outdoor = useSelector((state)=>Object.values(state.restaurant.outdoor))
     const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
+    const delivery = useSelector((state)=>Object.values(state.restaurant.delivery))
+    const burgers = useSelector((state)=>Object.values(state.restaurant.burgers))
+    const pizza = useSelector((state)=>Object.values(state.restaurant.pizza))
+    const asian = useSelector((state)=>Object.values(state.restaurant.asian))
     const user = useSelector(state => state.session.user);
     if (user){
     }
@@ -74,7 +78,10 @@ function Home(){
           await dispatch(getRestaurants("italian",ip));
           await dispatch(getRestaurants("outdoor",ip));
           await dispatch(getRestaurants("hispanic",ip));
-
+          await dispatch(getRestaurants("delivery",ip));
+          await dispatch(getRestaurants("burgers",ip));
+          await dispatch(getRestaurants("pizza",ip));
+          await dispatch(getRestaurants("asian",ip));
         })();
       }, [dispatch]);
 
@@ -89,8 +96,10 @@ function Home(){
         <div>
             <SplashDisplay/>
             {outdoor &&<CardScroll order={1} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
-            {italian &&<CardScroll order={2}collectionTitle={"Italian Food"} restaurants={italian}/>}
-            {hispanic &&<CardScroll order={3}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {delivery &&<CardScroll order={2} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
+            {italian &&<CardScroll order={3}collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic &&<CardScroll order={4}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {asian &&<CardScroll order={5} collectionTitle={"Asian Flavors"} restaurants={asian}/>}
 
         </div>
     );
