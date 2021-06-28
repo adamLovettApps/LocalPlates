@@ -10,6 +10,7 @@ const GET_Barbecue="restaurants/GET_barbecue"
 const GET_Pizza="restaurants/GET_pizza"
 const GET_Outdoor="restaurants/GET_outdoor"
 const GET_Delivery="restaurants/GET_delivery"
+const GET_Asian="restaurants/GET_asian"
 const ADD_REVIEW="restaurants/ADD_review"
 
 
@@ -70,7 +71,7 @@ const setReview = (review) => ({
 
 
 const initialState = {restaurants: {}, italian:{}, indian:{}, hispanic:{},sushi:{},
-burgers:{},vegetarian:{}, barbecue:{}, pizza:{}, outdoor:{}, delivery:{}, restaurant: {}, restaurant_data: {}}
+burgers:{},vegetarian:{}, barbecue:{}, pizza:{}, outdoor:{}, delivery:{}, restaurant: {}, asian:{}, restaurant_data: {}}
 
 const RestaurantReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -82,6 +83,15 @@ const RestaurantReducer = (state = initialState, action) => {
 
             return {
                 ...state, italian: all_italian
+            }
+        case GET_Asian:
+            let all_asian = {};
+            for (let key in action.restaurants){
+                all_asian[key] = action.restaurants[key]
+            }
+
+            return {
+                ...state, asian: all_asian
             }
         case GET_Indian:
             let all_indian = {};

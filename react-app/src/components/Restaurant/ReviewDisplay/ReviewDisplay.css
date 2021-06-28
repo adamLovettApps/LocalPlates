@@ -10,7 +10,7 @@
     display: flex;
 }
 .review-star-display {
- margin-left: 20px;
+ margin-left: 10px;
  font-size: 20px;
 }
 .review-user-profile-pic {
@@ -29,15 +29,21 @@
 
 .review-user {
     margin-top: 10px;
+    color: #2d333f;
 }
 
 .review-body-container {
-    margin-left: 30px;
+    margin-left: 20px;
 }
-
+.review-title-display {
+    width:70%;
+    color: #2d333f;
+}
 .review-title {
     font-size: 25px;
     display: flex;
+    border-bottom: 1px solid #2d333f;
+
 }
 .review-user-container {
     width: 100px;
@@ -46,5 +52,6 @@
 
 .review-body {
     margin-top: 20px;
+    color: #2d333f;
 
 }

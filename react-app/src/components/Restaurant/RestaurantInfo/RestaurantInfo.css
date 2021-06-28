@@ -13,38 +13,41 @@
     width: 600px;
 }
 
-.restaurant-name-container { 
-    grid-area: 2 / 2 / 3 / 4; 
+.restaurant-name-container {
+    grid-area: 2 / 2 / 3 / 4;
     display: flex;
     font-size: 48px;
     margin-top: -20px;
     margin-bottom: -20px;
+    color: #2d333f;
+    padding-bottom: 4px;
 
 }
 
 .hr-container {
     grid-area: 3 / 2 / 4 / 3;
 
-    
+
 }
-.restaurant-page-stars-container { 
+.restaurant-page-stars-container {
     grid-area: 4 / 2 / 5 / 4;
 
 }
 
-.tag-container { 
+.tag-container {
     grid-area: 5 / 2 / 6 / 4;
+    color: #2d333f;
 
 }
 
-.description-container { 
+.description-container {
     grid-area: 6 / 2 / 7 / 3;
-
+    color: #2d333f;
 
 }
 
 .description-text {
     max-width: 500px;
-    
-}
+    color: #2d333f;
 
+}

@@ -31,7 +31,10 @@ function ReviewDisplay({review}){
 
         <div className="review-body-container">
             <div className="review-title">
+                <div className="review-title-display">
+
             {review.title}
+                </div>
         <div className="review-star-display">
             {review.stars>0 ?<span className="fa fa-star checked" ></span> : <span className="fa fa-star not-checked" ></span>}
             {review.stars>1 ?<span className="fa fa-star checked" ></span> : <span className="fa fa-star not-checked" ></span>}
@@ -39,8 +42,8 @@ function ReviewDisplay({review}){
             {review.stars>3 ?<span className="fa fa-star checked" ></span> : <span className="fa fa-star not-checked" ></span>}
             {review.stars>4 ?<span className="fa fa-star checked" ></span> : <span className="fa fa-star not-checked" ></span>}
 
-        </div>
             </div>
+        </div>
         <div className='review-body'>
             {review.body}
         </div>
