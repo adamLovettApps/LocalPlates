@@ -1,6 +1,9 @@
 from flask import Blueprint, jsonify, redirect
 from flask_login import login_required, current_user
 from app.models import User, Booking, Favorite, Review, Restaurant, db
+import os
+import requests
+from sqlalchemy import func
 
 user_routes = Blueprint('users', __name__)
 
@@ -46,10 +49,20 @@ def user(id):
         return redirect("http://localhost:3000/", 302)
 
 
-@user_routes.route('/getfavorites/<int:id>')
+@user_routes.route('/getfavorites/<int:id>/<ip>')
 @login_required
-def favorites(id):
-    favorites = Favorite.query.filter_by(user_id=id).all()
+def favorites(id,ip):
+    REACT_APP_IPAPI_KEY = os.environ.get('REACT_APP_IPAPI_KEY')
+    res = requests.get(
+        f"https://api.ipapi.com/api/{ip}?access_key={REACT_APP_IPAPI_KEY}")
+    location = res.json()
+    latitude = location["latitude"] - 2
+    longitude = location["longitude"] + 3
+    data = db.session.execute(f"SELECT favorites.restaurant_id FROM favorites WHERE favorites.user_id = {id}")
+    restaurant_ids_with_tup = data.fetchall()
+    restaurant_id_list = list({id[0] for id in restaurant_ids_with_tup})
+    favorites = Restaurant.query.order_by(func.ST_Distance(
+        Restaurant.geo, func.ST_MakePoint(latitude, longitude))).filter(Restaurant.id.in_(restaurant_id_list)).all()
     new_favorites = {k: favorite.to_dict() for k, favorite in dict(
         zip(range(len(favorites)), favorites)).items()}
     return new_favorites
@@ -73,5 +86,3 @@ def addfavorite(userid, restaurantid, status):
     new_favorites = {k: favorite.to_dict() for k, favorite in dict(
         zip(range(len(favorites)), favorites)).items()}
     return new_favorites
-
-

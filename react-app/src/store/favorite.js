@@ -6,8 +6,9 @@ const setFavorites = (favorites) => ({
     payload: favorites
 })
 
-export const getAllFavorites = (id) => async (dispatch) => {
-    const response = await fetch(`/api/users/getfavorites/${id}`);
+export const getAllFavorites = (id,ip) => async (dispatch) => {
+    ip = ip.ip
+    const response = await fetch(`/api/users/getfavorites/${id}/${ip}`);
 
     if (response.ok){
         const data = await response.json();
@@ -16,23 +17,28 @@ export const getAllFavorites = (id) => async (dispatch) => {
     }
 }
 
-export const setFavorite = (userId, restaurantId, status) => async (dispatch) => {
+export const setFavorite = (userId, restaurantId, status,ip) => async (dispatch) => {
     const response = await fetch(`/api/users/setFavorite/${userId}/${restaurantId}/${status}`);
 
     if (response.ok){
-        const data = await response.json();
+        const res2 = await await fetch(`/api/users/getfavorites/${userId}/${ip}`);
+        let data = res2.json();
         dispatch(setFavorites(data))
         return data;
     }
 }
 
-const initialState = {favorites: {}}
+const initialState = {favorites: []}
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case SET_FAVORITES:
+            let favArr= []
+            for(let key in action.payload) {
+                favArr.push(action.payload[key])
+            }
             return {
-                favorites: action.payload
+                favorites: favArr
             }
         default:
             return state;

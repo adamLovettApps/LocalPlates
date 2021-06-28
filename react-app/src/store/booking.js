@@ -22,6 +22,7 @@ export const getAcceptedBookings = id => async(dispatch) => {
 
     if (response.ok) {
         const accepted = await response.json();
+        console.log("ACCEPTED BOOKINGS",accepted)
         dispatch(setAccepted(accepted));
         return;
     }
@@ -57,7 +58,7 @@ export const updateBooking = (bookingId, status, id) => async(dispatch) => {
         dispatch(getAcceptedBookings(id));
         dispatch(getPendingBookings(id));
         dispatch(getCancelledBookings(id));
-        
+
     }
     return;
 }
@@ -67,17 +68,17 @@ const initialState = {accepted: {}, pending: {}, cancelled: {}}
 
 export default function reducer(state=initialState, action) {
     switch(action.type) {
-        case SET_ACCEPTED_BOOKINGS: 
+        case SET_ACCEPTED_BOOKINGS:
             return {
                 ...state,
                 accepted: action.payload
             }
-        case SET_PENDING_BOOKINGS: 
+        case SET_PENDING_BOOKINGS:
             return {
                 ...state,
                 pending: action.payload
             }
-        case SET_CANCELLED_BOOKINGS: 
+        case SET_CANCELLED_BOOKINGS:
             return {
                 ...state,
                 cancelled: action.payload

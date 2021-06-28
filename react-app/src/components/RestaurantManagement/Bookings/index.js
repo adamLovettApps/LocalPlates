@@ -11,7 +11,7 @@ const Bookings = () => {
     const cancelled = useSelector(state => state.booking.cancelled);
     const [loaded, setLoaded] = useState(false);
     const { id } = useParams();
-
+    console.log("RESTARANT BOOKING",accepted,pending);
     useEffect(() => {
         (async () => {
             dispatch(getAcceptedBookings(id))
@@ -28,7 +28,7 @@ const Bookings = () => {
             // dispatch(getAcceptedBookings(id))
             // dispatch(getPendingBookings(id))
             // dispatch(getCancelledBookings(id))
-        })();   
+        })();
     }
 
     function dateToString(dateIn) {
@@ -51,7 +51,7 @@ const Bookings = () => {
         hour = "12";
     }
 
-    
+
 
     return hour + ":" + minute + " " + AMPM + " " + month + "-" + day + "-" + year
 
@@ -93,10 +93,10 @@ const Bookings = () => {
                     })}
                 </table>
             </div>
-            
-            
-            
-            
+
+
+
+
             <div className="accepted-bookings-table">
                 <div className="accepted-bookings-header"><div className="accepted-bookings-header-title">Accepted Reservations</div><hr></hr></div>
                 <table className="accepted-bookings-table">
@@ -119,7 +119,7 @@ const Bookings = () => {
                     })}
                 </table>
             </div>
-            
+
             <div className="cancelled-bookings-table">
                 <div className="accepted-bookings-header"><div className="accepted-bookings-header-title">Cancelled Reservations</div><hr></hr></div>
                 <table className="cancelled-bookings-table">
@@ -149,4 +149,3 @@ const Bookings = () => {
 }
 
 export default Bookings;
-

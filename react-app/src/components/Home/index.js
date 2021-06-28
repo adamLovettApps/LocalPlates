@@ -4,6 +4,7 @@ import SplashDisplay from "../SplashDisplay"
 import CardScroll from "../CardScroll"
 import { useDispatch, useSelector } from "react-redux";
 import {getRestaurants} from "../../store/restaurant"
+import {getAllFavorites} from "../../store/favorite"
 
 const getIPInfo = async () => {
         let res = await fetch('https://ipapi.co/json/');
@@ -12,18 +13,24 @@ const getIPInfo = async () => {
   }
 
 function Home(){
+    const [offset, setOffset] = useState(-1);
     const dispatch = useDispatch();
-    const restaurants = useSelector((state)=>Object.values(state.restaurant.restaurants))
     const italian = useSelector((state)=>Object.values(state.restaurant.italian))
     const outdoor = useSelector((state)=>Object.values(state.restaurant.outdoor))
     const hispanic = useSelector((state)=>Object.values(state.restaurant.hispanic))
     const delivery = useSelector((state)=>Object.values(state.restaurant.delivery))
-    const burgers = useSelector((state)=>Object.values(state.restaurant.burgers))
-    const pizza = useSelector((state)=>Object.values(state.restaurant.pizza))
     const asian = useSelector((state)=>Object.values(state.restaurant.asian))
+    const favorites = useSelector((state)=>state.favorites.favorites)
     const user = useSelector(state => state.session.user);
-    if (user){
-    }
+
+    useEffect(()=>{
+        console.log("FAVVVV LENGTH",favorites)
+        if(favorites.length  >0){
+            setOffset(0);
+        }else{
+            setOffset(-1);
+        }
+    },[favorites,user])
 
     useEffect(() =>{
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++")
@@ -68,20 +75,17 @@ function Home(){
             }
             }, 300)
     },[])
-
-    let placeholderTitle = "Tag Title Goes here"
     useEffect(() => {
         (async() => {
           let ip = await getIPInfo();
-
-        //   await dispatch(getRestaurants("all"));
           await dispatch(getRestaurants("italian",ip));
           await dispatch(getRestaurants("outdoor",ip));
           await dispatch(getRestaurants("hispanic",ip));
           await dispatch(getRestaurants("delivery",ip));
-          await dispatch(getRestaurants("burgers",ip));
-          await dispatch(getRestaurants("pizza",ip));
           await dispatch(getRestaurants("asian",ip));
+          if(user){
+              await dispatch(getAllFavorites(user.id,ip));
+          }
         })();
       }, [dispatch]);
 
@@ -95,11 +99,12 @@ function Home(){
     return(
         <div>
             <SplashDisplay/>
-            {outdoor &&<CardScroll order={1} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
-            {delivery &&<CardScroll order={2} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
-            {italian &&<CardScroll order={3}collectionTitle={"Italian Food"} restaurants={italian}/>}
-            {hispanic &&<CardScroll order={4}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
-            {asian &&<CardScroll order={5} collectionTitle={"Asian Flavors"} restaurants={asian}/>}
+            { (user && favorites.length>0 && favorites) &&<CardScroll order={1+offset} collectionTitle={"Favorites of Yours!"} restaurants={favorites}/>}
+            {outdoor && <CardScroll order={2+offset} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
+            {delivery && <CardScroll order={3+offset} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
+            {italian && <CardScroll order={4+offset}collectionTitle={"Italian Food"} restaurants={italian}/>}
+            {hispanic && <CardScroll order={5+offset}collectionTitle={"Hispanic Cuisine"} restaurants={hispanic}/>}
+            {asian && <CardScroll order={6+offset} collectionTitle={"Asian Flavors"} restaurants={asian}/>}
 
         </div>
     );
