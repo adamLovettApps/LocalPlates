@@ -99,7 +99,7 @@ function Home(){
     return(
         <div>
             <SplashDisplay/>
-            {null &&<CardScroll order={1+offset} collectionTitle={"Favorites of Yours!"} restaurants={favorites}/>}
+            {favorites.length >0 &&<CardScroll order={1+offset} collectionTitle={"Favorites of Yours!"} restaurants={favorites}/>}
             {outdoor && <CardScroll order={2+offset} collectionTitle={"Outdoor Seating"} restaurants={outdoor}/>}
             {delivery && <CardScroll order={3+offset} collectionTitle={"Delivery Options"} restaurants={delivery}/>}
             {italian && <CardScroll order={4+offset}collectionTitle={"Italian Food"} restaurants={italian}/>}
