@@ -11,7 +11,7 @@ function Reviews({restaurant}){
     const allReviews =  Object.values(useSelector((state)=>Object.values(state.reviews))[0]);
     const sessionUser = useSelector(state => state.session.user)
     const { id } = useParams();
-    console.log('THIS SHOULD BE EVERY REVIEW', allReviews)
+
 
     const [loaded, setLoaded] = useState(false);
     const [showReviewForm, setShowReviewForm] = useState(false);

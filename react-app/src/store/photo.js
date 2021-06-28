@@ -12,11 +12,27 @@ export const getRestaurantPhotos=(id)=> async(dispatch)=>{
     if (response.ok){
         const data = await response.json();
         dispatch(setPhotos(data))
+
         return;
     }
 }
 
-const initialState = {photos : []}
+export const removeRestaurantPhoto = (id, restaurantID) => async(dispatch) => {
+    const response = fetch(`/api/restaurants/photos/remove/${id}`);
+
+    dispatch(getRestaurantPhotos(restaurantID));
+}
+
+export const addRestaurantPhoto = (id, url) => async(dispatch) => {
+    url = url.url
+
+    url = url.substring(37);
+    const response = fetch(`/api/restaurants/photos/add/${id}/${url}`);
+
+    dispatch(getRestaurantPhotos(id));
+}
+
+const initialState = {photos : {}}
 export default function reducer(state = initialState, action){
     switch (action.type) {
         case SET_PHOTOS:

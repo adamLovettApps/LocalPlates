@@ -2,13 +2,14 @@
     background-color: #2d333f;
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
     padding-left: 60px;
+    width:100%;
+    z-index: 2;
 }
 
 .footer-title {
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -22,5 +23,5 @@
 .dev-container {
     display:flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }

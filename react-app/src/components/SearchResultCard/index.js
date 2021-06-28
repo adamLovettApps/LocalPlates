@@ -7,20 +7,21 @@ import "./SearchResultCard.css";
 function trimString( review, useWordBoundary ){
     if (review.length <= 145) { return review; }
     const subString = review.substr(0, 144); // the original check
-    return (useWordBoundary 
-        ? subString.substr(0, subString.lastIndexOf(" ")) 
+    return (useWordBoundary
+        ? subString.substr(0, subString.lastIndexOf(" "))
         : subString) + "...";
     };
 
 const SearchRestultCard = (restaurant) => {
 
     if (restaurant.restaurant) {
+
         const baseURL = restaurant.restaurant.photo.split('/')[3];;
         const imageRequest = JSON.stringify({
                         bucket: "localplates",
                         key: baseURL,
                         edits: {
-                            
+
                             resize: {
                                 width: 205,
                                 height:205,
@@ -30,13 +31,13 @@ const SearchRestultCard = (restaurant) => {
                     })
         const encoded = btoa(imageRequest);
         const url = `https://d3tzg5ntrh3zgq.cloudfront.net/${encoded}`;
-        
+
         if (restaurant.restaurant.review) {
             restaurant.restaurant.review = trimString(restaurant.restaurant.review);
         }
 
         let count = 0;
-        console.log("RES ID", restaurant.restaurant.id)
+
         return (
             <>
             <div className="search-result-card-container">
@@ -46,7 +47,7 @@ const SearchRestultCard = (restaurant) => {
                 <div className="stars-container"><StarRating rating={restaurant.restaurant.rating} reviewNum={restaurant.restaurant.reviews} ></StarRating></div>
                 <div className="tags-container">{restaurant.restaurant.tags.map(tag => {if (count < restaurant.restaurant.tags.length -1 && count < 4 ) {count++; ; return `${tag} • `;} if (count < 4) {count++; return `${tag}`;}} )}</div>
                 <div className="book-container"><Link to={`/restaurants/${restaurant.id}}`}><button className="booking-button">Book Now</button></Link> <div className="booking-count-container">Booked {restaurant.restaurant.bookings} times previously.</div></div>
-                <div className="review-container">{restaurant.restaurant.review ? `"${restaurant.restaurant.review}"` : null}</div>
+                <div className="search-review-container">{restaurant.restaurant.review ? `"${restaurant.restaurant.review}"` : null}</div>
             </div>
             </>
         )

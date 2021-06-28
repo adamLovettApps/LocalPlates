@@ -11,9 +11,9 @@ import './NavBar.css'
 const NavBar = ({  }) => {
   const dispatch = useDispatch();
   const handleSubmit = async (e)=>{
-    console.log("demo user clicked");
+
     const data= await dispatch(login("fake@email.com","password"));
-    console.log(data);
+
   }
 
 

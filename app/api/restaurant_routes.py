@@ -1,10 +1,12 @@
-from flask import Blueprint, jsonify
+from flask import Flask, Blueprint, jsonify, request
 import requests
 import os
 from requests.api import request
 from sqlalchemy import func
+from sqlalchemy import desc
 from flask.helpers import url_for
 from app.models import User, Restaurant, Review, Photo, MenuPhoto, db, Tag, restaurant_tags
+from app.forms import ReviewForm
 restaurant_routes = Blueprint('restaurants', __name__)
 
 
@@ -66,15 +68,54 @@ def get_reviews(id):
 
 @restaurant_routes.route('/reviews', methods=['POST'])
 def add_review():
+    print(request)
     print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    form = ReviewForm()
+    print(form.data)
+
+    form_validates = False
+    if form['body'] and form['title'] and form['stars']:
+        form_validates = True
+    if form_validates:
+        new_review = Review()
+        form.populate_obj(new_review)
+        print('REVIEW SUCCESS', new_review)
+        db.session.add(new_review)
+        db.session.commit()
+        return {}
+    print("review add backEnd>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ERROR")
+    return {}
     # update review count and score on the user obj
 
 @restaurant_routes.route('/photos/<int:id>')
 def get_photos(id):
-    photos = Photo.query.filter_by(restaurant_id=id).all()
+    photos = Photo.query.order_by(
+        desc(Photo.id)).filter_by(restaurant_id=id).all()
     new_photos = {k: photo.to_dict() for k, photo in dict(
         zip(range(len(photos)), photos)).items()}
     return new_photos
+
+
+@restaurant_routes.route('/photos/add/<int:id>/<url>')
+def add_photo(id, url):
+    print("GOT TO THE ADD PHOTO ROUTE WHAT IS HAPPENING HERE")
+    new_url = "https://localplates.s3.amazonaws.com/" + url
+    photo = Photo(
+        image=new_url,
+        restaurant_id=id,
+        caption=""
+    )
+    db.session.add(photo)
+    db.session.commit()
+    return {}
+
+
+@restaurant_routes.route('/photos/remove/<int:id>')
+def remove_photo(id):
+    photo = Photo.query.filter_by(id=id).first()
+    db.session.delete(photo)
+    db.session.commit()
+    return {}
 
 
 @restaurant_routes.route('/menuphotos/<int:id>')
@@ -96,3 +137,12 @@ def get_restaurant_tags(id):
         tags[row[0]] = row[0]
 
     return tags
+
+
+@restaurant_routes.route('/getRestaurantId/<int:id>')
+def get_restaurant_id(id):
+    restaurant = Restaurant.query.filter_by(owner_id=id).first()
+    print("RESTAURANT!!!!!!!!!", restaurant.id)
+
+    return {"id": restaurant.id}
+

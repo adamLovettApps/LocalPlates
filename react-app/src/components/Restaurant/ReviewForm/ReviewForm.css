@@ -5,9 +5,15 @@
     display: flex;
     justify-content: space-around;;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
     justify-content: center;
     background-color:rgb(236, 236, 236);
+    /* border: 1px solid #2d333f; */
+    border-radius: 4px;
+    padding: 15px;
+    margin-left: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    margin-bottom: 35px;
 }
 
 .inputBox {
@@ -25,51 +31,32 @@
 .review-form-body {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #2d333f;
+    border: 0px;
     border-radius: 4px;
-    background-color:rgba(209, 49, 62, 0.2);
+    background-color:rgba(138, 138, 138, 0.2);
     padding:5px;
-    width: 500px;
+    width: 80%;
+    height: 100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .review-form-title {
     padding:5px;
-    margin-top: 10px;
     margin-bottom: 10px;
-    width:100%;
-    border: 1px solid #2d333f;
+    width: 80%;
+    border: 0px;
     border-radius: 4px;
-    background-color:rgba(209, 49, 62, 0.2);
+    background-color:rgba(138, 138, 138, 0.2);
     color:#2d333f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.form {
-    width: 70vw;
-    height: 85vh;
-    display:flex;
-    align-items: center;
-    border: 0.2rem outset rgb(211, 141, 11);
-    -moz-box-shadow:0 8px 8px rgba(5, 5, 5, 0.75);
-    -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.75);
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.75);
-    border-radius: 12px;
-    background-color: rgba(18, 78, 0,.3);
-}
-.inputBox {
-    padding: 5px;
-    /* background-image: url('http://permacultureapprentice.com/wp-content/uploads/2016/02/cover.jpg'); */
-    background-color: rgb(18, 78, 0);
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    flex-direction: column;
-  }
 
   .submit-review {
-    border: solid 1px #247f9e;
+    border: 0px;
     background-color: #247f9e;
     color: rgb(239,241,243);
-
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     margin-top: 20px;
     border-radius: 4px;
     margin-right: 30px;

@@ -1,12 +1,89 @@
+body {
+    font-family: 'Mukta', sans-serif;
+}
 
-@media screen and (min-width: 800px) {
+.log-in-form {
+    max-width: 300px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 349px;
+}
 
-    .form-wrapper{
-        background-color: #EFF1F3;
-        width: 600px;
-    }
+.sign-up-form-header {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
-    form {
-        background-color: #EFF1F3;
-    }
+.form-field-input-container {
+    padding-bottom: 8px;
+    margin-right: 10px;
+}
+
+.form-field-input {
+    width: 100%;
+    line-height:30px;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mukta', sans-serif;
+}
+
+.form-field-textarea {
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Mukta', sans-serif;
+    height: 120px;
+    resize: none;
+}
+
+textarea {
+    border: 2px solid rgb(107, 107, 107);
+}
+
+.form-field-button-container {
+    margin-top: -20px;
+}
+
+.form-field-button {
+    font-family: 'Mukta', sans-serif;
+    color: white;
+    border-radius: 2px;
+    background-color: rgb(209, 49, 62);
+    font-size: 18px;
+    width: 101%;
+    height: 40px;
+    border: none;
+}
+
+.form-field-button:hover {
+    background-color: rgb(172, 32, 43);
+}
+
+.file { 
+    position: relative; height: 30px; width: 101%;
+    margin-bottom: 10px;
+}
+.file > input[type="file"] { 
+    position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 
+}
+.file > label { 
+    position: absolute; top: 0; right: 0; left: 0; bottom: 0; background-color: #666; color: #fff; line-height: 30px; text-align: center; cursor: pointer; 
+}
+
+.restaurant-owner-box {
+    padding-top:10px;
+    padding-right: 30px;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 300px;
 }

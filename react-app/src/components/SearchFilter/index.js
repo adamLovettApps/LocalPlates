@@ -14,15 +14,15 @@ const SearchFilter = () => {
         (async() => {
             let res = await fetch('/api/search/getTags');
             let tagRes = await res.json();
-            console.log(tagRes[1].id)
+
             setTags(tagRes);
             setLoaded(true);
-            console.log("tags", tags)
+
         })();
     }, []);
 
     const changeTags = (tag) => {
-        console.log(tag)
+
         if (selectedTags.includes(tag)) {
             let currentTags = selectedTags;
             const index = currentTags.indexOf(tag);
@@ -45,10 +45,10 @@ const SearchFilter = () => {
 
     return (
         <div>
-            <h3>Filter By</h3>
-            {Object.keys(tags).map((key) => 
-                <div>
-                    <input type="checkbox" onClick={() => changeTags(tags[key].type)} id={tags[key].type} name={tags[key].type}></input><label for={tags[key].type}>{tags[key].type}</label>
+            <h3 className="filter-header">Filter By</h3>
+            {Object.keys(tags).map((key) =>
+                <div >
+                    <input className="filer-checkbox" type="checkbox" onClick={() => changeTags(tags[key].type)} id={tags[key].type} name={tags[key].type}></input><  label for={tags[key].type} className="filer-checkbox" >{tags[key].type}</label>
                 </div>
             )}
         </div>

@@ -11,7 +11,7 @@ function ReviewForm({restaurant}){
     const [stars, setStars] = useState(0);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("ATTEMPT TO POST REVIEW: ", restaurant.id, sessionUser.id, body, stars, title)
+
         await dispatch(addOneReview(restaurant.id, sessionUser.id, body, stars, title))
     }
     return(
@@ -44,11 +44,11 @@ function ReviewForm({restaurant}){
                 </select> */}
 
                 <div className = "form-ratings">
-                        {stars>0 ?<span onClick={()=>setStars(1)} className="fa fa-star checked star" ></span> : <span  onClick={()=>setStars(1)} className="fa fa-star not-checked star" ></span>}
-                        {stars>1 ?<span onClick={()=>setStars(2)}className="fa fa-star checked star" ></span> : <span  onClick={()=>setStars(2)} className="fa fa-star not-checked star" ></span>}
-                        {stars>2 ?<span onClick={()=>setStars(3)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(3)} className="fa fa-star not-checked star" ></span>}
-                        {stars>3 ?<span onClick={()=>setStars(4)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(4)}className="fa fa-star not-checked star" ></span>}
-                        {stars>4 ?<span onClick={()=>setStars(5)} className="fa fa-star checked star" ></span> : <span onClick={()=>setStars(5)} className="fa fa-star not-checked star" ></span>}
+                        {stars>0 ?<span onClick={()=>setStars(1)} className="fa fa-star checked star" style={{fontSize:'20px'}}></span> : <span  onClick={()=>setStars(1)} style={{fontSize:'20px'}} className="fa fa-star not-checked star" ></span>}
+                        {stars>1 ?<span onClick={()=>setStars(2)}className="fa fa-star checked star" style={{fontSize:'20px'}}></span> : <span  onClick={()=>setStars(2)}style={{fontSize:'20px'}} className="fa fa-star not-checked star" ></span>}
+                        {stars>2 ?<span onClick={()=>setStars(3)} className="fa fa-star checked star" style={{fontSize:'20px'}}></span> : <span onClick={()=>setStars(3)}style={{fontSize:'20px'}} className="fa fa-star not-checked star" ></span>}
+                        {stars>3 ?<span onClick={()=>setStars(4)} className="fa fa-star checked star" style={{fontSize:'20px'}}></span> : <span onClick={()=>setStars(4)}style={{fontSize:'20px'}}className="fa fa-star not-checked star" ></span>}
+                        {stars>4 ?<span onClick={()=>setStars(5)} className="fa fa-star checked star" style={{fontSize:'20px'}}></span> : <span onClick={()=>setStars(5)}style={{fontSize:'20px'}} className="fa fa-star not-checked star" ></span>}
                 </div>
                 <textarea
                 id='description'
