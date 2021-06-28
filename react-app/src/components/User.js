@@ -61,13 +61,13 @@ function User() {
 
 
   useEffect(() => {
+
     if (!bookingsList.length) {
       let newBookings = [];
       for (let key in user.bookings) {
         newBookings.push(user.bookings[key])
       }
       setBookings(newBookings)
-      console.log(bookingsList[0])
     }
 
     if (!favsList.length) {
@@ -79,15 +79,15 @@ function User() {
     }
 
     if (!reviewList.length) {
-
       let newReviews = [];
       for (let key in user.reviews) {
         newReviews.push(user.reviews[key])
       }
       setReviewList(newReviews)
     }
-
-  }, [user])
+    console.log(bookingsList)
+    console.log("KKKKKKKKKKKKKKKKKKKKKKKKKKKKK", user.bookings)
+  }, [user, dispatch])
 
   function Bookings() {
     return (
@@ -97,35 +97,32 @@ function User() {
         {bookingsList.map(booking =>
           <div className="restaurant-wrapper">
             <div className="title-wrapper">
-            <h3>{booking.restaurant.name}</h3>
-            <StarRating rating={booking.restaurant.star_rating} reviewNum={booking.restaurant.review_count} />
+              <h3>{booking.restaurant.name}</h3>
+              <StarRating rating={booking.restaurant.star_rating} reviewNum={booking.restaurant.review_count} />
             </div>
             <div className="separator">
               {/* <div className="restaurant-photo">
                 <img src={booking.restaurant.profile_photo} />
               </div> */}
               <div className="reservation-details">
-                <div>
-                  Reservation for: {booking.booked_for}
-                </div>
-                  Status:
-                  {booking.confirmation_status === 0 && <div>Pending</div>}
-                  {booking.confirmation_status === 1 && <div>Approved</div>}
-                  {booking.confirmation_status === 2 && <div>Cancelled</div>}
-                <div>
-                  {booking.party_size} People
+                <div className="reservation-date">
+                  {booking["booked-for"].split(" ").slice(0, 4).join(" ")}
                 </div>
               </div>
+
+              <div className="description">{booking.restaurant.description}</div>
+
+            </div>
+            <div className="details">
               <div>
-                <div className="restaurant-data">
-                  <div className="description">{booking.restaurant.description}</div>
-                  <div>
-                    {booking.restaurant.phone_number}
-                  </div>
-                  <div>
-                    {booking.restaurant.address} {booking.restaurant.city}, {booking.restaurant.state}  {booking.restaurant.zipcode}
-                  </div>
-                </div>
+                {booking.party_size} People
+              </div>
+              <div>
+                {booking.restaurant.phone_number}
+              </div>
+              <div>
+                {booking.restaurant.address} {booking.restaurant.city},
+                {booking.restaurant.state}  {booking.restaurant.zipcode}
               </div>
             </div>
           </div>
